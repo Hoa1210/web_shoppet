@@ -57,7 +57,7 @@
                                     <tr>
                                         <td><?php echo $key ; ?></td>
                                         <td><?php echo $value->ten_sp ; ?></td>
-                                        <td> <img style="width: 150px;"  src = 'public/imagebanner/<?php echo$value->hinh_anh;?>'></td>
+                                        <td> <img style="width: 150px;"  src = 'public/imageproduct/<?php echo$value->hinh_anh;?>'></td>
                                         <td><?php echo $value->so_luong ; ?></td>
                                         <td><?php echo $value->gia_ban ; ?></td>
                                         <td><?php echo $value->thong_tin_them ; ?></td>

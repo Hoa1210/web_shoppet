@@ -17,19 +17,19 @@
             <div class="col-lg-5 col-md-12">
                 <div class="products-details-thumbs-image">
                     <ul class="products-details-thumbs-image-slides">
-                        <li><img src="public/patoi/assets/img/products/products4.jpg" alt="image"></li>
-                        <li><img src="public/patoi/assets/img/products/products5.jpg" alt="image"></li>
-                        <li><img src="public/patoi/assets/img/products/products6.jpg" alt="image"></li>
-                        <li><img src="public/patoi/assets/img/products/products7.jpg" alt="image"></li>
-                        <li><img src="public/patoi/assets/img/products/products8.jpg" alt="image"></li>
+                        <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                        <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                        <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                        <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                        <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
                     </ul>
                     <div class="slick-thumbs">
                         <ul>
-                            <li><img src="public/patoi/assets/img/products/products4.jpg" alt="image"></li>
-                            <li><img src="public/patoi/assets/img/products/products5.jpg" alt="image"></li>
-                            <li><img src="public/patoi/assets/img/products/products6.jpg" alt="image"></li>
-                            <li><img src="public/patoi/assets/img/products/products7.jpg" alt="image"></li>
-                            <li><img src="public/patoi/assets/img/products/products8.jpg" alt="image"></li>
+                            <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                            <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                            <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                            <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                            <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
                         </ul>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                         <i class='bx bxs-star'></i>
                     </div>
                     <p>Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried near the Pyramids. Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipiscing elitet.</p>
-                    <form action="cart.php?action=add&ma_sp=<?php echo $review->ma_sp;?>" method="POST">
+                    <form action="cart.php?action=add2&ma_sp=<?php echo $review->ma_sp;?>" method="POST">
                     <div class="products-add-to-cart">
                         <div class="input-counter">
                             <span class="minus-btn"><i class='bx bx-minus'></i></span>

@@ -17,7 +17,7 @@
             <div class="col-lg-6 col-md-6 result-count">
                 <div class="d-flex align-items-center">
                     <a href="#" data-bs-toggle="modal" data-bs-target="#productsFilterModal" class="sidebar-filter"><i class='bx bx-filter-alt'></i> Filter</a>
-                    <p>We found <span class="count">12</span> products available for you</p>
+                    <p>We found <span class="count"><?php echo $item_per_page;?></span> products available for you</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 ordering">
@@ -34,12 +34,16 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <?php foreach ($product as $key=>$value) {?>
+            <?php
+//            echo "<pre />";
+//            var_dump($product);
+            foreach ($product as $key=>$value) :?>
+
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-products-box">
                     <div class="image">
-                        <a onclick="window.location.href='products_details.php?ma_sp=<?php echo $value->ma_sp;?>'" class="d-block">
-                            <img src="admin/public/imagebanner/<?php echo $value->hinh_anh?>" alt="products-image">
+                        <a onclick="window.location.href='products_details.php?action=add1&&ma_sp=<?php echo $value->ma_sp;?>'" class="d-block">
+                            <img src="admin/public/imageproduct/<?php echo $value->hinh_anh?>" alt="products-image">
                         </a>
                         <ul class="products-button">
                             <li><a onclick="window.location.href='cart.php?ma_sp=<?php echo $value->ma_sp;?>'"><i class='bx bx-cart-alt'></i></a></li>
@@ -63,15 +67,15 @@
                     </div>
                 </div>
             </div>
-            <?php } ?>
+            <?php endforeach; ?>
             <div class="col-lg-12 col-md-12">
                 <div class="pagination-area">
                     <div class="nav-links">
-                        <a href="shop-grid.html" class="previous page-numbers" title="Next Page"><i class='bx bx-chevrons-left'></i></a>
-                        <span class="page-numbers current">1</span>
-                        <a href="shop-grid.html" class="page-numbers">2</a>
-                        <a href="shop-grid.html" class="page-numbers">3</a>
-                        <a href="shop-grid.html" class="next page-numbers" title="Next Page"><i class='bx bx-chevrons-right'></i></a>
+                        <a href="shop.php?page=<?php echo 1;?>" class="previous page-numbers" title="Next Page"><i class='bx bx-chevrons-left'></i></a>
+                        <?php for ($i = 0; $i < $max_page; $i++) :?>
+                        <a href="shop.php?page=<?php echo ($i+1);?>" class="page-numbers"><?php echo ($i+1);?></a>
+                        <?php endfor;?>
+                        <a href="shop.php?page=<?php echo $max_page;?>" class="next page-numbers" title="Next Page"><i class='bx bx-chevrons-right'></i></a>
                     </div>
                 </div>
             </div>

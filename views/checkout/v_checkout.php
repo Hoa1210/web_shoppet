@@ -13,9 +13,9 @@
 
 <div class="checkout-area ptb-100">
     <div class="container">
-<!--        <div class="user-actions">-->
-<!--            <span>Returning customer? <a href="profile-authentication.html">Click here to login</a></span>-->
-<!--        </div>-->
+        <div class="user-actions">
+            <span>Returning cart? <a href="cart.php">Click here to cart</a></span>
+        </div>
         <form action="ckeck_out.php" method="post">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
@@ -169,30 +169,29 @@
                             <table class="table table-bordered">
                                 <tbody>
                                 <?php
-                                if (isset($_SESSION)){
-                                    for ($i = 0; $i < sizeof($_SESSION['cart']); $i++) {
-//                                        var_dump($_SESSION['cart']);
+                                if(isset($_SESSION['cart']) && !empty($_SESSION['cart'])) :
+                                    foreach ($_SESSION['cart'] as $key=>$value) :
                                 ?>
                                 <tr>
-                                    <td class="product-name"><a href="products-details.html"><?php echo $_SESSION['cart'][$i][1]; ?> VNĐ</a></td>
+                                    <td class="product-name"><a href="products-details.html"><?php echo $value['ten_sp']; ?> VNĐ</a></td>
                                     <td class="product-total">
-                                        <span class="subtotal-amount"><?php echo number_format($_SESSION['cart'][$i][3]); ?></span>
+                                        <span class="subtotal-amount"><?php echo number_format($value['tt']); ?></span>
                                     </td>
                                 </tr>
                                 <?php
-                                }
-                                }
+                                    endforeach;
+                                endif;
                                 ?>
                                 <tr>
                                     <td class="order-subtotal"><span>Cart Subtotal</span></td>
                                     <td class="order-subtotal-price">
-                                        <span class="order-subtotal-amount">$1683.50</span>
+                                        <span class="order-subtotal-amount">0 VNĐ</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="order-shipping"><span>Shipping</span></td>
                                     <td class="shipping-price">
-                                        <span>$30.00</span>
+                                        <span>0 VNĐ</span>
                                     </td>
                                 </tr>
                                 <tr>

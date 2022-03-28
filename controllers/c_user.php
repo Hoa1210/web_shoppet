@@ -1,6 +1,6 @@
 <?php
 include_once("models/m_user.php");
-session_start();
+@session_start();
 class c_user {
 
     public function account() {

@@ -43,7 +43,7 @@
                 <a class="navbar-brand" href="home.php"><img src="public/patoi/assets/img/logo.png" alt="logo"></a>
                 <div class="collapse navbar-collapse mean-menu">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="home.php" class=" nav-link active">Home</a>
+                        <li class="nav-item"><a href="home.php?home" class=" nav-link <?php echo isset($_GET['home']) ? "active" : " ";?>">Home</a>
 <!--                            <ul class="dropdown-menu">-->
 <!--                                <li class="nav-item"><a href="index.html" class="nav-link">Home Demo - One</a></li>-->
 <!--                                <li class="nav-item"><a href="index-2.html" class="nav-link">Home Demo - Two</a></li>-->
@@ -51,17 +51,17 @@
 <!--                            </ul>-->
                         </li>
                         <li class="nav-item">
-                            <a href="about_us.php" class="nav-link">About Us</a>
+                            <a href="about_us.php?about_us" class="nav-link <?php echo isset($_GET['about_us']) ? "active" : " "; ?>">About Us</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="shop.php" class=" nav-link">Shop</a>
+                            <a href="shop.php?shop" class=" nav-link <?php echo isset($_GET['shop']) ? "active" : " "; ?>">Shop</a>
 
                         </li>
                         <li class="nav-item">
-                            <a href="blog.php" class=" nav-link">Blog</a>
+                            <a href="blog.php?blog" class=" nav-link <?php echo isset($_GET['blog']) ? "active" : " "; ?>">Blog</a>
                         </li>
-                        <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="contact.php?contact" class="nav-link <?php echo isset($_GET['contact']) ? "active" : " "; ?>">Contact</a></li>
                     </ul>
                     <div class="others-option">
                         <div class="d-flex align-items-center">
@@ -73,7 +73,7 @@
                                         <option value="2">Chinese</option>
                                     </select>
                                 </li>
-                                <li><a href="user.php"><i class='bx bx-user-circle'></i></a></li>
+                                <li ><a href="user.php?user" ><i class='bx bx-user-circle'></i></a></li>
                                 <li><a href="cart.php"><i class='bx bx-cart'></i></a></li>
                             </ul>
                         </div>

@@ -16,14 +16,16 @@
             <div class="col-lg-6 col-md-12">
                 <div class="login-form">
                     <h2>Login</h2>
-                    <form action="user.php" method="POST">
+                    <form action="user.php" method="POST" id="contactForm">
                         <div class="form-group">
                             <label>Username or email</label>
-                            <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap" required placeholder="Username or email">
+                            <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap"  placeholder="Username " required data-error="Please enter your Username">
+                            <div class="help-block with-errors alert-danger" ></div>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" id="mat_khau" name="mat_khau" required placeholder="Password">
+                            <input type="password" class="form-control" id="mat_khau" name="mat_khau"  placeholder="Password" required data-error="Please enter your Password">
+                            <div class="help-block with-errors  alert-danger"></div>
                         </div>
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-6 remember-me-wrap">
