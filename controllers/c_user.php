@@ -21,26 +21,25 @@ class c_user {
     public function register() {
 
         if(isset($_POST["btn_submit"])) {
+            $id = NULL;
             $ten_dang_nhap = $_POST["ten_dang_nhap"];
             $email = $_POST["email"];
             $mat_khau = $_POST["mat_khau"];
 
-            $this->saveRegisterSession($ten_dang_nhap, $email, $mat_khau);
+            $this->saveRegisterSession($id,$ten_dang_nhap, $email, $mat_khau);
 
             if (isset($_SESSION['register'])) {
-//                $_SESSION['error_success'] = "Thành công rồi nhé!";
-                echo "<script> alert('Đăng ký thành công!!'); </script>";
+                $_SESSION['error_success'] = "Thành công rồi nhé!";
             }else {
-//                $_SESSION['error_danger'] = "Đăng ký thất bại!";
-                echo "<script> alert('Đăng ký thất bại!!'); </script>";
+                $_SESSION['error_danger'] = "Đăng ký thất bại!";
             }
 
         }
     }
 
-    public function saveRegisterSession($ten_dang_nhap,$email,$mat_khau) {
+    public function saveRegisterSession($id,$ten_dang_nhap,$email,$mat_khau) {
         $m_register = new m_user();
-        $result = $m_register->insert_register($ten_dang_nhap, $email, $mat_khau);
+        $result = $m_register->insert_register($id,$ten_dang_nhap, $email, $mat_khau);
         if (!empty($result)) {
             $_SESSION['register'] = $result;
         }
@@ -56,13 +55,9 @@ class c_user {
 
             $this->saveLoginSession($ten_dang_nhap, $mat_khau);
 
-//            echo print_r($_SESSION['login']);
-
-
             if (isset($_SESSION['login'])) {
                 echo "<script> alert('Đăng nhập thành công!'); </script>";
                 echo "<script>location.href = 'home.php';</script>";
-//
             }else {
                 echo "<script> alert('Đăng nhập thất bại!!'); </script>";
             }

@@ -16,16 +16,16 @@
             <div class="col-lg-6 col-md-12">
                 <div class="login-form">
                     <h2>Login</h2>
-                    <form action="user.php" method="POST" id="contactForm">
+                    <form action="user.php" method="POST" >
                         <div class="form-group">
                             <label>Username or email</label>
-                            <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap"  placeholder="Username " required data-error="Please enter your Username">
-                            <div class="help-block with-errors alert-danger" ></div>
+                            <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap"  placeholder="Username " required >
+
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" id="mat_khau" name="mat_khau"  placeholder="Password" required data-error="Please enter your Password">
-                            <div class="help-block with-errors  alert-danger"></div>
+                            <input type="password" class="form-control" id="mat_khau" name="mat_khau"  placeholder="Password" required s>
+
                         </div>
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-6 remember-me-wrap">
@@ -48,7 +48,7 @@
                     <form action="" enctype="multipart/form-data" method="POST">
                         <?php if (isset($_SESSION['error_success'])) { ?>
                             <div class="alert alert-success"  role="alert">
-                                <?php echo "Đăng ký thành công";?>
+                                <?php echo $_SESSION['error_success'];?>
                             </div>
                         <?php }?>
                         <?php if (isset($_SESSION['error_danger'])) { ?>

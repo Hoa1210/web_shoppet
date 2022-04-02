@@ -8,10 +8,12 @@
             </div>
             <div class="col-lg-5 col-md-5 col-sm-6">
                 <div class="search-box">
-                    <form>
-                        <input type="text" class="input-search" placeholder="Enter your keywords...">
-                        <button type="submit"><i class='bx bx-search'></i></button>
+                    <form action="search.php" method="POST">
+                        <input type="text" class="input-search" placeholder="Enter your keywords..." name="tu_khoa">
+                        <button type="submit" name="tim_kiem"><i class='bx bx-search'></i></button>
+<!--                        <input type="submit" name="tim_kiem" value="a">-->
                     </form>
+
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6">

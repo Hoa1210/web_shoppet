@@ -27,7 +27,7 @@ class c_user {
 
     public function logout(){
         session_destroy();
-        header("location:login.php");
+        header("location:http://localhost/NHOM_4/user.php");
     }
 
     public function saveLoginSession($username,$password) {

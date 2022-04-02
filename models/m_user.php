@@ -9,12 +9,12 @@ class m_user extends database {
         return $this->loadRow(array($ten_dang_nhap,md5($mat_khau)));
     }
 
-    public function insert_register($ten_dang_nhap,$email,$mat_khau) {
-        $sql = "insert into nguoi_dung values (?,?,?)";
+    public function insert_register($id,$ten_dang_nhap,$email,$mat_khau) {
+        $sql = "insert into nguoi_dung values (?,?,?,?)";
         $this->setQuery($sql);
-        return $this->execute(array($ten_dang_nhap,$email,md5($mat_khau)));
+        return $this->execute(array($id,$ten_dang_nhap,$email,md5($mat_khau)));
     }
-
+    
     public function info_user() {
         $sql = "insert into nguoi_dung ";
         $this->setQuery($sql);
