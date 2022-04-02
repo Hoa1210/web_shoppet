@@ -6,7 +6,6 @@
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-                <h4 class="page-title">Tables</h4>
                 <div class="ml-auto text-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -32,8 +31,13 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Basic Datatable</h5>
+                        <h5 class="card-title">PRODUCTS</h5>
                         <div class="table-responsive">
+                            <div class="border-top">
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='add_product.php'">Add Product</button>
+                                </div>
+                            </div>
                             <table id="zero_config" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
@@ -64,7 +68,7 @@
                                         <td> <span class="badge badge-pill <?php echo $css_trang_thai;?>"><?php echo $text_trang_thai;?> </span></td>
                                         <td>
                                             <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='edit_product.php?ma_sp=<?php echo $value->ma_sp;?>'">Edit</button>
-                                            <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='delete_product.php?ma_sp=<?php echo $value->ma_sp;?>'">Delete</button>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_product.php?ma_sp=<?php echo $value->ma_sp;?>'">Delete</button>
                                         </td>
                                     </tr>
                                 <?php } ?>

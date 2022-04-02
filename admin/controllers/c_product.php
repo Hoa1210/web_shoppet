@@ -20,7 +20,6 @@ class c_product{
 //         echo print_r($_FILES['f_hinh_anh']);
 //         die();
 
-
             $m_banner = new m_product();
             $result = $m_banner->insert_product($ma_sp,$ten_sp,$hinh_sp,$so_luong,$gia_ban,$thong_tin_them,$trang_thai);
             if ($result) {
