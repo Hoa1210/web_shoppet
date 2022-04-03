@@ -19,6 +19,26 @@ class c_user {
 
     }
 
+    public function add_profile() {
+        if(isset($_POST['btn_information'])) {
+            $id = $_SESSION['id_user'];
+            $ten_khach_hang = $_POST['name'];
+            $ngay_sinh = $_POST['date'];
+            $dia_chi = $_POST['address'];
+            $so_dien_thoai = $_POST['phone'];
+            $email = $_POST['email'];
+
+            $information = new m_user();
+            $result1 = $information->add_information_user($id, $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email);
+
+            if($result1) {
+                echo "<script>window.location='user.php'</script>";
+            }
+        }
+        $view = "views/profile/v_add_profile.php";
+        include ("templates/layout.php");
+    }
+
     public function edit_information() {
         $id_user = $_SESSION['id_user'];
         $info = new m_user();
@@ -48,22 +68,31 @@ class c_user {
     }
 
     public function register() {
-
         if(isset($_POST["btn_submit"])) {
+
             $id = NULL;
             $ten_dang_nhap = $_POST["ten_dang_nhap"];
             $email = $_POST["email"];
             $mat_khau = $_POST["mat_khau"];
 
+            $m_user = new m_user();
+            $check = $m_user->read_user_by_id_pass($ten_dang_nhap,$email);
 
-            $this->saveRegisterSession($id,$ten_dang_nhap, $email, $mat_khau);
-
-            if (isset($_SESSION['register'])) {
-                $_SESSION['error_success'] = "Thành công rồi nhé!";
+            if(!empty($check)) {
+                $_SESSION['error_danger'] = "Tài khoản hoặc email đã tồn tại!!";
+                echo "<script>location.href = 'user.php';</script>";
+                die();
             }else {
-                $_SESSION['error_danger'] = "Đăng ký thất bại!";
-            }
 
+                $this->saveRegisterSession($id, $ten_dang_nhap, $email, $mat_khau);
+
+                if (isset($_SESSION['register'])) {
+                    $_SESSION['error_success'] = "Thành công rồi nhé!";
+                } else {
+                    $_SESSION['error_danger'] = "Đăng ký thất bại!";
+                }
+
+            }
         }
     }
 

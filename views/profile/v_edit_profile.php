@@ -4,7 +4,7 @@
             <div class="col-lg-6 col-md-12">
                 <form action="" method="POST">
                      <div class="billing-details">
-                    <h3><span>Personal Information</span></h3>
+                    <h3><span> Edit Personal Information</span></h3>
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="form-group">

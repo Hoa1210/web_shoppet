@@ -49,5 +49,27 @@ class c_shop {
 
     }
 
+    public function quick_view() {
+
+        echo 123;
+            echo "<script> alert('Đăng nhập thất bại!!'); </script>";
+            $ma_sp = 38;
+
+            $m_view = new m_product();
+            $quick_view = $m_view->read_product_by_id($ma_sp);
+
+            echo "<pre />";
+            var_dump($quick_view);
+    }
+
+    public function arrange() {
+
+        if(isset($_POST['btn_submit'])) {
+
+        }
+        $view = "views/search/v_arrange.php";
+        include("templates/layout.php");
+    }
+
 }
 ?>

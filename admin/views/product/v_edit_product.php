@@ -13,7 +13,18 @@
                                 <div class="form-group row">
                                     <label for="fname" class="col-sm-3 text-right control-label col-form-label">Mã sản phẩm</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="ma_sp" name="ma_sp"  placeholder="ma san pham">
+                                        <input type="text" class="form-control" id="ma_sp" name="ma_sp" value="<?php echo $edit_product->ma_sp;?>"  placeholder="ma san pham">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 text-right control-label col-form-label">Loại sản phẩm</label>
+                                    <div class="col-md-9">
+                                        <select name="ma_loai_sp" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                            <option >---Chọn---</option>
+                                            <?php foreach ($arr as $key=>$value) :  ?>
+                                                <option value="<?php echo $value->ma_loai; ?>" <?php if($value->ma_loai == $edit_product->ma_loai_sp) {echo "selected";}else{echo " ";}?>><?php echo $value->ten_loai_sp; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -52,12 +63,7 @@
                                 <div class="form-group row">
                                     <label for="fname" class="col-sm-3 text-right control-label col-form-label">Thông tin</label>
                                     <div class="col-sm-9">
-                                        <!--                                    <input type="text" class="form-control" id="thong_tin" name="thong_tin" -->
-                                        <!--                                           value="--><?php //echo $edit_product->thong_tin_them;?><!--" placeholder="thong tin">-->
-
-                                        <!--input class="text-input large-input" type="text" id="chi_tiet" name="chi_tiet" value="{$tin_tuc->chi_tiet}" /-->
                                         <textarea name="thong_tin" id="thong_tin"  class="form-control" ><?php echo $edit_product->thong_tin_them;?></textarea>
-
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -65,8 +71,8 @@
                                     <div class="col-sm-9">
                                         <select class="select2 form-control custom-select" name="trang_thai" style="width: 100%; height:36px;">
                                             <option>---Chon---</option>
-                                            <option value="1" <?php if($edit_product->trang_thai == 1) echo"selected"; ?>>Open</option>
-                                            <option value="0" <?php if($edit_product->trang_thai == 0) echo"selected"; ?>>Close</option>
+                                            <option value="1" <?php if($edit_product->trang_thai_sp == 1) echo"selected"; ?>>Open</option>
+                                            <option value="0" <?php if($edit_product->trang_thai_sp == 0) echo"selected"; ?>>Close</option>
                                         </select>
                                     </div>
                                 </div>

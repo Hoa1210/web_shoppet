@@ -31,50 +31,35 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">PRODUCTS</h5>
+                        <h5 class="card-title">CUSTOMMER</h5>
                         <div class="table-responsive">
-                            <div class="border-top" style="display: flex;">
-                                <div class="card-body" style="flex: 0;">
-                                    <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='add_product.php'">Add Product</button>
-                                </div>
-                                <div class="card-body" style="flex: 0;">
-                                    <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='type_product.php'">Product Type</button>
-                                </div>
-                            </div>
                             <table id="zero_config" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>Loại sản phẩm</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Hình ảnh</th>
-                                    <th>Số lượng</th>
-                                    <th>Giá bán</th>
-                                    <th>Thông tin</th>
-                                    <th>Trạng thái</th>
+                                    <th>Mã khách hàng</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Email</th>
                                     <th></th>
-
 
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                    foreach ($product as $key=>$value) {
-                                        $css_trang_thai = $value->trang_thai_sp ? "badge-info" : "badge-danger";
-                                        $text_trang_thai = $value->trang_thai_sp ? "Mở" : "Khóa";
-                                 ?>
+                                foreach ($list_customer as $key=>$value) {?>
                                     <tr>
                                         <td><?php echo $key ; ?></td>
-                                        <td><?php echo $value->ten_loai_sp ; ?></td>
-                                        <td><?php echo $value->ten_sp ; ?></td>
-                                        <td> <img style="width: 150px;"  src = 'public/imageproduct/<?php echo$value->hinh_anh;?>'></td>
-                                        <td><?php echo $value->so_luong ; ?></td>
-                                        <td><?php echo $value->gia_ban ; ?></td>
-                                        <td><?php echo $value->thong_tin_them ; ?></td>
-                                        <td> <span class="badge badge-pill <?php echo $css_trang_thai;?>"><?php echo $text_trang_thai;?> </span></td>
+                                        <td><?php echo $value->ma_kh; ?></td>
+                                        <td><?php echo $value->ten_khach_hang ; ?></td>
+                                        <td><?php echo $value->ngay_sinh ; ?></td>
+                                        <td><?php echo $value->dia_chi ; ?></td>
+                                        <td><?php echo $value->so_dien_thoai ; ?></td>
+                                        <td><?php echo $value->email ; ?></td>
                                         <td>
-                                            <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='edit_product.php?ma_sp=<?php echo $value->ma_sp;?>'">Edit</button>
-                                            <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_product.php?ma_sp=<?php echo $value->ma_sp;?>'">Delete</button>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_customer.php?ma_kh=<?php echo $value->ma_kh;?>'">Delete</button>
                                         </td>
                                     </tr>
                                 <?php } ?>

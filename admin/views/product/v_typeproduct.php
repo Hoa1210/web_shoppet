@@ -35,46 +35,37 @@
                         <div class="table-responsive">
                             <div class="border-top" style="display: flex;">
                                 <div class="card-body" style="flex: 0;">
-                                    <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='add_product.php'">Add Product</button>
+                                    <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='list_product.php'">Return</button>
                                 </div>
                                 <div class="card-body" style="flex: 0;">
-                                    <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='type_product.php'">Product Type</button>
+                                    <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='add_product_type.php'">Add Product Type</button>
                                 </div>
                             </div>
                             <table id="zero_config" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>Loại sản phẩm</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Hình ảnh</th>
-                                    <th>Số lượng</th>
-                                    <th>Giá bán</th>
-                                    <th>Thông tin</th>
+                                    <th> Mã loại sản phẩm</th>
+                                    <th>Tên loại sản phẩm</th>
                                     <th>Trạng thái</th>
-                                    <th></th>
 
 
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                    foreach ($product as $key=>$value) {
-                                        $css_trang_thai = $value->trang_thai_sp ? "badge-info" : "badge-danger";
-                                        $text_trang_thai = $value->trang_thai_sp ? "Mở" : "Khóa";
-                                 ?>
+                                foreach ($show_type as $key=>$value) {
+                                    $css_trang_thai = $value->trang_thai ? "badge-info" : "badge-danger";
+                                    $text_trang_thai = $value->trang_thai ? "Mở" : "Khóa";
+                                    ?>
                                     <tr>
                                         <td><?php echo $key ; ?></td>
+                                        <td><?php echo $value->ma_loai ; ?></td>
                                         <td><?php echo $value->ten_loai_sp ; ?></td>
-                                        <td><?php echo $value->ten_sp ; ?></td>
-                                        <td> <img style="width: 150px;"  src = 'public/imageproduct/<?php echo$value->hinh_anh;?>'></td>
-                                        <td><?php echo $value->so_luong ; ?></td>
-                                        <td><?php echo $value->gia_ban ; ?></td>
-                                        <td><?php echo $value->thong_tin_them ; ?></td>
                                         <td> <span class="badge badge-pill <?php echo $css_trang_thai;?>"><?php echo $text_trang_thai;?> </span></td>
                                         <td>
-                                            <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='edit_product.php?ma_sp=<?php echo $value->ma_sp;?>'">Edit</button>
-                                            <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_product.php?ma_sp=<?php echo $value->ma_sp;?>'">Delete</button>
+                                            <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='edit_typeproduct.php?ma_loai=<?php echo $value->ma_loai;?>'">Edit</button>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_typeproduct.php?ma_loai=<?php echo $value->ma_loai;?>'">Delete</button>
                                         </td>
                                     </tr>
                                 <?php } ?>

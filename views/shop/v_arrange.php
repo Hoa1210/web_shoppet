@@ -13,29 +13,32 @@
 
 <div class="products-area ptb-100">
     <div class="container">
-        <div class="patoi-grid-sorting row align-items-center">
-            <div class="col-lg-6 col-md-6 result-count">
-                <div class="d-flex align-items-center">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#productsFilterModal" class="sidebar-filter"><i class='bx bx-filter-alt'></i> Filter</a>
-                    <p>We found <span class="count"><?php if(isset($search)){echo $item_per_page;}else{echo 0;}?></span> products available for you</p>
+        <form>
+            <div class="patoi-grid-sorting row align-items-center">
+                <div class="col-lg-4 col-md-6 result-count">
+                    <div class="d-flex align-items-center">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsFilterModal" class="sidebar-filter"><i class='bx bx-filter-alt'></i> Filter</a>
+                        <p>We found <span class="count"><?php echo $item_per_page;?></span> products available for you</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 ">
+                    <div class="select-box">
+                        <label>Sort By:</label>
+                        <select name="xap_xep">
+                            <option>Default</option>
+                            <option value="high">Price: low to high</option>
+                            <option value="low">Price: high to low</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 ordering">
+                    <input value="Send">
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 ordering">
-                <div class="select-box">
-                    <label>Sort By:</label>
-                    <select>
-                        <option>Default</option>
-                        <option>Price: low to high</option>
-                        <option>Price: high to low</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <?php if($search != NULL) { ?>
+        </form>
         <div class="row justify-content-center">
             <?php
-//            var_dump($search);
-            foreach ($search as $key=>$value) :?>
+            foreach ($product as $key=>$value) :?>
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-products-box">
@@ -69,17 +72,15 @@
             <div class="col-lg-12 col-md-12">
                 <div class="pagination-area">
                     <div class="nav-links">
-                        <a href="search.php?page=<?php echo 1;?>" class="previous page-numbers" title="Next Page"><i class='bx bx-chevrons-left'></i></a>
+                        <a href="shop.php?page=<?php echo 1;?>" class="previous page-numbers" title="Next Page"><i class='bx bx-chevrons-left'></i></a>
                         <?php for ($i = 0; $i < $max_page; $i++) :?>
-                            <a href="search.php?page=<?php echo ($i+1);?>" class="page-numbers"><?php echo ($i+1);?></a>
+                            <a href="shop.php?page=<?php echo ($i+1);?>" class="page-numbers"><?php echo ($i+1);?></a>
                         <?php endfor;?>
-                        <a href="search.php?page=<?php echo $max_page;?>" class="next page-numbers" title="Next Page"><i class='bx bx-chevrons-right'></i></a>
+                        <a href="shop.php?page=<?php echo $max_page;?>" class="next page-numbers" title="Next Page"><i class='bx bx-chevrons-right'></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <?php }else{  ?>
-            <h3>No product!!</h3>
-        <?php }?>
     </div>
 </div>
+

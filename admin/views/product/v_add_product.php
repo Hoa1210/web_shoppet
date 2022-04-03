@@ -4,15 +4,26 @@
     <!-- Start Page Content -->
     <!-- ============================================================== -->
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" style="width: 50%;">
             <div class="card">
                 <form class="form-horizontal" action="" enctype="multipart/form-data" method="POST">
-                    <div class="card-body">
+                    <div class="card-body" >
                         <h4 class="card-title">Personal Info</h4>
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Mã sản phẩm</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="ma_sp" name="ma_sp" placeholder="ma san pham">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 text-right control-label col-form-label">Loại sản phẩm</label>
+                            <div class="col-md-9">
+                                <select name="ma_loai_sp" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                    <option>---Chọn---</option>
+                                    <?php foreach ($arr as $key=>$value) : ?>
+                                        <option value="<?php echo $value->ma_loai; ?>" ><?php echo $value->ten_loai_sp; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -47,7 +58,7 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Thông tin</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="thong_tin" name="thong_tin" placeholder="thong tin">
+                                <textarea name="thong_tin" id="thong_tin"  class="form-control" > </textarea>
                             </div>
                         </div>
                         <div class="form-group row">
