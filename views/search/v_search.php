@@ -17,7 +17,7 @@
             <div class="col-lg-6 col-md-6 result-count">
                 <div class="d-flex align-items-center">
                     <a href="#" data-bs-toggle="modal" data-bs-target="#productsFilterModal" class="sidebar-filter"><i class='bx bx-filter-alt'></i> Filter</a>
-                    <p>We found <span class="count"><?php if(isset($search)){echo $item_per_page;}else{echo 0;}?></span> products available for you</p>
+                    <p>We found <span class="count"><?php if(isset($search)){echo $item_per_page_new;}else{echo 0;}?></span> products available for you</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 ordering">

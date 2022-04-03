@@ -4,7 +4,7 @@
             <h3>Personal Information</h3>
             <div class="col-lg-6 col-md-12">
                 <div class="contact-info">
-                    <?php if(!empty($profile)) {?>
+                    <?php if($profile) {?>
                     <ul>
                         <li><span>Name:</span> <?php echo $profile->ten_khach_hang;?></li>
                         <li><span>Date of birth:</span> <?php echo $profile->ngay_sinh;?></li>

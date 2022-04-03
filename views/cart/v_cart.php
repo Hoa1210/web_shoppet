@@ -76,7 +76,7 @@
                     <div class="col-lg-5 col-sm-12 col-md-5 text-end">
                         <!--                        <a href="" class="default-btn"><span>Update Cart</span></a>-->
                         <input type="submit" class="default-btn"  name="btn_delete"  value="Delete all cart">
-                        <input type="submit" class="default-btn"  name="btn_update"  value="Update">
+<!--                        <input type="submit" class="default-btn"  name="btn_update"  value="Update">-->
                     </div>
                 </div>
             </div>

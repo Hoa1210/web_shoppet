@@ -15,6 +15,7 @@ class c_shop {
 
         $product = $m_product->read_product_by_page($item_per_page, $offset);
 
+        $item_per_page_new = sizeof($product_add) < 8 ? sizeof($product_add) : 8;
 
         $view = "views/shop/v_shop.php";
         include ("templates/layout.php");
@@ -39,27 +40,14 @@ class c_shop {
 
             $m_search = new m_search();
             $search = $m_product->read_product_by_page($tu_khoa,$item_per_page,$offset);
-            if (sizeof($search) < 8) {
-                $item_per_page = sizeof($search);
-            }
+
+            $item_per_page_new = sizeof($search) < 8 ? sizeof($search) : 8;
+
 
             $view = "views/search/v_search.php";
             include("templates/layout.php");
         }
 
-    }
-
-    public function quick_view() {
-
-        echo 123;
-            echo "<script> alert('Đăng nhập thất bại!!'); </script>";
-            $ma_sp = 38;
-
-            $m_view = new m_product();
-            $quick_view = $m_view->read_product_by_id($ma_sp);
-
-            echo "<pre />";
-            var_dump($quick_view);
     }
 
     public function arrange() {

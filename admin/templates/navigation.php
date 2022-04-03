@@ -6,6 +6,7 @@
             <ul id="sidebarnav" class="p-t-30">
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="list_product.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Products</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="customer.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Customers</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="order.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Order</span></a></li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

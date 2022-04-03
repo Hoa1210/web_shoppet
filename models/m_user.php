@@ -25,7 +25,7 @@ class m_user extends database {
 
 //    lay thong tin khach hang
     public function read_information_user($id_user){
-        $sql = "select * from khach_hang where id = $id_user";
+        $sql = "select * from khach_hang where ma_kh = $id_user";
         $this->setQuery($sql);
         return $this->loadRow(array($id_user));
     }
