@@ -75,7 +75,7 @@ class c_product{
                 $trang_thai = $_POST['trang_thai'] ;
 
                 $m_product = new m_product();
-                $result = $m_product->edit_product($ma_sp,$ma_loai_sp,$ten_sp,$hinh_sp,$so_luong,$gia_ban,$thong_tin_them,$trang_thai);
+                $result = $m_product->edit_product($ma_loai_sp,$ten_sp,$hinh_sp,$so_luong,$gia_ban,$thong_tin_them,$trang_thai,$ma_sp);
 
                 if ($result) {
                     if ($_FILES['f_hinh_anh']['error'] == 0) {
@@ -113,13 +113,12 @@ class c_product{
         if(isset($_POST['btn-submit'])) {
             $ma_loai = NULL;
             $ten_loai_sp = $_POST['ten_loai_sp'];
-            $trang_thai = $_POST['trang_thai'];
 
             $m_type = new m_product();
-            $type_product = $m_type->add_product_type($ma_loai, $ten_loai_sp, $trang_thai);
+            $type_product = $m_type->add_product_type($ma_loai, $ten_loai_sp);
 
             if($type_product) {
-                echo "<script>alert('Thêm thành công');</script>";
+                echo "<script>alert('Thêm thành công');window.location.href='type_product.php'</script>";
             }else{
                 echo "<script>alert('Thêm thất bại');</script>";
             }
@@ -160,10 +159,9 @@ class c_product{
 
             if(isset($_POST['btn-submit'])) {
                 $ten_loai_sp = $_POST['ten_loai_sp'];
-                $trang_thai = $_POST['trang_thai'];
 
                 $insert = new m_product();
-                $update = $insert->edit_type_product($ma_loai, $ten_loai_sp, $trang_thai);
+                $update = $insert->edit_type_product($ma_loai, $ten_loai_sp);
 
                 if($update) {
                     echo "<script>alert('Sửa thành công');window.location.href='type_product.php'</script>";

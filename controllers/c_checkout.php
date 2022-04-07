@@ -14,25 +14,33 @@ class c_checkout {
     }
 
     public function add_order() {
-        if(isset($_POST['btn_order'])) {
 
-            $ma_hd = NULL;
+        if(isset($_POST['btn_order'])) {
+            $ma_dh = NULL;
             $ma_kh = $_SESSION['id_user'];
             $tong_tien = $_SESSION['tong'];
             $phuong_thuc_thanh_toan = $_POST['radio-group'];
             $ngay_thanh_toan = date("Y-m-d");
             $trang_thai = 1;
 
-            echo $ma_hd;
-            echo $ma_kh;
-            echo $tong_tien;
-            echo $phuong_thuc_thanh_toan;
-            echo $ngay_thanh_toan;
             $m_order = new m_checkout();
-            $order = $m_order->insert_order($ma_hd, $ma_kh, $tong_tien, $phuong_thuc_thanh_toan,$ngay_thanh_toan,$trang_thai);
+            $last_id = $m_order->insert_order($ma_dh, $ma_kh, $tong_tien, $phuong_thuc_thanh_toan,$ngay_thanh_toan,$trang_thai);
 
-            echo "<pre />";
-            var_dump($order);
+
+            if($last_id) {
+//            lấy thông tin chi tiết đơn hàng đẩy lên databases
+                foreach ($_SESSION['cart'] as $key => $value) :
+
+                    $ma_sp = $value['id'];
+                    $so_luong = $value['so_luong'];
+
+                    $m_order_details = new m_checkout();
+                    $details = $m_order_details->insert_order_details($last_id, $ma_sp, $so_luong);
+
+                endforeach;
+            }
+            echo "<script>window.location.href='order_history.php'</script>";
+//            echo "<script>alert('Mua hàng thành công')</script>";
         }
     }
 }

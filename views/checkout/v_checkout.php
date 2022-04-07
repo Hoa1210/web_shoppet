@@ -70,7 +70,7 @@
                                     foreach ($_SESSION['cart'] as $key=>$value) :
                                 ?>
                                 <tr>
-                                    <td class="product-name"><a><?php echo $value['ten_sp']; ?> </a></td>
+                                    <td class="product-name"><a><?php echo $value['ten_sp']."(".$value['id'].")"; ?> </a></td>
                                     <td class="product-total">
                                         <span class="subtotal-amount"><?php echo number_format($value['tt']); ?> VNĐ</span>
                                     </td>

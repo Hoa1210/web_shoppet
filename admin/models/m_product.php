@@ -27,9 +27,9 @@ class m_product extends database {
     }
 
 //    sửa sản phẩm
-    public function edit_product($ma_sp, $ma_loai_sp,$ten_sp,$hinh_anh,$so_luong,$gia_ban,$thong_tin_them,$trang_thai){
-        $sql = "update  san_pham set ma_loai_sp = ?, ten_sp = ? , hinh_anh = ?, so_luong = ?, gia_ban = ?, thong_tin_them = ?, trang_thai = ? 
-                where ma_sp = ?";
+    public function edit_product($ma_loai_sp,$ten_sp,$hinh_anh,$so_luong,$gia_ban,$thong_tin_them,$trang_thai, $ma_sp){
+        $sql = "update  san_pham set ma_loai_sp = '$ma_loai_sp', ten_sp = '$ten_sp' , hinh_anh = '$hinh_anh', so_luong = '$so_luong', gia_ban = '$gia_ban', thong_tin_them = '$thong_tin_them', trang_thai_sp = $trang_thai 
+                where ma_sp = '$ma_sp'";
         $this->setQuery($sql);
         return $this->execute(array($ma_loai_sp,$ten_sp,$hinh_anh,$so_luong,$gia_ban,$thong_tin_them,$trang_thai,$ma_sp));
     }
@@ -49,10 +49,10 @@ class m_product extends database {
     }
 
 //    them loại sản phẩm
-    public function add_product_type($ma_loai, $ten_loai_sp, $trang_thai) {
-        $sql = "insert into loai_sp values (?,?,?)";
+    public function add_product_type($ma_loai, $ten_loai_sp) {
+        $sql = "insert into loai_sp values (?,?)";
         $this->setQuery($sql);
-        return $this->execute(array($ma_loai, $ten_loai_sp, $trang_thai));
+        return $this->execute(array($ma_loai, $ten_loai_sp));
     }
 
 //    xóa loại sp
@@ -70,10 +70,10 @@ class m_product extends database {
     }
 
 //    sửa loại sp theo mã
-    public function edit_type_product($ma_loai, $ten_loai_sp, $trang_thai) {
-        $sql = "update loai_sp set ten_loai_sp = ?, trang_thai =? where ma_loai = ? ";
+    public function edit_type_product($ma_loai,$ten_loai_sp) {
+        $sql = "update loai_sp set ten_loai_sp = ? where ma_loai = ? ";
         $this->setQuery($sql);
-        return $this->execute(array($ten_loai_sp, $trang_thai, $ma_loai));
+        return $this->execute(array($ten_loai_sp, $ma_loai));
     }
 }
 ?>

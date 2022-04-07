@@ -22,16 +22,6 @@
                                         <input type="text" class="form-control" id="ten_loai_sp" name="ten_loai_sp" value="<?php echo $edit_typeproduct->ten_loai_sp ;?>" >
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Trang thai</label>
-                                    <div class="col-sm-9">
-                                        <select class="select2 form-control custom-select" name="trang_thai" style="width: 100%; height:36px;">
-                                            <option>---Chon---</option>
-                                            <option value="1" <?php if($edit_typeproduct->trang_thai == 1) echo"selected"; ?>>Open</option>
-                                            <option value="0" <?php if($edit_typeproduct->trang_thai == 0) echo"selected"; ?>>Close</option>
-                                        </select>
-                                    </div>
-                                </div>
 
                             </div>
                         </fieldset>

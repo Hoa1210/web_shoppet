@@ -50,12 +50,12 @@
                             <div class="alert alert-success"  role="alert">
                                 <?php echo $_SESSION['error_success'];?>
                             </div>
-                        <?php }?>
+                        <?php } unset($_SESSION['error_success']);?>
                         <?php if (isset($_SESSION['error_danger'])) { ?>
                             <div class="alert alert-danger"  role="alert">
                                 <?php echo $_SESSION['error_danger'];?>
                             </div>
-                        <?php }?>
+                        <?php } unset($_SESSION['error_danger']);?>
                         <div class="form-group">
                             <label>Username</label>
                             <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap" required placeholder="Username">

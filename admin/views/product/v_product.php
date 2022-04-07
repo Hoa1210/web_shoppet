@@ -61,7 +61,7 @@
                                 <?php
                                     foreach ($product as $key=>$value) {
                                         $css_trang_thai = $value->trang_thai_sp ? "badge-info" : "badge-danger";
-                                        $text_trang_thai = $value->trang_thai_sp ? "Mở" : "Khóa";
+                                        $text_trang_thai = $value->trang_thai_sp ? "Còn hàng" : "Hết hàng";
                                  ?>
                                     <tr>
                                         <td><?php echo $key ; ?></td>

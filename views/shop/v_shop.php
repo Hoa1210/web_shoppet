@@ -15,13 +15,13 @@
     <div class="container">
         <form>
           <div class="patoi-grid-sorting row align-items-center">
-            <div class="col-lg-4 col-md-4 result-count">
+            <div class="col-lg-6 col-md-6 result-count">
                 <div class="d-flex align-items-center">
                     <a href="#" data-bs-toggle="modal" data-bs-target="#productsFilterModal" class="sidebar-filter"><i class='bx bx-filter-alt'></i> Filter</a>
                     <p>We found <span class="count"><?php echo $item_per_page_new;?></span> products available for you</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 ordering">
+            <div class="col-lg-6 col-md-6 ordering">
                 <div class="select-box">
                     <label>Sort By:</label>
                     <select name="xap_xep">
@@ -31,9 +31,6 @@
                     </select>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 ordering">
-                <button type="submit" name="btn_submit">OK</button>
-             </div>
         </div>
         </form>
         <div class="row justify-content-center">
@@ -45,6 +42,11 @@
                         <a onclick="window.location.href='products_details.php?action=add1&&ma_sp=<?php echo $value->ma_sp;?>'" class="d-block">
                             <img src="admin/public/imageproduct/<?php echo $value->hinh_anh?>" alt="products-image">
                         </a>
+                        <?php
+                            $css = $value->trang_thai_sp ? "new"  : "sold";
+                            $tt = $value->trang_thai_sp ? "Hot!"  : "Sold!";
+                        ?>
+                        <span class="<?php echo $css;?>"><?php echo $tt;?></span>
                         <ul class="products-button">
                             <li><a onclick="window.location.href='cart.php?ma_sp=<?php echo $value->ma_sp;?>'"><i class='bx bx-cart-alt'></i></a></li>
 <!--                            <li><a href="wishlist.php"><i class='bx bx-heart'></i></a></li>-->

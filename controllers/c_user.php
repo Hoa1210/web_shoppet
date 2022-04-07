@@ -58,7 +58,7 @@ class c_user {
             $email = $_POST['email'];
 
             $information = new m_user();
-            $result1 = $information->edit_information_user( $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email, $id);
+            $result1 = $information->edit_information_user( $id, $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email);
 
             if($result1) {
                 echo "<script>window.location='user.php'</script>";
@@ -76,7 +76,7 @@ class c_user {
             $mat_khau = $_POST["mat_khau"];
 
             $m_user = new m_user();
-            $check = $m_user->read_user_by_id_pass($ten_dang_nhap,$email);
+            $check = $m_user->read_pass_or_email_user($ten_dang_nhap,$email);
 
             if(!empty($check)) {
                 $_SESSION['error_danger'] = "Tài khoản hoặc email đã tồn tại!!";

@@ -32,7 +32,9 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">PRODUCTS</h5>
+
                         <div class="table-responsive">
+
                             <div class="border-top" style="display: flex;">
                                 <div class="card-body" style="flex: 0;">
                                     <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='list_product.php'">Return</button>
@@ -47,7 +49,6 @@
                                     <th>STT</th>
                                     <th> Mã loại sản phẩm</th>
                                     <th>Tên loại sản phẩm</th>
-                                    <th>Trạng thái</th>
 
 
                                 </tr>
@@ -55,14 +56,11 @@
                                 <tbody>
                                 <?php
                                 foreach ($show_type as $key=>$value) {
-                                    $css_trang_thai = $value->trang_thai ? "badge-info" : "badge-danger";
-                                    $text_trang_thai = $value->trang_thai ? "Mở" : "Khóa";
                                     ?>
                                     <tr>
                                         <td><?php echo $key ; ?></td>
                                         <td><?php echo $value->ma_loai ; ?></td>
                                         <td><?php echo $value->ten_loai_sp ; ?></td>
-                                        <td> <span class="badge badge-pill <?php echo $css_trang_thai;?>"><?php echo $text_trang_thai;?> </span></td>
                                         <td>
                                             <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='edit_typeproduct.php?ma_loai=<?php echo $value->ma_loai;?>'">Edit</button>
                                             <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_typeproduct.php?ma_loai=<?php echo $value->ma_loai;?>'">Delete</button>

@@ -50,14 +50,6 @@ class c_shop {
 
     }
 
-    public function arrange() {
-
-        if(isset($_POST['btn_submit'])) {
-
-        }
-        $view = "views/search/v_arrange.php";
-        include("templates/layout.php");
-    }
 
 }
 ?>

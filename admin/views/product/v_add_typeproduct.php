@@ -21,16 +21,6 @@
                                     <input type="text" class="form-control" id="ten_loai_sp" name="ten_loai_sp" placeholder="ten loai san pham">
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Trang thai</label>
-                                <div class="col-sm-9">
-                                    <select class="select2 form-control custom-select" name="trang_thai" style="width: 100%; height:36px;">
-                                        <option>---Chon---</option>
-                                        <option value="1">Open</option>
-                                        <option value="0">Close</option>
-                                    </select>
-                                </div>
-                            </div>
 
                         </div>
                         <div class="border-top">

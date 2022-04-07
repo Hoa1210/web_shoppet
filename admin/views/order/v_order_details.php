@@ -33,43 +33,32 @@
                     <div class="card-body">
                         <h5 class="card-title">ORDER</h5>
                         <div class="table-responsive">
-                            <?php if(isset($_SESSION['alert_delete_order'])) :?>
-                            <div class="alert alert-success" role="alert">
-                                <?php echo $_SESSION['alert_delete_order'];?>
-                            </div>
-                            <?php endif; unset($_SESSION['alert_delete_order']);?>
                             <table id="zero_config" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>Mã đơn hàng</th>
-                                    <th>Tên khách hàng</th>
-                                    <th>Tổng tiền</th>
-                                    <th>Phương thức thanh toán</th>
-                                    <th>Trạng thái</th>
-                                    <th></th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Hình hảnh</th>
+                                    <th>Số lượng</th>
+                                    <th>Thành tiền</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php
-                                foreach ($list_order as $key=>$value) {
-                                    $css_trang_thai = $value->trang_thai ? "badge-info" : "badge-danger";
-                                    $text_trang_thai = $value->trang_thai ? "Đã thanh toán" : "Chưa thanh toán";
-                                ?>
-                                    <tr>
-                                        <td><?php echo $key ; ?></td>
-                                        <td><?php echo $value->ma_dh; ?></td>
-                                        <td><?php echo $value->ten_khach_hang ; ?></td>
-                                        <td><?php echo $value->tong_tien ; ?></td>
-                                        <td><?php echo $value->phuong_thuc_thanh_toan ; ?></td>
-                                        <td> <span class="badge badge-pill <?php echo $css_trang_thai;?>"><?php echo $text_trang_thai;?> </span></td>
-                                        <td>
-                                            <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_order.php?ma_dh=<?php echo $value->ma_dh;?>'">Delete</button>
-                                            <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='order_details.php?ma_dh=<?php echo $value->ma_dh;?>'">Order Details</button>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
+                                <?php foreach ($details as $key=>$value) : ?>
+                                <tr>
+                                    <td><?php echo $key+1;?></td>
+                                    <td class="order-id"><?php echo $value->ten_sp;?></td>
+                                    <td>
+                                        <a>
+                                            <img width="150px" src="public/imageproduct/<?php echo $value->hinh_anh;?>" alt="item">
+                                        </a>
+                                    </td>
+                                    <td class="product-quanlity"><?php echo $value->so_luong;?></td>
+                                    <td class="price"><?php echo number_format($value->gia_ban * $value->so_luong);?> VNĐ</td>
+
+                                </tr>
+                                <?php endforeach; ?>
                                 </tbody>
 
                             </table>

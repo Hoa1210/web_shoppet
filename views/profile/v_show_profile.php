@@ -24,6 +24,9 @@
                     <div class="col-lg-12 col-md-12" style="margin-top: 4px;">
                         <button type="button" onclick="window.location.href='edit_profile.php'" style="width: auto" class="default-btn"><span>Edit information</span></button>
                     </div>
+                        <div class="col-lg-12 col-md-12" style="margin-top: 4px;">
+                            <button type="button" onclick="window.location.href='order_history.php'" style="width: auto" class="default-btn"><span>Purchase history</span></button>
+                        </div>
                     <?php } ?>
                     <div class="col-lg-12 col-md-12" style="margin-top: 4px;">
                         <button type="button" onclick="window.location.href='logout.php'" style="width: auto" class="default-btn"><span>Logout</span></button>

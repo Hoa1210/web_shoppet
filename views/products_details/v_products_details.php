@@ -48,12 +48,12 @@
                         <i class='bx bxs-star'></i>
                         <i class='bx bxs-star'></i>
                     </div>
-                    <p>Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried near the Pyramids. Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipiscing elitet.</p>
+                    <p><?php echo $review->thong_tin_them; ?></p>
                     <form action="cart.php?action=add2&ma_sp=<?php echo $review->ma_sp;?>" method="POST">
                     <div class="products-add-to-cart">
                         <div class="input-counter">
                             <span class="minus-btn"><i class='bx bx-minus'></i></span>
-                            <input type="text" value="1" name="so_luong">
+                            <input type="text" value="1" name="so_luong" min="1" max="<?php echo $review->so_luong;?>">
                             <span class="plus-btn"><i class='bx bx-plus'></i></span>
                         </div>
                         <button type="submit" class="default-btn" name="add_cart"><span >Add to Cart</span></button>
