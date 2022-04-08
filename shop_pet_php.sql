@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 08, 2022 lúc 09:38 AM
+-- Thời gian đã tạo: Th4 08, 2022 lúc 11:56 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.4.25
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `ct_don_hang` (
-  `ma_dh` varchar(11) NOT NULL,
+  `ma_dh` int(11) NOT NULL,
   `ma_sp` varchar(11) NOT NULL,
   `so_luong` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -38,23 +38,22 @@ CREATE TABLE `ct_don_hang` (
 --
 
 INSERT INTO `ct_don_hang` (`ma_dh`, `ma_sp`, `so_luong`) VALUES
-('1', 'SP002', 1),
-('2', 'SP002', 8),
-('2', 'SP006', 6),
-('3', 'SP002', 8),
-('3', 'SP004', 5),
-('3', 'SP006', 6),
-('4', 'SP002', 8),
-('4', 'SP004', 5),
-('4', 'SP006', 6),
-('4', 'SP008', 4),
-('5', 'SP002', 8),
-('5', 'SP004', 5),
-('5', 'SP006', 6),
-('5', 'SP008', 4),
-('6', 'SP001', 1),
-('6', 'SP002', 2),
-('6', 'SP004', 1);
+(1, 'SP002', 1),
+(8, 'SP002', 20),
+(9, 'SP001', 6),
+(9, 'SP002', 180);
+
+--
+-- Bẫy `ct_don_hang`
+--
+DELIMITER $$
+CREATE TRIGGER `insert_don_hang` BEFORE INSERT ON `ct_don_hang` FOR EACH ROW begin
+ UPDATE san_pham
+ SET so_luong = so_luong - NEW.so_luong
+ where ma_sp = NEW.ma_sp;
+end
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -76,7 +75,9 @@ CREATE TABLE `don_hang` (
 --
 
 INSERT INTO `don_hang` (`ma_dh`, `ma_kh`, `tong_tien`, `phuong_thuc_thanh_toan`, `ngay_lap_dh`, `trang_thai`) VALUES
-(1, 2, 99000, 'Chuyển khoản', '2022-04-08', 1);
+(1, 2, 99000, 'Chuyển khoản', '2022-04-08', 1),
+(8, 4, 210000, 'Chuyển khoản', '2022-04-08', 1),
+(9, 4, 18030000, 'Chuyển khoản', '2022-04-08', 1);
 
 -- --------------------------------------------------------
 
@@ -98,7 +99,7 @@ CREATE TABLE `khach_hang` (
 --
 
 INSERT INTO `khach_hang` (`ma_kh`, `ten_khach_hang`, `ngay_sinh`, `dia_chi`, `so_dien_thoai`, `email`) VALUES
-(4, 'Nông Minh Hiếu', '2022-04-02', 'Quý Sơn-Lục Ngạn-Bắc Giang', '0972798037', 'hieuminh2002@gmail.com'),
+(4, 'Nông Minh Hiếu Ngu', '2022-04-02', 'Quý Sơn-Lục Ngạn-Bắc Giang', '0972798037', 'hieuminh2002@gmail.com'),
 (5, 'admin', '2022-04-06', 'Quý Sơn-Lục Ngạn-Bắc Giang', '0357143496', 'hoamon146@gmail.com');
 
 -- --------------------------------------------------------
@@ -165,8 +166,8 @@ CREATE TABLE `san_pham` (
 --
 
 INSERT INTO `san_pham` (`ma_sp`, `ma_loai_sp`, `ten_sp`, `hinh_anh`, `so_luong`, `gia_ban`, `thong_tin_them`, `trang_thai_sp`) VALUES
-('SP001', '1', 'Pet brash', 'products1.jpg', 6, 35000, ' Make your grooming work double time with the Hartz Groomer\'s Best Combo Dog Brush. This dual-action brush has two specialized sides―one with stainless steel pins to remove lose hair and tangles, and another with nylon bristles to redistribute the natural oils in your dog’s coat to restore shine and silkiness. It’s great for pups with long, curly or wiry coats and is extra-gentle thanks to the safety tips on every pin. Plus, it has an ergonomically designed handle so you can enjoy brushing time ', 1),
-('SP002', '1', 'Bowl with rubber toy', 'products5.jpg', 200, 99000, ' Our Woof X Harness, Leash & Collar is made out of high-strength nylon and able to hold up to 200 lbs.', 1),
+('SP001', '1', 'Pet brash', 'products1.jpg', 80, 35000, ' Make your grooming work double time with the Hartz Groomer\'s Best Combo Dog Brush. This dual-action brush has two specialized sides―one with stainless steel pins to remove lose hair and tangles, and another with nylon bristles to redistribute the natural oils in your dog’s coat to restore shine and silkiness. It’s great for pups with long, curly or wiry coats and is extra-gentle thanks to the safety tips on every pin. Plus, it has an ergonomically designed handle so you can enjoy brushing time ', 1),
+('SP002', '1', 'Bowl with rubber toy', 'products5.jpg', 0, 99000, ' Our Woof X Harness, Leash & Collar is made out of high-strength nylon and able to hold up to 200 lbs.', 1),
 ('SP003', '1', 'Automatic dog blue leash', 'products2.jpg', 99, 75000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them. The All-In-One Smart Leash with built-in Water Bottle, Food Bowl, and Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 0),
 ('SP004', '1', 'Cat toilet bowl', 'products3.jpg', 20, 49000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them.', 1),
 ('SP005', '1', 'Bowl with rubber toy', 'products4.jpg', 15, 60000, 'Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
@@ -230,7 +231,7 @@ ALTER TABLE `san_pham`
 -- AUTO_INCREMENT cho bảng `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `ma_dh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ma_dh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `khach_hang`

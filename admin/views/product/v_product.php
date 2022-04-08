@@ -61,8 +61,14 @@
                                 <tbody>
                                 <?php
                                     foreach ($product as $key=>$value) {
-                                        $css_trang_thai = $value->trang_thai_sp ? "badge-info" : "badge-danger";
-                                        $text_trang_thai = $value->trang_thai_sp ? "Còn hàng" : "Hết hàng";
+
+                                        if ($value->so_luong == 0) {
+                                            $css_trang_thai =   "badge-danger";
+                                        $text_trang_thai =  "Hết hàng";
+                                        } else {
+                                            $css_trang_thai =  "badge-info" ;
+                                         $text_trang_thai =  "Còn hàng";
+                                        }
                                  ?>
                                     <tr>
                                         <td><?php echo $key+1; ?></td>

@@ -27,9 +27,9 @@ class m_product extends database {
     }
 
 //    sửa sản phẩm
-    public function edit_product($ma_loai_sp,$ten_sp,$hinh_anh,$so_luong,$gia_ban,$thong_tin_them,$trang_thai, $ma_sp){
-        $sql = "update  san_pham set ma_loai_sp = '$ma_loai_sp', ten_sp = '$ten_sp' , hinh_anh = '$hinh_anh', so_luong = '$so_luong', gia_ban = '$gia_ban', thong_tin_them = '$thong_tin_them', trang_thai_sp = $trang_thai 
-                where ma_sp = '$ma_sp'";
+    public function edit_product($ma_sp,$ma_loai_sp,$ten_sp,$hinh_anh,$so_luong,$gia_ban,$thong_tin_them,$trang_thai){
+        $sql = "update  san_pham set ma_loai_sp = ?, ten_sp = ? , hinh_anh = ?, so_luong = ?, gia_ban = ?, thong_tin_them = ?, trang_thai_sp = ? 
+                where ma_sp = ?";
         $this->setQuery($sql);
         return $this->execute(array($ma_loai_sp,$ten_sp,$hinh_anh,$so_luong,$gia_ban,$thong_tin_them,$trang_thai,$ma_sp));
     }

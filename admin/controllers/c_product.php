@@ -74,7 +74,7 @@ class c_product{
                 $trang_thai = $_POST['trang_thai'] ;
 
                 $m_product = new m_product();
-                $result = $m_product->edit_product($ma_loai_sp,$ten_sp,$hinh_sp,$so_luong,$gia_ban,$thong_tin_them,$trang_thai,$ma_sp);
+                $result = $m_product->edit_product($ma_sp,$ma_loai_sp,$ten_sp,$hinh_sp,$so_luong,$gia_ban,$thong_tin_them,$trang_thai);
 
                 if ($result) {
                     if ($_FILES['f_hinh_anh']['error'] == 0) {

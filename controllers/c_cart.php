@@ -17,7 +17,7 @@ class c_cart
                 $cart = new m_cart();
                 $add_cart = $cart->select_product_by_id_product($ma_sp);
 
-                if($add_cart->trang_thai_sp == 1) {
+                if($add_cart->so_luong != 0) {
                     $ten_sp = $add_cart->ten_sp;
                     $hinh_sp = $add_cart->hinh_anh;
                     $gia_ban = $add_cart->gia_ban;
