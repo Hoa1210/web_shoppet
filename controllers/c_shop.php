@@ -15,7 +15,7 @@ class c_shop {
 
         $product = $m_product->read_product_by_page($item_per_page, $offset);
 
-        $item_per_page_new = sizeof($product_add) < 8 ? sizeof($product_add) : 8;
+        $item_per_page_new = sizeof($product) < 8 ? sizeof($product) : 8;
 
         $view = "views/shop/v_shop.php";
         include ("templates/layout.php");

@@ -17,6 +17,11 @@
                 <div class="login-form">
                     <h2>Login</h2>
                     <form action="user.php" method="POST" >
+                        <?php if (isset($_SESSION['alert_login'])) { ?>
+                            <div class="alert alert-danger"  role="alert">
+                                <?php echo $_SESSION['alert_login'];?>
+                            </div>
+                        <?php } unset($_SESSION['alert_login']);?>
                         <div class="form-group">
                             <label>Username or email</label>
                             <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap"  placeholder="Username " required >

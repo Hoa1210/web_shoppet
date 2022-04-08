@@ -4,7 +4,7 @@ class m_user extends database {
 
 //    dang nhap
     public function read_user_by_id_pass($ten_dang_nhap, $mat_khau) {
-        $sql = "select id,ten_dang_nhap,mat_khau from nguoi_dung where ten_dang_nhap = ? and mat_khau = ?";
+        $sql = "select * from nguoi_dung where ten_dang_nhap = ? and mat_khau = ?";
         $this->setQuery($sql);
         return $this->loadRow(array($ten_dang_nhap,md5($mat_khau)));
     }
@@ -17,10 +17,10 @@ class m_user extends database {
     }
 
 //    dang ky
-    public function insert_register($id,$ten_dang_nhap,$email,$mat_khau) {
-        $sql = "insert into nguoi_dung values (?,?,?,?)";
+    public function insert_register($id,$ten_dang_nhap,$email,$mat_khau,$trang_thai) {
+        $sql = "INSERT INTO nguoi_dung (id, ten_dang_nhap, email, mat_khau, trang_thai) VALUES (?,?,?,?,?);";
         $this->setQuery($sql);
-        return $this->execute(array($id,$ten_dang_nhap,$email,md5($mat_khau)));
+        return $this->execute(array($id,$ten_dang_nhap,$email,md5($mat_khau),$trang_thai));
     }
 
 //    lay thong tin khach hang

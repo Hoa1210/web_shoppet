@@ -41,5 +41,10 @@ class m_checkout extends database {
         return $this->loadAllRows(array($ma_dh));
     }
 
+    public function add_information($id, $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email ) {
+        $sql = "INSERT INTO khach_hang VALUES (?,?,?,?,?,?)";
+        $this->setQuery($sql);
+        return $this->execute(array( $id, $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email));
+    }
 }
 ?>

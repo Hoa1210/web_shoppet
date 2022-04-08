@@ -8,7 +8,25 @@ class c_checkout {
         $m_checkout = new m_checkout();
         $check_out = $m_checkout->select_infomation_user($ma_kh);
 
+            $name = $check_out ? $check_out->ten_khach_hang : "";
+            $date = $check_out ? $check_out->ngay_sinh : "";
+            $address = $check_out ? $check_out->dia_chi : "";
+            $phone = $check_out ? $check_out->so_dien_thoai : "";
+            $email = $check_out ? $check_out->email : "";
 
+        if(!$check_out) {
+            if(isset($_POST['btn_order'])) {
+                $id = $_SESSION['id_user'];
+                $ten_khach_hang = $_POST['name'];
+                $ngay_sinh = $_POST['date'];
+                $dia_chi = $_POST['address'];
+                $so_dien_thoai = $_POST['phone'];
+                $email = $_POST['email'];
+
+                $information = new m_checkout();
+                $result1 = $information->add_information($id, $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email);
+            }
+        }
         $view = "views/checkout/v_checkout.php";
         include_once ("templates/layout.php");
     }

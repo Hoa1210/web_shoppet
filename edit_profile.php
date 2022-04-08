@@ -1,4 +1,6 @@
 <?php
+@session_start();
+include ("check_login.php");
 include "controllers/c_user.php";
 
 $edit = new c_user();

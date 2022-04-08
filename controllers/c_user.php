@@ -74,9 +74,10 @@ class c_user {
             $ten_dang_nhap = $_POST["ten_dang_nhap"];
             $email = $_POST["email"];
             $mat_khau = $_POST["mat_khau"];
-
+            $trang_thai = 0;
             $m_user = new m_user();
             $check = $m_user->read_pass_or_email_user($ten_dang_nhap,$email);
+
 
             if(!empty($check)) {
                 $_SESSION['error_danger'] = "Tài khoản hoặc email đã tồn tại!!";
@@ -84,7 +85,7 @@ class c_user {
                 die();
             }else {
 
-                $this->saveRegisterSession($id, $ten_dang_nhap, $email, $mat_khau);
+                $this->saveRegisterSession($id, $ten_dang_nhap, $email, $mat_khau,$trang_thai);
 
                 if (isset($_SESSION['register'])) {
                     $_SESSION['error_success'] = "Thành công rồi nhé!";
@@ -96,9 +97,9 @@ class c_user {
         }
     }
 
-    public function saveRegisterSession($id,$ten_dang_nhap,$email,$mat_khau) {
+    public function saveRegisterSession($id,$ten_dang_nhap,$email,$mat_khau,$trang_thai) {
         $m_register = new m_user();
-        $result = $m_register->insert_register($id,$ten_dang_nhap, $email, $mat_khau);
+        $result = $m_register->insert_register($id,$ten_dang_nhap, $email, $mat_khau,$trang_thai);
 
         if (!empty($result)) {
             $_SESSION['register'] = $result;
@@ -116,8 +117,6 @@ class c_user {
 
             if (isset($_SESSION['login'])) {
                 echo "<script>location.href = 'home.php';</script>";
-            }else {
-                echo "<script> alert('Đăng nhập thất bại!!'); </script>";
             }
         }
     }
@@ -127,8 +126,18 @@ class c_user {
         $user = $m_user->read_user_by_id_pass($ten_dang_nhap, $mat_khau);
 
         if (!empty($user)) {
-            $_SESSION['login'] = $user;
-            $_SESSION['id_user'] = $user->id;
+            if($user->trang_thai == 0) {
+                $_SESSION['login'] = $user;
+                $_SESSION['id_user'] = $user->id;
+                $_SESSION['email'] = $user->email;
+            }elseif ($user->trang_thai == 1) {
+                unset($_SESSION['login']);
+                unset($_SESSION['id_user']);
+                unset($_SESSION['email']);
+                $_SESSION['alert_login'] = "Tài khoản của bạn đã bị khóa!";
+            }
+        }else{
+            $_SESSION['alert_login'] = "Sai tài khoản hoặc mật khẩu!";
         }
     }
 

@@ -25,31 +25,31 @@
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
                                         <label>Name <span class="required">*</span></label>
-                                        <input type="text" name="name" value="<?php echo $check_out->ten_khach_hang;?>" class="form-control" required>
+                                        <input type="text" name="name" value="<?php echo $name;?>" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
                                         <label>Date of birth <span class="required">*</span></label>
-                                        <input type="date" name="date" value="<?php echo $check_out->ngay_sinh;?>" class="form-control" required>
+                                        <input type="date" name="date" value="<?php echo $date;?>" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
                                         <label>Address <span class="required">*</span></label>
-                                        <input type="text" name="address" class="form-control" value="<?php echo $check_out->dia_chi;?>" placeholder="Apartment, suite, unit, etc. (optional)" required>
+                                        <input type="text" name="address" class="form-control" value="<?php echo $address;?>" placeholder="Apartment, suite, unit, etc. (optional)" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
                                         <label>Phone <span class="required">*</span></label>
-                                        <input type="text" name="phone" value="<?php echo $check_out->so_dien_thoai;?>" class="form-control" required>
+                                        <input type="text" name="phone" value="<?php echo $phone;?>" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
                                         <label>Email address <span class="required">*</span></label>
-                                        <input type="text" name="email" value="<?php echo $check_out->email;?>" class="form-control" required>
+                                        <input type="text" name="email" value="<?php echo $email;?>" class="form-control" required>
                                     </div>
                                 </div>
                             </div>

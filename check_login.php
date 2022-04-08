@@ -1,8 +1,7 @@
 <?php
-
+@session_start();
 if (!isset($_SESSION['login'])) {
-
-    echo "<script> alert('Bạn chưa đăng nhập!!')</script>";
+    $_SESSION['alert_login'] = "Bạn chưa đăng nhập!";
     echo "<script>location.href = 'user.php';</script>";
 }
 ?>

@@ -8,7 +8,12 @@
             <div class="card">
                 <form class="form-horizontal" action="" enctype="multipart/form-data" method="POST">
                     <div class="card-body" >
-                        <h4 class="card-title">Personal Info</h4>
+                        <h4 class="card-title">ADD PRODUCTS</h4>
+                        <?php if (isset($_SESSION['alert_add_sp'])) { ?>
+                            <div class="alert alert-success"  role="alert">
+                                <?php echo $_SESSION['alert_add_sp'];?>
+                            </div>
+                        <?php } unset($_SESSION['alert_add_sp']);?>
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Mã sản phẩm</label>
                             <div class="col-sm-9">

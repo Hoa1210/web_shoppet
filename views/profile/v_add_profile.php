@@ -33,7 +33,7 @@
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
                                     <label>Email address <span class="required">*</span></label>
-                                    <input type="text" name="email"  class="form-control" required>
+                                    <input type="text" name="email"  class="form-control" value="<?php echo $_SESSION['email'];?>" required>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">

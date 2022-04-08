@@ -12,7 +12,7 @@
                             <div class="form-group row">
                                 <label for="fname" class="col-sm-3 text-right control-label col-form-label">Mã loại sản phẩm</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="ma_sp" name="ma_sp" placeholder="ma san pham">
+                                    <input type="text" class="form-control" id="ma_loai" name="ma_loai" placeholder="ma loai san pham">
                                 </div>
                             </div>
                             <div class="form-group row">

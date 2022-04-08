@@ -1,7 +1,7 @@
 <?php
 
 include ("models/m_product.php");
-
+@session_start();
 class c_product{
 
 
@@ -14,6 +14,7 @@ class c_product{
 
         if(isset($_POST['btn-submit'])) {
             $ma_sp = $_POST['ma_sp'];
+
 
             $ma_loai_sp = $_POST['ma_loai_sp'];
 
@@ -36,9 +37,7 @@ class c_product{
                     //di chuyển hình vào thư mục source
                     move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "public/imageproduct/".$hinh_sp);
                 }
-                echo "<script>alert('Success!')</script>";
-            } else {
-                echo "<script>alert('No thanh cong');</script>";
+                $_SESSION['alert_add_sp'] = "Thêm sản phẩm có mã là ".$ma_sp." thành công!!";
             }
         }
         $view = "views/product/v_add_product.php";

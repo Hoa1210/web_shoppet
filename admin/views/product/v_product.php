@@ -45,6 +45,7 @@
                                 <thead>
                                 <tr>
                                     <th>STT</th>
+                                    <th>Mã sản phẩm</th>
                                     <th>Loại sản phẩm</th>
                                     <th>Tên sản phẩm</th>
                                     <th>Hình ảnh</th>
@@ -64,7 +65,8 @@
                                         $text_trang_thai = $value->trang_thai_sp ? "Còn hàng" : "Hết hàng";
                                  ?>
                                     <tr>
-                                        <td><?php echo $key ; ?></td>
+                                        <td><?php echo $key+1; ?></td>
+                                        <td><?php echo $value->ma_sp ; ?></td>
                                         <td><?php echo $value->ten_loai_sp ; ?></td>
                                         <td><?php echo $value->ten_sp ; ?></td>
                                         <td> <img style="width: 150px;"  src = 'public/imageproduct/<?php echo$value->hinh_anh;?>'></td>

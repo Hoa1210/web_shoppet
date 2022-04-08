@@ -58,7 +58,7 @@
                                 foreach ($show_type as $key=>$value) {
                                     ?>
                                     <tr>
-                                        <td><?php echo $key ; ?></td>
+                                        <td><?php echo $key+1 ; ?></td>
                                         <td><?php echo $value->ma_loai ; ?></td>
                                         <td><?php echo $value->ten_loai_sp ; ?></td>
                                         <td>
