@@ -14,6 +14,11 @@
                                 <?php echo $_SESSION['alert_add_sp'];?>
                             </div>
                         <?php } unset($_SESSION['alert_add_sp']);?>
+                        <?php if (isset($_SESSION['alert_err_add_sp'])) { ?>
+                            <div class="alert alert-danger"  role="alert">
+                                <?php echo $_SESSION['alert_err_add_sp'];?>
+                            </div>
+                        <?php } unset($_SESSION['alert_err_add_sp']);?>
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Mã sản phẩm</label>
                             <div class="col-sm-9">

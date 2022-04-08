@@ -17,19 +17,19 @@
             <div class="col-lg-5 col-md-12">
                 <div class="products-details-thumbs-image">
                     <ul class="products-details-thumbs-image-slides">
-                        <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                        <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                        <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                        <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                        <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
                     </ul>
                     <div class="slick-thumbs">
                         <ul>
-                            <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                            <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                            <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                            <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                            <li><img src="public/patoi/assets/img/products/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
                         </ul>
                     </div>
                 </div>

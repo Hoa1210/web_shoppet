@@ -14,30 +14,35 @@ class c_product{
 
         if(isset($_POST['btn-submit'])) {
             $ma_sp = $_POST['ma_sp'];
-
-
-            $ma_loai_sp = $_POST['ma_loai_sp'];
-
-            echo $ma_loai_sp;
-            $ten_sp = $_POST['ten_sp'];
-
-            //lấy hình ảnh
-            $hinh_sp = ($_FILES['f_hinh_anh']['error'] == 0) ? $_FILES['f_hinh_anh']['name'] : "";
-
-            $so_luong = $_POST['so_luong'];
-            $gia_ban = $_POST['gia_ban'];
-            $thong_tin_them = $_POST['thong_tin'];
-            $trang_thai = $_POST['trang_thai'];
-
-            echo $ma_loai_sp;
             $m_banner = new m_product();
-            $result = $m_banner->insert_product($ma_sp,$ma_loai_sp,$ten_sp,$hinh_sp,$so_luong,$gia_ban,$thong_tin_them,$trang_thai);
-            if ($result) {
-                if ($hinh_sp != "") {
-                    //di chuyển hình vào thư mục source
-                    move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "public/imageproduct/".$hinh_sp);
+
+            $ma = $m_banner->select_product_by_id_product($ma_sp);
+
+            if($ma) {
+                $_SESSION['alert_err_add_sp'] = "Đã tồn tại ".$ma_sp;
+            }else {
+                $ma_loai_sp = $_POST['ma_loai_sp'];
+
+                $ten_sp = $_POST['ten_sp'];
+
+                //lấy hình ảnh
+                $hinh_sp = ($_FILES['f_hinh_anh']['error'] == 0) ? $_FILES['f_hinh_anh']['name'] : "";
+
+                $so_luong = $_POST['so_luong'];
+                $gia_ban = $_POST['gia_ban'];
+                $thong_tin_them = $_POST['thong_tin'];
+                $trang_thai = $_POST['trang_thai'];
+
+                echo $ma_loai_sp;
+
+                $result = $m_banner->insert_product($ma_sp, $ma_loai_sp, $ten_sp, $hinh_sp, $so_luong, $gia_ban, $thong_tin_them, $trang_thai);
+                if ($result) {
+                    if ($hinh_sp != "") {
+                        //di chuyển hình vào thư mục source
+                        move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "public/imageproduct/" . $hinh_sp);
+                    }
+                    $_SESSION['alert_add_sp'] = "Thêm sản phẩm có mã là " . $ma_sp . " thành công!!";
                 }
-                $_SESSION['alert_add_sp'] = "Thêm sản phẩm có mã là ".$ma_sp." thành công!!";
             }
         }
         $view = "views/product/v_add_product.php";

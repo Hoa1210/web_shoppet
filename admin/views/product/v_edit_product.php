@@ -42,7 +42,7 @@
                                             <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                             <div class="invalid-feedback">Example invalid custom file feedback</div>
                                             <div class="col-xs-6  bg-white" id="image-holder3" >
-                                                <img src="public/imagebanner/<?php echo $edit_product->hinh_anh;?>" style="width: 100px;" />
+                                                <img src="public/imageproduct/<?php echo $edit_product->hinh_anh;?>" style="width: 100px;" />
                                             </div>
                                         </div>
                                     </div>
