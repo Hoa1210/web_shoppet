@@ -37,5 +37,27 @@ class c_order {
             include_once "templates/layout.php";
         }
     }
+
+    public function update_status() {
+        $ma_dh = $_GET['ma_dh'];
+
+        $m_order = new m_order();
+        $status = $m_order->select_status($ma_dh);
+        if (isset($_POST['btn_update'])) {
+            $trang_thai = $_POST['trang_thai'];
+            $m_order = new m_order();
+            $update = $m_order->update_status_order($ma_dh,$trang_thai);
+
+            if($update) {
+                $_SESSION['alert_update'] = "Cập nhật thành công trạng thái đơn hàng ".$ma_dh." !";
+                echo "<script> window.location.href='order.php'</script>";
+
+            }
+
+        }
+
+        $view = "views/order/v_update_status_order.php";
+        include_once "templates/layout.php";
+    }
 }
 ?>

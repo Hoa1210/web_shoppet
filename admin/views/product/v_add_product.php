@@ -39,7 +39,7 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Tên sản phẩm</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="ten_sp" name="ten_sp" placeholder="ten san pham">
+                                <input type="text" class="form-control" id="ten_sp" name="ten_sp" required placeholder="ten san pham">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -56,13 +56,13 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Số Lượng</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="so_luong" name="so_luong" placeholder="so luong">
+                                <input type="text" class="form-control" id="so_luong" name="so_luong" required placeholder="so luong">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Giá Bán</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="gia_ban" name="gia_ban" placeholder="gia bán">
+                                <input type="text" class="form-control" id="gia_ban" name="gia_ban" required placeholder="gia bán">
                             </div>
                         </div>
                         <div class="form-group row">

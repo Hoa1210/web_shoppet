@@ -54,10 +54,12 @@ class c_checkout {
 
                     $m_order_details = new m_checkout();
                     $details = $m_order_details->insert_order_details($last_id, $ma_sp, $so_luong);
-
+                    var_dump($details);
                 endforeach;
             }
+
             echo "<script>window.location.href='order_history.php'</script>";
+            unset($_SESSION['cart']);
 //            echo "<script>alert('Mua hàng thành công')</script>";
         }
     }

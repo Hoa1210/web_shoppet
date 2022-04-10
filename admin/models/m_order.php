@@ -26,6 +26,19 @@ class m_order extends database {
         $this->setQuery($sql);
         return $this->loadAllRows(array($ma_dh));
     }
+
+    // lấy trạng thái theo  đơn hàng
+    public function select_status($ma_dh) {
+        $sql = "select trang_thai from don_hang where ma_dh = ?";
+        $this->setQuery($sql);
+        return $this->loadRow(array($ma_dh));
+    }
+    // cập nhật trạng thái đơn hàng
+    public function update_status_order($ma_dh,$trang_thai) {
+        $sql = "update don_hang set trang_thai = ? where ma_dh = ?";
+        $this->setQuery($sql);
+        return $this->execute(array($trang_thai,$ma_dh));
+    }
 }
 
 ?>

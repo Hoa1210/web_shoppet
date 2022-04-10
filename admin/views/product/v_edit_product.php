@@ -13,7 +13,7 @@
                                 <div class="form-group row">
                                     <label for="fname" class="col-sm-3 text-right control-label col-form-label">Mã sản phẩm</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="ma_sp" name="ma_sp" value="<?php echo $edit_product->ma_sp;?>"  placeholder="ma san pham">
+                                        <input type="text" class="form-control" id="ma_sp" name="ma_sp" required value="<?php echo $edit_product->ma_sp;?>"  placeholder="ma san pham">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -30,7 +30,7 @@
                                 <div class="form-group row">
                                     <label for="fname" class="col-sm-3 text-right control-label col-form-label">Tên sản phẩm</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="ten_sp" name="ten_sp" value="<?php echo $edit_product->ten_sp;?>" >
+                                        <input type="text" class="form-control" id="ten_sp" name="ten_sp" required value="<?php echo $edit_product->ten_sp;?>" >
                                     </div>
                                 </div>
                                 <div class="form-group row" style="height: 200px;">
@@ -51,13 +51,13 @@
                                 <div class="form-group row">
                                     <label for="fname" class="col-sm-3 text-right control-label col-form-label">Số Lượng</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="so_luong" name="so_luong" value="<?php echo $edit_product->so_luong;?>" placeholder="so luong">
+                                        <input type="text" class="form-control" id="so_luong" name="so_luong" required value="<?php echo $edit_product->so_luong;?>" placeholder="so luong">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="fname" class="col-sm-3 text-right control-label col-form-label">Giá Bán</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="gia_ban" name="gia_ban" value="<?php echo $edit_product->gia_ban;?>" placeholder="gia bán">
+                                        <input type="text" class="form-control" id="gia_ban" name="gia_ban" required value="<?php echo $edit_product->gia_ban;?>" placeholder="gia bán">
                                     </div>
                                 </div>
                                 <div class="form-group row">

@@ -13,13 +13,13 @@
                                 <div class="form-group row">
                                     <label for="fname" class="col-sm-3 text-right control-label col-form-label">Mã sản phẩm</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="ma_loai" name="ma_loai" value="<?php echo $edit_typeproduct->ma_loai;?>"  placeholder="ma san pham">
+                                        <input type="text" class="form-control" id="ma_loai" required name="ma_loai" value="<?php echo $edit_typeproduct->ma_loai;?>"  placeholder="ma san pham">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="fname" class="col-sm-3 text-right control-label col-form-label">Tên loại sản phẩm</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="ten_loai_sp" name="ten_loai_sp" value="<?php echo $edit_typeproduct->ten_loai_sp ;?>" >
+                                        <input type="text" class="form-control" id="ten_loai_sp" required name="ten_loai_sp" value="<?php echo $edit_typeproduct->ten_loai_sp ;?>" >
                                     </div>
                                 </div>
 
