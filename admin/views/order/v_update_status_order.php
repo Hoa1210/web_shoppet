@@ -58,7 +58,7 @@
                                                 <option value="0" <?php echo $trang_thai0; ?>>Chưa nhận hàng - Chưa thanh toán</option>
                                                 <option value="1" <?php echo $trang_thai1; ?>>Chưa nhận hàng - Đã thanh toán</option>
                                                 <option value="2" <?php echo $trang_thai2; ?>>Đã nhận hàng - Đã thanh toán</option>
-
+                                                
                                             </select>
                                         </td>
                                         <td>
