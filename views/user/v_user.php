@@ -22,20 +22,29 @@
                                 <?php echo $_SESSION['alert_login'];?>
                             </div>
                         <?php } unset($_SESSION['alert_login']);?>
+                        <?php if(isset($_COOKIE['username'])&&isset($_COOKIE['password'])){
+                            $user = $_COOKIE['username'];
+                            $pass = $_COOKIE['password'];
+                            $check = "checked";
+                        }else{
+                            $user = "";
+                            $pass = "";
+                            $check = "";
+                        }?>
                         <div class="form-group">
-                            <label>Username or email</label>
-                            <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap"  placeholder="Username " required >
+                            <label>Username</label>
+                            <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap"  value="<?php echo $user;?>" placeholder="Username " required >
 
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" id="mat_khau" name="mat_khau"  placeholder="Password" required s>
+                            <input type="password" class="form-control" id="mat_khau" name="mat_khau" value="<?php echo $pass;?>" placeholder="Password" required >
 
                         </div>
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-6 remember-me-wrap">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="remember-me">
+                                    <input class="form-check-input" name="remember" <?php echo $check;?> type="checkbox" id="remember-me">
                                     <label class="form-check-label" for="remember-me">Remember me</label>
                                 </div>
                             </div>

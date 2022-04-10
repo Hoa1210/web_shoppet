@@ -113,13 +113,13 @@
 <!--                                    Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.-->
 <!--                                </p>-->
                                 <p>
-                                    <input type="radio" id="paypal" value="Chuyển khoản" name="radio-group" checked>
+                                    <input type="radio" id="paypal" value="1" name="radio-group" checked>
                                     <label for="paypal">PayPal</label>
                                     <img src="public/patoi/assets/img/paypal.png" alt="paypal">
                                     Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="privacy-policy.html">privacy policy</a>.
                                 </p>
                                 <p>
-                                    <input type="radio" id="cash-on-delivery" value="Tiền mặt" name="radio-group">
+                                    <input type="radio" id="cash-on-delivery" value="0" name="radio-group">
                                     <label for="cash-on-delivery">Cash on delivery</label>
                                     Pay with cash upon delivery.
                                 </p>

@@ -37,9 +37,14 @@
                         <td class="order_date"><?php echo $value->ngay_lap_dh;?></td>
                         <td class="product-stock-status">
                             <?php if($value->trang_thai == 0){ ?>
-                            <span class="in-stock"><i class='bx bx-check-circle'></i> Đã nhận hàng</span>
-                            <?php }else{?>
+                                <span class="out-stock"><i class='bx bx-x'></i> Chưa nhận hàng </span>
+                          </br> <span class="out-stock"><i class='bx bx-x'></i> Chưa thanh toán </span>
+                            <?php }elseif ($value->trang_thai == 1){?>
                             <span class="out-stock"><i class='bx bx-x'></i> Chưa nhận hàng</span>
+                          </br> <span class="in-stock"><i class='bx bx-check-circle'></i> Đã thanh toán </span>
+                            <?php }elseif ($value->trang_thai == 2) {?>
+                                <span class="in-stock"><i class='bx bx-check-circle'></i> Đã nhận hàng</span>
+                           </br> <span class="in-stock"><i class='bx bx-check-circle'></i> Đã thanh toán </span>
                             <?php }?>
                         </td>
                         <td>
