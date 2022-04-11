@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 08, 2022 lúc 11:56 AM
+-- Thời gian đã tạo: Th4 11, 2022 lúc 05:05 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.4.25
 
@@ -38,10 +38,11 @@ CREATE TABLE `ct_don_hang` (
 --
 
 INSERT INTO `ct_don_hang` (`ma_dh`, `ma_sp`, `so_luong`) VALUES
-(1, 'SP002', 1),
-(8, 'SP002', 20),
-(9, 'SP001', 6),
-(9, 'SP002', 180);
+(21, 'SP003', 4),
+(21, 'SP005', 5),
+(21, 'SP007', 5),
+(22, 'SP007', 1),
+(22, 'SP009', 3);
 
 --
 -- Bẫy `ct_don_hang`
@@ -75,9 +76,8 @@ CREATE TABLE `don_hang` (
 --
 
 INSERT INTO `don_hang` (`ma_dh`, `ma_kh`, `tong_tien`, `phuong_thuc_thanh_toan`, `ngay_lap_dh`, `trang_thai`) VALUES
-(1, 2, 99000, 'Chuyển khoản', '2022-04-08', 1),
-(8, 4, 210000, 'Chuyển khoản', '2022-04-08', 1),
-(9, 4, 18030000, 'Chuyển khoản', '2022-04-08', 1);
+(21, 3, 1645000, '1', '2022-04-11', 0),
+(22, 5, 358000, '1', '2022-04-11', 0);
 
 -- --------------------------------------------------------
 
@@ -99,6 +99,7 @@ CREATE TABLE `khach_hang` (
 --
 
 INSERT INTO `khach_hang` (`ma_kh`, `ten_khach_hang`, `ngay_sinh`, `dia_chi`, `so_dien_thoai`, `email`) VALUES
+(3, 'Lương Văn Hòa 1000', '2022-04-02', 'Quý Sơn-Lục Ngạn-Bắc Giang', '0357143496', 'hoa@gmail.com'),
 (4, 'Nông Minh Hiếu Ngu', '2022-04-02', 'Quý Sơn-Lục Ngạn-Bắc Giang', '0972798037', 'hieuminh2002@gmail.com'),
 (5, 'admin', '2022-04-06', 'Quý Sơn-Lục Ngạn-Bắc Giang', '0357143496', 'hoamon146@gmail.com');
 
@@ -140,9 +141,9 @@ CREATE TABLE `nguoi_dung` (
 --
 
 INSERT INTO `nguoi_dung` (`id`, `ten_dang_nhap`, `email`, `mat_khau`, `trang_thai`) VALUES
-(3, 'luongvanhoa123', '123@gmail.com', '202cb962ac59075b964b07152d234b70', 1),
-(4, 'hieungu189', 'hieuminh2002@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
-(5, 'admin', 'hoamon146@gmail.com', '202cb962ac59075b964b07152d234b70', 0);
+(3, 'luongvanhoa123', '123@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
+(5, 'admin', 'hoamon146@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
+(6, 'luongvanhoa1000', 'hoachinsu123@gmail.com', '202cb962ac59075b964b07152d234b70', 0);
 
 -- --------------------------------------------------------
 
@@ -166,15 +167,14 @@ CREATE TABLE `san_pham` (
 --
 
 INSERT INTO `san_pham` (`ma_sp`, `ma_loai_sp`, `ten_sp`, `hinh_anh`, `so_luong`, `gia_ban`, `thong_tin_them`, `trang_thai_sp`) VALUES
-('SP001', '1', 'Pet brash', 'products1.jpg', 80, 35000, ' Make your grooming work double time with the Hartz Groomer\'s Best Combo Dog Brush. This dual-action brush has two specialized sides―one with stainless steel pins to remove lose hair and tangles, and another with nylon bristles to redistribute the natural oils in your dog’s coat to restore shine and silkiness. It’s great for pups with long, curly or wiry coats and is extra-gentle thanks to the safety tips on every pin. Plus, it has an ergonomically designed handle so you can enjoy brushing time ', 1),
 ('SP002', '1', 'Bowl with rubber toy', 'products5.jpg', 0, 99000, ' Our Woof X Harness, Leash & Collar is made out of high-strength nylon and able to hold up to 200 lbs.', 1),
-('SP003', '1', 'Automatic dog blue leash', 'products2.jpg', 99, 75000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them. The All-In-One Smart Leash with built-in Water Bottle, Food Bowl, and Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 0),
-('SP004', '1', 'Cat toilet bowl', 'products3.jpg', 20, 49000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them.', 1),
-('SP005', '1', 'Bowl with rubber toy', 'products4.jpg', 15, 60000, 'Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
-('SP006', '1', 'Dog toys', 'products6.jpg', 30, 15000, ' Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
-('SP007', '1', 'Plastic muzzle', 'products7.jpg', 99, 29000, ' ', 1),
-('SP008', '2', 'Premium beef rice', 'products13.jpg', 4, 134000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them. The All-In-One Smart Leash with built-in Water Bottle, Food Bowl, and ', 1),
-('SP009', '2', 'Premium pork rice', 'products14.jpg', 50, 100000, 'Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
+('SP003', '1', 'Automatic dog blue leash', 'products2.jpg', 79, 75000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them. The All-In-One Smart Leash with built-in Water Bottle, Food Bowl, and Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 0),
+('SP004', '1', 'Cat toilet bowl', 'products3.jpg', 0, 49000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them.', 1),
+('SP005', '1', 'Bowl with rubber toy', 'products4.jpg', 9, 60000, 'Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
+('SP006', '1', 'Dog toys', 'products6.jpg', 0, 15000, ' Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
+('SP007', '1', 'Plastic muzzle', 'products7.jpg', 87, 29000, ' ', 1),
+('SP008', '2', 'Premium beef rice', 'products13.jpg', 0, 134000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them. The All-In-One Smart Leash with built-in Water Bottle, Food Bowl, and ', 1),
+('SP009', '2', 'Premium pork rice', 'products14.jpg', 47, 100000, 'Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
 ('SP010', '1', 'Pink ceramic cat bowl', 'products10.jpg', 49, 49000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them. The All-In-One Smart Leash with built-in Water Bottle', 1),
 ('SP011', '1', 'Red dog bed', 'products11.jpg', 29, 125000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them. ', 1),
 ('SP012', '1', 'Pet chair', 'products9.jpg', 54, 150000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them.', 1),
@@ -188,8 +188,7 @@ INSERT INTO `san_pham` (`ma_sp`, `ma_loai_sp`, `ten_sp`, `hinh_anh`, `so_luong`,
 -- Chỉ mục cho bảng `ct_don_hang`
 --
 ALTER TABLE `ct_don_hang`
-  ADD PRIMARY KEY (`ma_dh`,`ma_sp`),
-  ADD KEY `ma_sp` (`ma_sp`);
+  ADD PRIMARY KEY (`ma_dh`,`ma_sp`);
 
 --
 -- Chỉ mục cho bảng `don_hang`
@@ -231,7 +230,7 @@ ALTER TABLE `san_pham`
 -- AUTO_INCREMENT cho bảng `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `ma_dh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ma_dh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `khach_hang`
@@ -243,17 +242,11 @@ ALTER TABLE `khach_hang`
 -- AUTO_INCREMENT cho bảng `nguoi_dung`
 --
 ALTER TABLE `nguoi_dung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
-
---
--- Các ràng buộc cho bảng `ct_don_hang`
---
-ALTER TABLE `ct_don_hang`
-  ADD CONSTRAINT `ct_don_hang_ibfk_1` FOREIGN KEY (`ma_sp`) REFERENCES `san_pham` (`ma_sp`);
 
 --
 -- Các ràng buộc cho bảng `san_pham`

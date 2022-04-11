@@ -18,7 +18,12 @@ class m_order extends database {
         $this->setQuery($sql);
         return $this->execute(array($ma_dh));
     }
-
+//    xóa chi tiết đơn hàng đơn hàng
+    public function delete_order_details_by_id($ma_dh) {
+        $sql = "delete from ct_don_hang where ma_dh = ?";
+        $this->setQuery($sql);
+        return $this->execute(array($ma_dh));
+    }
 
     // lấy thông tin chi tiết hóa đơn
     public function select_order_details($ma_dh) {

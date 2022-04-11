@@ -19,7 +19,8 @@ class c_order {
             $m_order = new m_order();
             $delete = $m_order->delete_order_by_id($ma_dh);
 
-            if($delete) {
+            $delete_details = $m_order->delete_order_details_by_id($ma_dh);
+            if($delete && $delete_details) {
                 $_SESSION['alert_delete_order'] = "Xóa thành công đơn hàng số ".$ma_dh;
                 echo "<script> window.location.href='order.php'</script>";
             }
