@@ -124,7 +124,7 @@ class c_user {
                     unset($_COOKIE["username"]);
                     unset($_COOKIE["password"]);
                 }
-                echo "<script>location.href = 'home.php';</script>";
+                echo "<script>location.href = 'index.php';</script>";
             }
         }
     }
