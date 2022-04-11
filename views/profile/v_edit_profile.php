@@ -36,12 +36,6 @@
                                 <input type="text" name="email" value="<?php echo $profile->email;?>" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-lg-12 col-md-12">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="checkme">
-                                <label class="form-check-label" for="checkme">Save this information for next time</label>
-                            </div>
-                        </div>
                         <button type="submit" name="btn_information" style="width: 100px" class="default-btn"><span>Save</span></button>
                     </div>
                 </div>

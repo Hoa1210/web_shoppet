@@ -86,9 +86,10 @@ class c_product{
                         //di chuyển hình vào thư mục source
                         move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "public/imageproduct/".$hinh_sp);
                     }
-                    echo "<script>window.location='list_product.php'</script>";
+                    $_SESSION['alert_product'] = "Sửa sản phẩm có mã là ".$ma_sp." thành công!!";
+                    header("location:list_product.php");
                 } else {
-                    echo "<script>alert('No thanh cong');</script>";
+                    $_SESSION['alert_err_product'] = "Sửa sản phẩm có mã là ".$ma_sp." thành công!!";
                 }
             }
 
@@ -107,8 +108,11 @@ class c_product{
             $delete = $m_product->delete_product($ma_sp);
             if($delete)
             {
-                echo "<script>alert('Xóa thành công');window.location.href='list_product.php'</script>";
+                $_SESSION['alert_product'] = "Xóa sản phẩm có mã là ".$ma_sp." thành công!!";
+            }else{
+                $_SESSION['alert_err_product'] = "Xóa sản phẩm có mã là ".$ma_sp." thành công!!";
             }
+            header("location:list_product.php");
         }
     }
 
@@ -150,8 +154,11 @@ class c_product{
             $delete = $m_product->delete_type_product($ma_loai);
             if($delete)
             {
-                echo "<script>alert('Xóa thành công');window.location.href='type_product.php'</script>";
+                $_SESSION['alert_type_product'] = "Xóa sản phẩm có mã là ".$ma_loai." thành công!!";
+            }else{
+                $_SESSION['alert_err_type_product'] = "Xóa sản phẩm có mã là ".$ma_loai." thành công!!";
             }
+            header("location:type_product.php");
         }
     }
 
@@ -168,11 +175,14 @@ class c_product{
                 $insert = new m_product();
                 $update = $insert->edit_type_product($ma_loai, $ten_loai_sp);
 
-                if($update) {
-                    echo "<script>alert('Sửa thành công');window.location.href='type_product.php'</script>";
+                if($update)
+                {
+                    $_SESSION['alert_type_product'] = "Sửa loại sản phẩm có mã là ".$ma_loai." thành công!!";
+                    header("location:type_product.php");
                 }else{
-                    echo "<script>alert('Sửa thất bại');</script>";
+                    $_SESSION['alert_err_type_product'] = "Sửa loại sản phẩm có mã là ".$ma_loai." thành công!!";
                 }
+
 
             }else{
                 echo "no";

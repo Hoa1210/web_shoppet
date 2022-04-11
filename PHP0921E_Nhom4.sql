@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th4 11, 2022 lúc 08:57 AM
--- Phiên bản máy phục vụ: 5.7.37-0ubuntu0.18.04.1
--- Phiên bản PHP: 7.4.9
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th4 11, 2022 lúc 03:07 PM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `PHP0921E_Nhom4`
+-- Cơ sở dữ liệu: `php0921e_nhom4`
 --
 
 -- --------------------------------------------------------
@@ -44,13 +43,14 @@ INSERT INTO `ct_don_hang` (`ma_dh`, `ma_sp`, `so_luong`) VALUES
 (21, 'SP007', 5),
 (22, 'SP007', 1),
 (22, 'SP009', 3),
-(23, 'SP003', 3);
+(23, 'SP003', 3),
+(24, 'SP003', 4);
 
 --
 -- Bẫy `ct_don_hang`
 --
 DELIMITER $$
-CREATE TRIGGER `insert_don_hang` BEFORE INSERT ON `ct_don_hang` FOR EACH ROW begin 
+CREATE TRIGGER `insert_don_hang` BEFORE INSERT ON `ct_don_hang` FOR EACH ROW begin
  UPDATE san_pham
  SET so_luong = so_luong - NEW.so_luong
  where ma_sp = NEW.ma_sp;
@@ -80,7 +80,8 @@ CREATE TABLE `don_hang` (
 INSERT INTO `don_hang` (`ma_dh`, `ma_kh`, `tong_tien`, `phuong_thuc_thanh_toan`, `ngay_lap_dh`, `trang_thai`) VALUES
 (21, 3, 1645000, '1', '2022-04-11', 0),
 (22, 5, 358000, '1', '2022-04-11', 0),
-(23, 5, 225000, '1', '2022-04-11', 0);
+(23, 5, 225000, '1', '2022-04-11', 0),
+(24, 5, 300000, '0', '2022-04-11', 2);
 
 -- --------------------------------------------------------
 
@@ -104,7 +105,7 @@ CREATE TABLE `khach_hang` (
 INSERT INTO `khach_hang` (`ma_kh`, `ten_khach_hang`, `ngay_sinh`, `dia_chi`, `so_dien_thoai`, `email`) VALUES
 (3, 'Lương Văn Hòa 1000', '2022-04-02', 'Quý Sơn-Lục Ngạn-Bắc Giang', '0357143496', 'hoa@gmail.com'),
 (4, 'Nông Minh Hiếu Ngu', '2022-04-02', 'Quý Sơn-Lục Ngạn-Bắc Giang', '0972798037', 'hieuminh2002@gmail.com'),
-(5, 'admin', '2022-04-06', 'Quý Sơn-Lục Ngạn-Bắc Giang', '0357143496', 'hoamon146@gmail.com');
+(5, 'admin', '2022-04-06', 'Quý Sơn-Lục Ngạn-Bắc Giang', '0357143496', 'hoamon1467@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -138,7 +139,7 @@ CREATE TABLE `nguoi_dung` (
   `ten_dang_nhap` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `mat_khau` varchar(255) NOT NULL,
-  `trang_thai` tinyint(2) NOT NULL DEFAULT '0'
+  `trang_thai` tinyint(2) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -148,7 +149,8 @@ CREATE TABLE `nguoi_dung` (
 INSERT INTO `nguoi_dung` (`id`, `ten_dang_nhap`, `email`, `mat_khau`, `trang_thai`) VALUES
 (3, 'luongvanhoa123', '123@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
 (5, 'admin', 'hoamon146@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
-(6, 'luongvanhoa1000', 'hoachinsu123@gmail.com', '202cb962ac59075b964b07152d234b70', 0);
+(6, 'luongvanhoa1000', 'hoachinsu123@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
+(7, 'hoaluong', 'toiroiluomoi123@gmail.com', '202cb962ac59075b964b07152d234b70', 0);
 
 -- --------------------------------------------------------
 
@@ -164,7 +166,7 @@ CREATE TABLE `san_pham` (
   `so_luong` int(11) DEFAULT NULL,
   `gia_ban` int(11) DEFAULT NULL,
   `thong_tin_them` varchar(500) NOT NULL,
-  `trang_thai_sp` tinyint(2) NOT NULL DEFAULT '1'
+  `trang_thai_sp` tinyint(2) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -172,9 +174,7 @@ CREATE TABLE `san_pham` (
 --
 
 INSERT INTO `san_pham` (`ma_sp`, `ma_loai_sp`, `ten_sp`, `hinh_anh`, `so_luong`, `gia_ban`, `thong_tin_them`, `trang_thai_sp`) VALUES
-('SP001', '1', 'ABC', '119184367_807680199992626_3993443359832267766_n.gif', 3, 35000, ' ', 0),
-('SP002', '1', 'Bowl with rubber toy', 'products5.jpg', 0, 99000, ' Our Woof X Harness, Leash & Collar is made out of high-strength nylon and able to hold up to 200 lbs.', 1),
-('SP003', '1', 'Automatic dog blue leash', 'products2.jpg', 76, 75000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them. The All-In-One Smart Leash with built-in Water Bottle, Food Bowl, and Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
+('SP003', '1', 'Automatic dog blue leash', 'products2.jpg', 72, 75000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them. The All-In-One Smart Leash with built-in Water Bottle, Food Bowl, and Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
 ('SP004', '1', 'Cat toilet bowl', 'products3.jpg', 0, 49000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them.', 1),
 ('SP005', '1', 'Bowl with rubber toy', 'products4.jpg', 9, 60000, 'Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
 ('SP006', '1', 'Dog toys', 'products6.jpg', 0, 15000, ' Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
@@ -236,7 +236,7 @@ ALTER TABLE `san_pham`
 -- AUTO_INCREMENT cho bảng `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `ma_dh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `ma_dh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT cho bảng `khach_hang`
@@ -248,7 +248,7 @@ ALTER TABLE `khach_hang`
 -- AUTO_INCREMENT cho bảng `nguoi_dung`
 --
 ALTER TABLE `nguoi_dung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

@@ -45,7 +45,7 @@
                 <a class="navbar-brand" href="home.php"><img src="public/patoi/assets/img/logo.png" alt="logo"></a>
                 <div class="collapse navbar-collapse mean-menu">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="home.php?home" class=" nav-link <?php echo isset($_GET['home']) ? "active" : " ";?>">Home</a>
+                        <li class="nav-item"><a href="index.php?index" class=" nav-link <?php echo isset($_GET['index']) ? "active" : " ";?>">Home</a>
 <!--                            <ul class="dropdown-menu">-->
 <!--                                <li class="nav-item"><a href="index.html" class="nav-link">Home Demo - One</a></li>-->
 <!--                                <li class="nav-item"><a href="index-2.html" class="nav-link">Home Demo - Two</a></li>-->

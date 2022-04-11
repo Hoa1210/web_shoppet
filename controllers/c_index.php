@@ -1,6 +1,6 @@
 <?php
 include ("models/m_product.php");
-class c_home {
+class c_index {
 
     public function home() {
         $item_per_page = 6;

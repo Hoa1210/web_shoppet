@@ -15,4 +15,3 @@ define("DB_PWD","7tqrL4nXfF");
 //define("DB_USER","root");
 //define("DB_PWD","");
 ?>
-?>

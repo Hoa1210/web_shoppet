@@ -3,7 +3,7 @@
         <div class="page-title-content">
             <h1>Contact Us</h1>
             <ul>
-                <li><a href="home.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li>Contact Us</li>
             </ul>
         </div>

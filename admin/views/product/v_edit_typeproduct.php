@@ -10,6 +10,11 @@
                         <fieldset>
                             <div class="card-body">
                                 <h4 class="card-title">Edit Type Product ID :  <?php echo $_GET['ma_loai']; ?></h4>
+                                <?php if (isset($_SESSION['alert_err_product'])) { ?>
+                                    <div class="alert alert-danger"  role="alert">
+                                        <?php echo $_SESSION['alert_err_product'];?>
+                                    </div>
+                                <?php } unset($_SESSION['alert_err_product']);?>
                                 <div class="form-group row">
                                     <label for="fname" class="col-sm-3 text-right control-label col-form-label">Mã sản phẩm</label>
                                     <div class="col-sm-9">

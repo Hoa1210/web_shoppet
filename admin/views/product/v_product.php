@@ -32,6 +32,16 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">PRODUCTS</h5>
+                        <?php if (isset($_SESSION['alert_product'])) { ?>
+                            <div class="alert alert-success"  role="alert">
+                                <?php echo $_SESSION['alert_product'];?>
+                            </div>
+                        <?php } unset($_SESSION['alert_product']);?>
+                        <?php if (isset($_SESSION['alert_err_product'])) { ?>
+                            <div class="alert alert-danger"  role="alert">
+                                <?php echo $_SESSION['alert_err_product'];?>
+                            </div>
+                        <?php } unset($_SESSION['alert_err_product']);?>
                         <div class="table-responsive">
                             <div class="border-top" style="display: flex;">
                                 <div class="card-body" style="flex: 0;">
