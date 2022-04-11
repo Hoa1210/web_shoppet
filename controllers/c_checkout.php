@@ -36,10 +36,15 @@ class c_checkout {
         if(isset($_POST['btn_order'])) {
             $ma_dh = NULL;
             $ma_kh = $_SESSION['id_user'];
-            $tong_tien = $_SESSION['tong'];
+            $thanhtien = 0;
+            $tong_tien = 0;
+            foreach ($_SESSION['cart'] as $key => $value) :
+                $thanhtien += $value['so_luong'] * $value['gia_ban'];
+                $tong_tien +=$thanhtien;
+                endforeach;
             $phuong_thuc_thanh_toan = $_POST['radio-group'];
             $ngay_thanh_toan = date("Y-m-d");
-            $trang_thai = 1;
+            $trang_thai = 0;
 
             $m_order = new m_checkout();
             $last_id = $m_order->insert_order($ma_dh, $ma_kh, $tong_tien, $phuong_thuc_thanh_toan,$ngay_thanh_toan,$trang_thai);

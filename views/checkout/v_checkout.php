@@ -67,12 +67,15 @@
                                 <tbody>
                                 <?php
                                 if(isset($_SESSION['cart']) && !empty($_SESSION['cart'])) :
+                                    $tongtien = 0;
                                     foreach ($_SESSION['cart'] as $key=>$value) :
+                                        $thanhtien = $value['so_luong'] * $value['gia_ban'];
+                                        $tongtien += $thanhtien;
                                 ?>
                                 <tr>
                                     <td class="product-name"><a><?php echo $value['ten_sp']."(".$value['id'].")"; ?> </a></td>
                                     <td class="product-total">
-                                        <span class="subtotal-amount"><?php echo number_format($value['tt']); ?> VNĐ</span>
+                                        <span class="subtotal-amount"><?php echo number_format($thanhtien); ?> VNĐ</span>
                                     </td>
                                 </tr>
                                 <?php
@@ -94,7 +97,7 @@
                                 <tr>
                                     <td class="total-price"><span>Tổng</span></td>
                                     <td class="product-subtotal">
-                                        <span class="subtotal-amount"><?php echo number_format($_SESSION['tong']); ?> VNĐ</span>
+                                        <span class="subtotal-amount"><?php echo number_format($tongtien); ?> VNĐ</span>
                                     </td>
                                 </tr>
                                 </tbody>

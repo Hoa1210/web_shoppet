@@ -38,9 +38,9 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-products-box">
-                    <div class="image" width="260px">
-                        <a onclick="window.location.href='products_details.php?action=add1&&ma_sp=<?php echo $value->ma_sp;?>'" class="d-block">
-                            <img style="width: 260px; height: 269px;"  src="admin/public/imageproduct/<?php echo $value->hinh_anh?>" alt="products-image">
+                    <div class="image" >
+                        <a style="width: 260px; height: 269px;" onclick="window.location.href='products_details.php?action=add1&&ma_sp=<?php echo $value->ma_sp;?>'" class="d-block">
+                            <img class="img-fluid" style="width: 260px; height: 269px;" src="admin/public/imageproduct/<?php echo $value->hinh_anh?>" alt="products-image">
                         </a>
                         <?php
                         if($value->so_luong == 0) {

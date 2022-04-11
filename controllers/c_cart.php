@@ -22,7 +22,7 @@ class c_cart
                     $hinh_sp = $add_cart->hinh_anh;
                     $gia_ban = $add_cart->gia_ban;
                     $so_luong = 1;
-
+                    $sl_max = $add_cart->so_luong;
                     // lấy số lượng sp từ trang product_detail
                     if (isset($_GET['action'])) {
                         if ($_GET['action'] == 'add2') {
@@ -37,15 +37,25 @@ class c_cart
                         'hinh_sp' => $hinh_sp,
                         'gia_ban' => $gia_ban,
                         'so_luong' => $so_luong,
+                        'sl_max' => $sl_max,
                     ];
 
                     // tính tổng tiền của từng sp
-                    $_SESSION['cart'][$ma_sp]['tt'] = $_SESSION['cart'][$ma_sp]['so_luong'] * $_SESSION['cart'][$ma_sp]['gia_ban'];
+//                    $_SESSION['cart'][$ma_sp]['tt'] = $_SESSION['cart'][$ma_sp]['so_luong'] * $_SESSION['cart'][$ma_sp]['gia_ban'];
 
                     header("location:cart.php");
                 }else{
                     echo "<script>alert('Sản phẩm đã hết hàng');window.location.href='shop.php';</script>";
                 }
+            }
+            if(isset($_POST['btn_update'])) {
+                foreach ($_POST['so_luong'] as $key => $value) :
+                    if($value == 0) {
+                        unset($_SESSION['cart'][$key]);
+                    }else{
+                        $_SESSION['cart'][$key]['so_luong'] = $value;
+                    }
+                endforeach;
             }
 
     }
