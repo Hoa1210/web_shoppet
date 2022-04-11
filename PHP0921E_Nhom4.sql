@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.5deb2
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 11, 2022 lúc 10:28 AM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 7.4.25
+-- Máy chủ: localhost:3306
+-- Thời gian đã tạo: Th4 11, 2022 lúc 08:57 AM
+-- Phiên bản máy phục vụ: 5.7.37-0ubuntu0.18.04.1
+-- Phiên bản PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `shop_pet_php`
+-- Cơ sở dữ liệu: `PHP0921E_Nhom4`
 --
 
 -- --------------------------------------------------------
@@ -49,7 +50,7 @@ INSERT INTO `ct_don_hang` (`ma_dh`, `ma_sp`, `so_luong`) VALUES
 -- Bẫy `ct_don_hang`
 --
 DELIMITER $$
-CREATE TRIGGER `insert_don_hang` BEFORE INSERT ON `ct_don_hang` FOR EACH ROW begin
+CREATE TRIGGER `insert_don_hang` BEFORE INSERT ON `ct_don_hang` FOR EACH ROW begin 
  UPDATE san_pham
  SET so_luong = so_luong - NEW.so_luong
  where ma_sp = NEW.ma_sp;
@@ -137,7 +138,7 @@ CREATE TABLE `nguoi_dung` (
   `ten_dang_nhap` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `mat_khau` varchar(255) NOT NULL,
-  `trang_thai` tinyint(2) NOT NULL DEFAULT 0
+  `trang_thai` tinyint(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -163,7 +164,7 @@ CREATE TABLE `san_pham` (
   `so_luong` int(11) DEFAULT NULL,
   `gia_ban` int(11) DEFAULT NULL,
   `thong_tin_them` varchar(500) NOT NULL,
-  `trang_thai_sp` tinyint(2) NOT NULL DEFAULT 1
+  `trang_thai_sp` tinyint(2) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
