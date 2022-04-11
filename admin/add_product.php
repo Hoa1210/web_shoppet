@@ -7,6 +7,7 @@
 //}else{
 //    header("location:login.php");
 //}
+include ("check_login.php");
 include("controllers/c_product.php");
 $c_banner = new c_product();
 $c_banner->addproduct();

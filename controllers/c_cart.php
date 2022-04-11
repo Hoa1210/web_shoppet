@@ -53,7 +53,11 @@ class c_cart
                     if($value == 0) {
                         unset($_SESSION['cart'][$key]);
                     }else{
-                        $_SESSION['cart'][$key]['so_luong'] = $value;
+                        if($value > $_SESSION['cart'][$key]['sl_max']){
+                            $_SESSION['cart'][$key]['so_luong'] = $_SESSION['cart'][$key]['sl_max'];
+                        }else {
+                            $_SESSION['cart'][$key]['so_luong'] = $value;
+                        }
                     }
                 endforeach;
             }

@@ -76,23 +76,24 @@ class c_user {
             $mat_khau = $_POST["mat_khau"];
             $trang_thai = 0;
             $m_user = new m_user();
-            $check = $m_user->read_pass_or_email_user($ten_dang_nhap,$email);
+            $check_username = $m_user->check_username($ten_dang_nhap);
+            $check_email = $m_user->check_email($email);
 
-
-            if(!empty($check)) {
-                $_SESSION['error_danger'] = "Tài khoản hoặc email đã tồn tại!!";
-                echo "<script>location.href = 'user.php';</script>";
-                die();
+            if(!empty($check_username)) {
+                $_SESSION['error_danger'] = "Tài khoản  đã tồn tại!!";
             }else {
+                if(!empty($check_email)) {
+                    $_SESSION['error_danger'] = "Email đã tồn tại!!";
+                }else {
 
-                $this->saveRegisterSession($id, $ten_dang_nhap, $email, $mat_khau,$trang_thai);
+                    $this->saveRegisterSession($id, $ten_dang_nhap, $email, $mat_khau, $trang_thai);
 
-                if (isset($_SESSION['register'])) {
-                    $_SESSION['error_success'] = "Thành công rồi nhé!";
-                } else {
-                    $_SESSION['error_danger'] = "Đăng ký thất bại!";
+                    if (isset($_SESSION['register'])) {
+                        $_SESSION['error_success'] = "Thành công rồi nhé!";
+                    } else {
+                        $_SESSION['error_danger'] = "Đăng ký thất bại!";
+                    }
                 }
-
             }
         }
     }
@@ -131,7 +132,6 @@ class c_user {
     public function saveLoginSession($ten_dang_nhap,$mat_khau) {
         $m_user = new m_user();
         $user = $m_user->read_user_by_id_pass($ten_dang_nhap, $mat_khau);
-
         if (!empty($user)) {
             if($user->trang_thai == 0) {
                 $_SESSION['login'] = $user;

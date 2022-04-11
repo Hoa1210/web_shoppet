@@ -50,6 +50,11 @@ session_start();
                     <span class="db"><img src="public/assets/images/logo.png" alt="logo" /></span>
                 </div>
                 <!-- Form -->
+                <?php if (isset($_SESSION['alert_login'])) { ?>
+                    <div class="alert alert-danger"  role="alert">
+                        <?php echo $_SESSION['alert_login'] ?>
+                    </div>
+                <?php }unset($_SESSION['alert_login']);?>
                 <form class="form-horizontal m-t-20 " id="loginform" method="POST" action="user.php">
                     <div class="row p-b-30">
                         <div class="col-12">
@@ -65,11 +70,6 @@ session_start();
                                 </div>
                                 <input type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required="" name="password">
                             </div>
-<!--                            --><?php //if (isset($_SESSION['error_login'])) { ?>
-<!--                                <div class="alert alert-danger"  role="alert">-->
-<!--                                    Bạn đã nhập sai tài khoản hoặc mật khẩu!-->
-<!--                                </div>-->
-<!--                            --><?php //}?>
                         </div>
                     </div>
                     <div class="row border-top border-secondary">

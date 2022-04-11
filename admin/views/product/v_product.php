@@ -62,12 +62,17 @@
                                 <?php
                                     foreach ($product as $key=>$value) {
 
-                                        if ($value->so_luong == 0) {
+                                        if ( $value->so_luong == 0) {
                                             $css_trang_thai =   "badge-danger";
-                                        $text_trang_thai =  "Hết hàng";
-                                        } else {
-                                            $css_trang_thai =  "badge-info" ;
-                                         $text_trang_thai =  "Còn hàng";
+                                            $text_trang_thai =  "Hết hàng";
+                                        }else{
+                                            if($value->trang_thai_sp == 0) {
+                                                $css_trang_thai =   "badge-danger";
+                                                $text_trang_thai =  "Hết hàng";
+                                            }else{
+                                                $css_trang_thai = "badge-info";
+                                                $text_trang_thai = "Còn hàng";
+                                            }
                                         }
                                  ?>
                                     <tr>
@@ -75,14 +80,14 @@
                                         <td><?php echo $value->ma_sp ; ?></td>
                                         <td><?php echo $value->ten_loai_sp ; ?></td>
                                         <td><?php echo $value->ten_sp ; ?></td>
-                                        <td> <img style="width: 150px;"  src = 'public/imageproduct/<?php echo$value->hinh_anh;?>'></td>
+                                        <td> <img style="width: 150px;"  src = 'public/imageproduct/<?php echo $value->hinh_anh;?>'></td>
                                         <td><?php echo $value->so_luong ; ?></td>
                                         <td><?php echo $value->gia_ban ; ?></td>
                                         <td><?php echo $value->thong_tin_them ; ?></td>
                                         <td> <span class="badge badge-pill <?php echo $css_trang_thai;?>"><?php echo $text_trang_thai;?> </span></td>
                                         <td>
-                                            <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='edit_product.php?ma_sp=<?php echo $value->ma_sp;?>'">Edit</button>
-                                            <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_product.php?ma_sp=<?php echo $value->ma_sp;?>'">Delete</button>
+                                            <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='edit_product.php?ma_sp=<?php echo $value->ma_sp;?>'">Sửa</button>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_product.php?ma_sp=<?php echo $value->ma_sp;?>'">Xóa</button>
                                         </td>
                                     </tr>
                                 <?php } ?>

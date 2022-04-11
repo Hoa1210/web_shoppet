@@ -115,16 +115,17 @@ class c_product{
     public function add_product_type() {
 
         if(isset($_POST['btn-submit'])) {
-            $ma_loai = NULL;
+            $ma_loai = $_POST['ma_loai'];
             $ten_loai_sp = $_POST['ten_loai_sp'];
 
             $m_type = new m_product();
             $type_product = $m_type->add_product_type($ma_loai, $ten_loai_sp);
 
+
             if($type_product) {
-                echo "<script>alert('Thêm thành công');window.location.href='type_product.php'</script>";
+                $_SESSION['alert_add_loai_sp'] = "Thêm loại sản phẩm có mã là " . $ma_loai . " thành công!!";
             }else{
-                echo "<script>alert('Thêm thất bại');</script>";
+                $_SESSION['alert_add_loai_sp'] = "Thêm loại sản phẩm có mã là " . $ma_loai . " thất bại!!";
             }
         }
 

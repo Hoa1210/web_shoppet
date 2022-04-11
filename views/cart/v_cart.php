@@ -53,7 +53,7 @@
                                 <td class="product-quantity">
                                     <div class="input-counter">
                                         <span class="minus-btn"><i class='bx bx-minus'></i></span>
-                                        <input type="text" name="so_luong[<?php echo $value['id']?>]"  value="<?php echo $value['so_luong'];?>" min="1" max="<?php echo $value['sl_max'];?>">
+                                        <input type="text" name="so_luong[<?php echo $value['id']?>]"   value="<?php echo $value['so_luong'];?>" min="1" max="<?php echo $value['sl_max'];?>" >
                                         <span class="plus-btn"><i class='bx bx-plus'></i></span>
                                     </div>
                                 </td>

@@ -22,14 +22,14 @@
                         <div class="form-group row">
                             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Mã sản phẩm</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="ma_sp" name="ma_sp" placeholder="ma san pham">
+                                <input type="text" class="form-control" id="ma_sp" name="ma_sp" required placeholder="ma san pham">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-3 text-right control-label col-form-label">Loại sản phẩm</label>
                             <div class="col-md-9">
                                 <select name="ma_loai_sp" class="select2 form-control custom-select" style="width: 100%; height:36px;">
-                                    <option>---Chọn---</option>
+                                    <option >---Chọn---</option>
                                     <?php foreach ($arr as $key=>$value) : ?>
                                         <option value="<?php echo $value->ma_loai; ?>" ><?php echo $value->ten_loai_sp; ?></option>
                                     <?php endforeach; ?>
@@ -76,8 +76,8 @@
                             <div class="col-sm-9">
                                 <select class="select2 form-control custom-select" name="trang_thai" style="width: 100%; height:36px;">
                                     <option>---Chon---</option>
-                                    <option value="1">Open</option>
-                                    <option value="0">Close</option>
+                                    <option value="1">Còn hàng</option>
+                                    <option value="0">Hết hàng</option>
                                 </select>
                             </div>
                          </div>

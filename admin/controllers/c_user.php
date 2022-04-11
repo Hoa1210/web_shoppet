@@ -3,8 +3,6 @@ session_start();
 include_once ("models/m_user.php");
 class c_user {
 
-
-
     public function login() {
         if (isset($_POST['login'])) {
 
@@ -13,28 +11,25 @@ class c_user {
 
             $this->saveLoginSession($username,$password);
 
-            if (isset($_SESSION['login'])) {
-                unset($_SESSION['error_login']);
+            if (isset($_SESSION['login_admin'])) {
                 echo "<script>window.location.href = 'list_product.php';</script>";
-
             }else{
-//                $_SESSION['error_login'] = "Sai thông tin";
-//                header("location:login.php");
-                echo "no";
+                $_SESSION['alert_login'] = "Sai thông tin";
+                echo "<script>window.location.href = 'login.php';</script>";
             }
         }
     }
 
     public function logout(){
-        session_destroy();
-        header("location:http://localhost/NHOM_4/user.php");
+        unset($_SESSION['login_admin']);
+        echo "<script>window.location.href = 'login.php';</script>";
     }
 
     public function saveLoginSession($username,$password) {
         $m_user = new m_user();
         $user = $m_user->read_user_by_id_pass($username, $password);
         if (!empty($user)) {
-            $_SESSION['login'] = $user;
+            $_SESSION['login_admin'] = $user;
         }
     }
 

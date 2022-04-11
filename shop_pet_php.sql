@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 11, 2022 lúc 05:05 AM
+-- Thời gian đã tạo: Th4 11, 2022 lúc 10:28 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.4.25
 
@@ -42,7 +42,8 @@ INSERT INTO `ct_don_hang` (`ma_dh`, `ma_sp`, `so_luong`) VALUES
 (21, 'SP005', 5),
 (21, 'SP007', 5),
 (22, 'SP007', 1),
-(22, 'SP009', 3);
+(22, 'SP009', 3),
+(23, 'SP003', 3);
 
 --
 -- Bẫy `ct_don_hang`
@@ -77,7 +78,8 @@ CREATE TABLE `don_hang` (
 
 INSERT INTO `don_hang` (`ma_dh`, `ma_kh`, `tong_tien`, `phuong_thuc_thanh_toan`, `ngay_lap_dh`, `trang_thai`) VALUES
 (21, 3, 1645000, '1', '2022-04-11', 0),
-(22, 5, 358000, '1', '2022-04-11', 0);
+(22, 5, 358000, '1', '2022-04-11', 0),
+(23, 5, 225000, '1', '2022-04-11', 0);
 
 -- --------------------------------------------------------
 
@@ -120,7 +122,9 @@ CREATE TABLE `loai_sp` (
 
 INSERT INTO `loai_sp` (`ma_loai`, `ten_loai_sp`) VALUES
 ('1', 'Dog toys'),
-('2', 'Dog foods');
+('2', 'Dog foods'),
+('LABC', 'Vip'),
+('LABC123', 'Dog toys abc');
 
 -- --------------------------------------------------------
 
@@ -156,8 +160,8 @@ CREATE TABLE `san_pham` (
   `ma_loai_sp` varchar(11) NOT NULL,
   `ten_sp` varchar(50) NOT NULL,
   `hinh_anh` varchar(255) NOT NULL,
-  `so_luong` int(11) DEFAULT 0,
-  `gia_ban` int(11) DEFAULT 0,
+  `so_luong` int(11) DEFAULT NULL,
+  `gia_ban` int(11) DEFAULT NULL,
   `thong_tin_them` varchar(500) NOT NULL,
   `trang_thai_sp` tinyint(2) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -167,8 +171,9 @@ CREATE TABLE `san_pham` (
 --
 
 INSERT INTO `san_pham` (`ma_sp`, `ma_loai_sp`, `ten_sp`, `hinh_anh`, `so_luong`, `gia_ban`, `thong_tin_them`, `trang_thai_sp`) VALUES
+('SP001', '1', 'ABC', '119184367_807680199992626_3993443359832267766_n.gif', 3, 35000, ' ', 0),
 ('SP002', '1', 'Bowl with rubber toy', 'products5.jpg', 0, 99000, ' Our Woof X Harness, Leash & Collar is made out of high-strength nylon and able to hold up to 200 lbs.', 1),
-('SP003', '1', 'Automatic dog blue leash', 'products2.jpg', 79, 75000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them. The All-In-One Smart Leash with built-in Water Bottle, Food Bowl, and Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 0),
+('SP003', '1', 'Automatic dog blue leash', 'products2.jpg', 76, 75000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them. The All-In-One Smart Leash with built-in Water Bottle, Food Bowl, and Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
 ('SP004', '1', 'Cat toilet bowl', 'products3.jpg', 0, 49000, ' Take your best friend for a walk without having to worry about carrying the water bottle, the bowl and the poop bags and let\'s not forget their favorite snacks! We heard your issues and we came to solve them.', 1),
 ('SP005', '1', 'Bowl with rubber toy', 'products4.jpg', 9, 60000, 'Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
 ('SP006', '1', 'Dog toys', 'products6.jpg', 0, 15000, ' Poop Bag is here! Comfortably take your furry friend for strolls around that big beautiful park that they love so much with the peace of mind knowing everything they need is in the palm of your hands!', 1),
@@ -230,7 +235,7 @@ ALTER TABLE `san_pham`
 -- AUTO_INCREMENT cho bảng `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `ma_dh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `ma_dh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT cho bảng `khach_hang`

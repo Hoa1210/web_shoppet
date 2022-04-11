@@ -9,13 +9,19 @@ class m_user extends database {
         return $this->loadRow(array($ten_dang_nhap,md5($mat_khau)));
     }
 
-//    kiem tra ten dang nhap va email xem da co nguoi dnag ký chua
-    public function read_pass_or_email_user($ten_dang_nhap, $email) {
-        $sql = "select * from nguoi_dung where ten_dang_nhap = ? or email = ?";
+//    kiem tra ten dang nhap  xem da co nguoi dnag ký chua
+    public function check_username($ten_dang_nhap) {
+        $sql = "select * from nguoi_dung where ten_dang_nhap = ?";
         $this->setQuery($sql);
-        return $this->loadAllRows(array($ten_dang_nhap, $email));
+        return $this->loadAllRows(array($ten_dang_nhap));
     }
 
+    //    kiem tra email  xem da co nguoi dnag ký chua
+    public function check_email($email) {
+        $sql = "select * from nguoi_dung where email = ?";
+        $this->setQuery($sql);
+        return $this->loadAllRows(array($email));
+    }
 //    dang ky
     public function insert_register($id,$ten_dang_nhap,$email,$mat_khau,$trang_thai) {
         $sql = "INSERT INTO nguoi_dung (id, ten_dang_nhap, email, mat_khau, trang_thai) VALUES (?,?,?,?,?);";

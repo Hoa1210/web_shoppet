@@ -38,7 +38,7 @@
                                     <div class="col-sm-9">
 
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" name = "f_hinh_anh" id="validatedCustomFile"  >
+                                            <input type="file" class="custom-file-input" name = "f_hinh_anh"  id="validatedCustomFile"  >
                                             <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                                             <div class="invalid-feedback">Example invalid custom file feedback</div>
                                             <div class="col-xs-6  bg-white" id="image-holder3" >

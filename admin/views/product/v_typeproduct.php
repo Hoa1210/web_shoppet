@@ -62,8 +62,8 @@
                                         <td><?php echo $value->ma_loai ; ?></td>
                                         <td><?php echo $value->ten_loai_sp ; ?></td>
                                         <td>
-                                            <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='edit_typeproduct.php?ma_loai=<?php echo $value->ma_loai;?>'">Edit</button>
-                                            <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_typeproduct.php?ma_loai=<?php echo $value->ma_loai;?>'">Delete</button>
+                                            <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='edit_typeproduct.php?ma_loai=<?php echo $value->ma_loai;?>'">Sửa</button>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_typeproduct.php?ma_loai=<?php echo $value->ma_loai;?>'">Xóa</button>
                                         </td>
                                     </tr>
                                 <?php } ?>

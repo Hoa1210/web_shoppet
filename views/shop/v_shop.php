@@ -43,13 +43,26 @@
                             <img class="img-fluid" style="width: 260px; height: 269px;" src="admin/public/imageproduct/<?php echo $value->hinh_anh?>" alt="products-image">
                         </a>
                         <?php
-                        if($value->so_luong == 0) {
+//                        if($value->so_luong == 0) {
+//                            $css = "sold";
+//                            $tt = "Sold!";
+//                        }else{
+//                            $css = "";
+//                            $tt = "";
+//                        }
+                        if ( $value->so_luong == 0) {
                             $css = "sold";
                             $tt = "Sold!";
                         }else{
-                            $css = "";
-                            $tt = "";
-                        }?>
+                            if($value->trang_thai_sp == 0) {
+                                $css = "sold";
+                                $tt = "Sold!";
+                            }else{
+                                $css = "";
+                                $tt = "";
+                            }
+                        }
+                        ?>
                         <span class="<?php echo $css;?>"><?php echo $tt;?></span>
                         <ul class="products-button">
                             <li><a onclick="window.location.href='cart.php?ma_sp=<?php echo $value->ma_sp;?>'"><i class='bx bx-cart-alt'></i></a></li>
