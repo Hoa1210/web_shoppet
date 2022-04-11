@@ -1,7 +1,5 @@
 <?php
-session_start();
-//unset($_SESSION['user']);
-//echo $_SESSION['user'];
+@session_start();
 ?>
 <!DOCTYPE html>
 <html dir="ltr">

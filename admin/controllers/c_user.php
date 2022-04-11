@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 include_once ("models/m_user.php");
 class c_user {
 
