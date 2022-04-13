@@ -116,7 +116,7 @@ class c_user {
 
             $this->saveLoginSession($ten_dang_nhap, $mat_khau);
 
-            if ($_SESSION['login']) {
+            if (isset($_SESSION['login'])) {
                 if(isset($_POST['remember'])){
                     setcookie("username",$ten_dang_nhap,time()+86400*7);
                     setcookie("password",$mat_khau,time()+86400*7);
