@@ -42,9 +42,11 @@ class m_checkout extends database {
     }
 
     public function add_information($id, $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email ) {
-        $sql = "INSERT INTO khach_hang VALUES (?,?,?,?,?,?)";
+        $sql = "UPDATE khach_hang 
+                SET ten_khach_hang = ?,ngay_sinh = ? ,dia_chi = ?, so_dien_thoai = ?, email = ? 
+                WHERE ma_kh = ?";
         $this->setQuery($sql);
-        return $this->execute(array( $id, $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email));
+        return $this->execute(array( $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email,$id));
     }
 }
 ?>

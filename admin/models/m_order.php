@@ -27,7 +27,11 @@ class m_order extends database {
 
     // lấy thông tin chi tiết hóa đơn
     public function select_order_details($ma_dh) {
-        $sql = "select san_pham.ten_sp, san_pham.hinh_anh, ct_don_hang.so_luong, san_pham.gia_ban from ct_don_hang inner join san_pham on ct_don_hang.ma_sp = san_pham.ma_sp where ct_don_hang.ma_dh = ?";
+        $sql = "select san_pham.ten_sp, san_pham.hinh_anh, ct_don_hang.so_luong, san_pham.gia_ban 
+                from ct_don_hang 
+                inner join san_pham 
+                on ct_don_hang.ma_sp = san_pham.ma_sp 
+                where ct_don_hang.ma_dh = ?";
         $this->setQuery($sql);
         return $this->loadAllRows(array($ma_dh));
     }

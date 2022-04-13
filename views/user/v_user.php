@@ -33,12 +33,12 @@
                         }?>
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap"  value="<?php echo $user;?>" placeholder="Username " required >
+                            <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap"  value="<?php echo $user;?>" placeholder="Username " maxlength="16" required >
 
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" id="mat_khau" name="mat_khau" value="<?php echo $pass;?>" placeholder="Password" required >
+                            <input type="password" class="form-control" id="mat_khau" name="mat_khau" value="<?php echo $pass;?>" placeholder="Password" maxlength="16" required >
 
                         </div>
                         <div class="row align-items-center">
@@ -72,7 +72,7 @@
                         <?php } unset($_SESSION['error_danger']);?>
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap" required placeholder="Username">
+                            <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap" maxlength="16" required placeholder="Username">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
@@ -80,7 +80,7 @@
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" id="mat_khau" name="mat_khau" required placeholder="Password">
+                            <input type="password" class="form-control" id="mat_khau" name="mat_khau" maxlength="16" required placeholder="Password">
                         </div>
                         <p class="description">The password should be at least eight characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ & )</p>
                         <button type="submit" name="btn_submit">Register</button>

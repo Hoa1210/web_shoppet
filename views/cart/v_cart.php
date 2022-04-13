@@ -68,6 +68,7 @@
                     </tbody>
                 </table>
             </div>
+            <?php if(isset($_SESSION['cart']) && !empty($_SESSION['cart'])) { ?>
             <div class="cart-buttons">
                 <div class="row align-items-center">
                     <div class="col-lg-7 col-sm-12 col-md-7">
@@ -92,6 +93,7 @@
                 </ul>
                 <input type="button" name="btn_checkout" onclick="location.href='check_out.php'"  class="default-btn" value="Proceed to Checkout">
             </div>
+            <?php }else{ echo " "; } ?>
         </form>
     </div>
 </div>
