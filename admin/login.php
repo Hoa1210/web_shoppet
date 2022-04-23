@@ -154,6 +154,4 @@
 </script>
 
 </body>
-// tạo model user
-//tạo controller user (Tạo phương thức login ( Xử lý submit biến $POST))
 </html>
