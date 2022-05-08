@@ -1,11 +1,11 @@
 <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h1>Order Details</h1>
+            <h1>Chi Tiết Đơn hàng</h1>
             <ul>
-                <li><a href="user.php">Profile</a></li>
-                <li><a href="order_history.php">Order Details</a></li>
-                <li>Order Details</li>
+                <li><a href="user.php">Trang Cá Nhân</a></li>
+                <li><a href="order_history.php">Lịch sử mua hàng</a></li>
+                <li>Chi Tiết Đơn hàng</li>
             </ul>
         </div>
     </div>
@@ -19,10 +19,10 @@
                     <thead>
                     <tr>
                         <th scope="col">STT</th>
-                        <th scope="col">Product Name</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Quanlity</th>
-                        <th scope="col">Total</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Hình ảnh</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Thành tiền</th>
                     </tr>
                     </thead>
                     <tbody>

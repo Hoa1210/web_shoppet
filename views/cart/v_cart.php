@@ -1,10 +1,10 @@
 <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h1>Cart</h1>
+            <h1>Giỏ Hàng</h1>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li>Cart</li>
+                <li><a href="index.php">Trang chủ</a></li>
+                <li>Giỏ hàng</li>
             </ul>
         </div>
     </div>
@@ -20,10 +20,10 @@
                     <tr>
                         <th scope="col"></th>
                         <th scope="col">STT</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Total</th>
+                        <th scope="col">Sản phẩm</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Thành tiền</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -63,7 +63,7 @@
                     }else {
                         $tongtien = 0;
                         ?>
-                        <td colspan="6"> <b> Không có sản phẩm nào trong giỏ hàng</b></td>
+                        <td colspan="6"> <b> Không Có Sản Phẩm Nào Trong Giỏ Hàng</b></td>
                     <?php } ?>
                     </tbody>
                 </table>
@@ -73,25 +73,25 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7 col-sm-12 col-md-7">
                         <div class="shopping-coupon-code">
-                            <input type="text" class="form-control" placeholder="Coupon code" name="coupon-code" id="coupon-code">
-                            <button type="submit">Apply Coupon</button>
+                            <input type="text" class="form-control" placeholder="Nhập mã giảm giá" name="coupon-code" id="coupon-code">
+                            <button type="submit">Áp Dụng</button>
                         </div>
                     </div>
                     <div class="col-lg-5 col-sm-12 col-md-5 text-end">
                         <!--                        <a href="" class="default-btn"><span>Update Cart</span></a>-->
-                        <input type="submit" class="default-btn"  name="btn_delete"   value="Delete all cart">
+                        <input type="submit" class="default-btn"  name="btn_delete"   value="Xóa Giỏ Hàng">
 
-                        <input type="submit" class="default-btn"  name="btn_update"  value="Update">
+                        <input type="submit" class="default-btn"  name="btn_update"  value="Cập Nhật">
                     </div>
                 </div>
             </div>
             <div class="cart-totals">
                 <ul>
-                    <li>Ship <span>0 VNĐ</span></li>
+                    <li>Phí Vận Chuyển : <span>0 VNĐ</span></li>
 <!--                    if(isset($_SESSION['tong'])) {echo number_format($_SESSION['tong']);} else {echo "0";}-->
-                    <li>Total <span><?php echo number_format($tongtien); ?> VNĐ</span></li>
+                    <li>Tổng Tiền : <span><?php echo number_format($tongtien); ?> VNĐ</span></li>
                 </ul>
-                <input type="button" name="btn_checkout" onclick="location.href='check_out.php'"  class="default-btn" value="Proceed to Checkout">
+                <input type="button" name="btn_checkout" onclick="location.href='check_out.php'"  class="default-btn" value="Mua Hàng">
             </div>
             <?php }else{ echo " "; } ?>
         </form>

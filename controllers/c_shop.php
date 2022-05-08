@@ -6,6 +6,8 @@ class c_shop {
     public function shop() {
         $m_product = new m_product();
         $product_add = $m_product->read_product();
+        $type = $m_product->read_type_product();
+
 
         $item_per_page = 8;
         $current_page = isset($_GET['page']) ? $_GET['page']: 1 ;
@@ -16,6 +18,8 @@ class c_shop {
         $product = $m_product->read_product_by_page($item_per_page, $offset);
 
         $item_per_page_new = sizeof($product) < 8 ? sizeof($product) : 8;
+
+        
 
         $view = "views/shop/v_shop.php";
         include ("templates/layout.php");

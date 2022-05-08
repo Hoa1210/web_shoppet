@@ -1,10 +1,10 @@
 <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h1>Order History</h1>
+            <h1>Lịch Sử Mua Hàng</h1>
             <ul>
-                <li><a href="user.php">Profile</a></li>
-                <li>Order History</li>
+                <li><a href="user.php">Trang Cá Nhân</a></li>
+                <li>Lịch Sử Mua Hàng</li>
             </ul>
         </div>
     </div>
@@ -19,11 +19,11 @@
                     <thead>
                     <tr>
                         <th scope="col">STT</th>
-                        <th scope="col">Order Id</th>
-                        <th scope="col">Total Money</th>
-                        <th scope="col">Order Address</th>
-                        <th scope="col">Order Date</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Mã đơn hàng</th>
+                        <th scope="col">Tổng tiền</th>
+                        <th scope="col">Địa chỉ</th>
+                        <th scope="col">Ngày đặt hàng</th>
+                        <th scope="col">Trạng thái</th>
                         <th scope="col"></th>
                     </tr>
                     </thead>
@@ -48,7 +48,7 @@
                             <?php }?>
                         </td>
                         <td>
-                            <a href="order_details.php?ma_dh=<?php echo $value->ma_dh;?>" class="default-btn"><span>Order Details</span></a>
+                            <a href="order_details.php?ma_dh=<?php echo $value->ma_dh;?>" class="default-btn"><span>Chi Tiết</span></a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

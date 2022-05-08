@@ -15,5 +15,13 @@ class m_product extends database {
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
+
+    // lấy thông tin danh mục sp trên database
+    public function read_type_product() {
+        $sql = "select * from loai_sp";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
+    }
+
 }
 ?>

@@ -1,10 +1,10 @@
 <div class="page-title-area">
     <div class="container">
         <div class="page-title-content">
-            <h1>About Us</h1>
+            <h1>Giới Thiệu</h1>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li>About Us</li>
+                <li><a href="index.php">Trang chủ</a></li>
+                <li>Giới thiệu</li>
             </ul>
         </div>
     </div>
@@ -21,9 +21,12 @@
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="about-text">
-                    <h2>The Story of Our Journey</h2>
-                    <span>Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Cras ultricies ligula sed magna dictum porta.</span>
-                    <p>We offer quality products at low prices every day. We have been in this business for most 20 years. We have been doing online shopping very confiden tly. Our customers like and trust us so much because of the quality of our site's products. Cras ultricies ligula sed magna dictum porta low prices every day.</p>
+                    <h2>Câu Chuyện Về Hành Trình Của Chúng Tôi</h2>
+                    <span>Không biết viết gì luôn á @@</span>
+                    <p>Chúng tôi cung cấp các sản phẩm chất lượng với giá thấp mỗi ngày. 
+                        Chúng tôi đã làm việc trong ngành này trong hầu hết 20 năm. 
+                        Chúng tôi đã mua sắm trực tuyến rất tâm sự . 
+                        Khách hàng của chúng tôi thích và tin tưởng chúng tôi rất nhiều vì chất lượng sản phẩm của trang web của chúng tôi.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-12">
@@ -42,25 +45,25 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div class="facility-box">
                     <img src="public/patoi/assets/img/icon/icon1.png" alt="icon">
-                    <h3>Best collection</h3>
+                    <h3>Sản phẩm chát lượng</h3>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div class="facility-box bg-fed3d1">
                     <img src="public/patoi/assets/img/icon/icon2.png" alt="icon">
-                    <h3>Fast delivery</h3>
+                    <h3>Giao hàng nhanh</h3>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div class="facility-box bg-a9d4d9">
                     <img src="public/patoi/assets/img/icon/icon3.png" alt="icon">
-                    <h3>24/7 customer support</h3>
+                    <h3>Hỗ trợ 24/7</h3>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div class="facility-box bg-fef2d1">
                     <img src="public/patoi/assets/img/icon/icon4.png" alt="icon">
-                    <h3>Secured payment</h3>
+                    <h3>Thanh toán an toàn</h3>
                 </div>
             </div>
         </div>
@@ -77,27 +80,27 @@
             <div class="col-lg-6 col-md-12">
                 <div class="feedback-slides owl-carousel owl-theme">
                     <div class="single-feedback-box">
-                        <p>“Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget consectetur sed convallis at tellus.”</p>
+                        <p>“Chất lượng sản phẩm quá tốt, chất lượng. Mua 1 được 2,3,4,5,..., 100.”</p>
                         <div class="client-info">
                             <img src="public/patoi/assets/img/user/user1.jpg" alt="user">
-                            <h3>Kelly J. Brown</h3>
+                            <h3>Lương Văn Hòa</h3>
                             <span>Manager</span>
                         </div>
                     </div>
                     <div class="single-feedback-box">
-                        <p>“Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget consectetur sed convallis at tellus.”</p>
+                        <p>“Giao hàng quá nhanh. Mùng 4 đặt hàng mà sáng mùng 5 đã nhận được hàng nhưng mà là mùng 5 tháng sau.”</p>
                         <div class="client-info">
                             <img src="public/patoi/assets/img/user/user2.jpg" alt="user">
-                            <h3>Sarah Taylor</h3>
+                            <h3>Ngô Bá Khá</h3>
                             <span>Developer</span>
                         </div>
                     </div>
                     <div class="single-feedback-box">
-                        <p>“Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget consectetur sed convallis at tellus.”</p>
+                        <p>“Đồ ăn khá ngon và hợp khẩu vị”</p>
                         <div class="client-info">
                             <img src="public/patoi/assets/img/user/user3.jpg" alt="user">
-                            <h3>James Andy</h3>
-                            <span>Designer</span>
+                            <h3>Nông Minh Hiếu</h3>
+                            <span>Business Analyst</span>
                         </div>
                     </div>
                 </div>
@@ -105,7 +108,7 @@
             <div class="col-lg-6 xol-md-12">
                 <div class="video-box">
                     <img src="public/patoi/assets/img/video.jpg" alt="video-image">
-                    <a href="https://www.youtube.com/watch?v=0O2aH4XLbto" class="popup-video"><i class='bx bx-play'></i></a>
+                    <a href="https://www.youtube.com/watch?v=6t-MjBazs3o" class="popup-video"><i class='bx bx-play'></i></a>
                 </div>
             </div>
         </div>
@@ -116,28 +119,28 @@
 <div class="team-area pb-75">
     <div class="container">
         <div class="section-title">
-            <h2>Meet Our Founders</h2>
+            <h2>Những Người Sáng Lập</h2>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="single-team-member">
                     <img src="public/patoi/assets/img/team/team1.jpg" alt="team-image">
-                    <h3>Anthony Hughes</h3>
-                    <span>Founder</span>
+                    <h3>Nông Minh Hiếu</h3>
+                    <span>Business Analyst</span>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="single-team-member">
                     <img src="public/patoi/assets/img/team/team2.jpg" alt="team-image">
-                    <h3>Elvira Hurley</h3>
+                    <h3>????</h3>
                     <span>CEO</span>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="single-team-member">
                     <img src="public/patoi/assets/img/team/team3.jpg" alt="team-image">
-                    <h3>Jeffrey Weldon</h3>
-                    <span>Director</span>
+                    <h3>Lương Văn Hòa</h3>
+                    <span>Developer</span>
                 </div>
             </div>
         </div>
@@ -148,7 +151,7 @@
 <div class="partners-area pb-100">
     <div class="container">
         <div class="section-title">
-            <h2>Our Partners</h2>
+            <h2>Đối Tác Của Chúng Tôi</h2>
         </div>
         <div class="partners-inner">
             <div class="row justify-content-center align-items-center">

@@ -7,8 +7,8 @@ class database{
     public function __construct() {
         try
         {
-            $this->pdo = new PDO('mysql:host=localhost; dbname=PHP0921E_Nhom4','PHP0921E_Nhom4','7tqrL4nXfF');
-//            $this->pdo = new PDO('mysql:host=localhost; dbname=PHP0921E_Nhom4','root','');
+//            $this->pdo = new PDO('mysql:host=localhost; dbname=PHP0921E_Nhom4','PHP0921E_Nhom4','7tqrL4nXfF');
+            $this->pdo = new PDO('mysql:host=localhost; dbname=PHP0921E_Nhom4','root','');
             $this->pdo->query('set names "utf8"');
         }
         catch(PDOException $ex )

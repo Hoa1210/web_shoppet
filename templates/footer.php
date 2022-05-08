@@ -7,49 +7,48 @@
                         <img src="public/patoi/assets/img/white-logo.png" alt="logo">
                     </a>
                     <ul class="footer-contact-info">
-                        <li><span>Hotline:</span> <a href="tel:12855">12855</a></li>
-                        <li><span>Tech support:</span> <a href="tel:+1514312-5678">+1 (514) 312-5678</a></li>
-                        <li><span>Email:</span> <a href="https://templates.envytheme.com/cdn-cgi/l/email-protection#1179747d7d7e516170657e783f727e7c"><span class="__cf_email__" data-cfemail="761e131a1a1936061702191f5815191b">[email&#160;protected]</span></a></li>
-                        <li><span>Address:</span> 1523 Cook Hill Road New Haven, CT</li>
+                        <li><span>Hotline:</span> <a href="tel:(+84) 357143496">0357143496</a></li>
+                        <li><span>Hỗ trợ kỹ thuật:</span> <a href="tel:(+84) 357143496">0357143496</a></li>
+                        <li><span>Email:</span> <a href="mailto:luonghoa1210@gmail.com">luonghoa1210@gmail.com</span></a></li>
+                        <li><span>Địa Chỉ:</span> Lai Xá, Hoài Đức, Hà Nội</li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-footer-widget pl-4">
-                    <h3>Information</h3>
+                    <h3>Thông tin</h3>
                     <ul class="custom-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="privacy-policy.html">Refund Policy</a></li>
-                        <li><a href="terms-conditions.html">Cookie Policy</a></li>
+                        <li><a href="about_us.php">Giới Thiệu</a></li>
+                        <li><a href="terms-conditions.html">Điều khoản & Điều kiện</a></li>
+                        <li><a href="privacy-policy.html">Chính sách bảo mật</a></li>
+                        <li><a href="privacy-policy.html">Chính sách hoàn tiền</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <h3>Customer service</h3>
+                    <h3>Dịch vụ khách hàng</h3>
                     <ul class="custom-links">
-                        <li><a href="profile-authentication.html">My Account</a></li>
-                        <li><a href="faq.html">FAQ's</a></li>
-                        <li><a href="cart.html">Order History</a></li>
-                        <li><a href="wishlist.html">Wishlist</a></li>
-                        <li><a href="terms-conditions.html">Delivery Information</a></li>
+                        <li><a href="user.php">Tài khoản</a></li>
+                        <li><a href="faq.php">FAQ's</a></li>
+                        <li><a href="order_history.php">Lịch sử mua hàng</a></li>
+                        <li><a href="wishlist.php">Danh sách yêu thích</a></li>
+                        <li><a href="terms-conditions.php">Thông tin giao hàng</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <h3>Subscribe to our newsletter!</h3>
-                    <p>Sign up for our mailing list to get the latest updates news & offers.</p>
+                    <h3>Đăng ký!</h3>
+                    <p>Đăng ký danh sách gửi thư của chúng tôi để nhận tin tức và ưu đãi cập nhật mới nhất. </p>
                     <form class="newsletter-form" data-toggle="validator">
-                        <input type="email" class="input-newsletter" placeholder="Your email address" name="EMAIL" required autocomplete="off">
+                        <input type="email" class="input-newsletter" placeholder="Địa chỉ email của bạn..." name="EMAIL" required autocomplete="off">
                         <button type="submit"><i class='bx bx-paper-plane'></i></button>
                         <div id="validator-newsletter" class="form-result"></div>
                     </form>
                     <div class="payment-types">
                         <div class="d-flex align-items-center">
-                            <span>We accept:</span>
+                            <span>Chúng tôi nhận:</span>
                             <ul>
                                 <li><img src="public/patoi/assets/img/payment/visa.png" alt="visa"></li>
                                 <li><img src="public/patoi/assets/img/payment/mc.png" alt="master-card"></li>
@@ -65,132 +64,66 @@
     </div>
     <div class="copyright-area">
         <div class="container">
-            <p>Copyright @2021 <span>Patoi</span>. Design & Developed by <a href="https://envytheme.com/">EnvyTheme</a></p>
+            <p>Copyright © 2022 <span>Patoi</span>. Design & Developed by <a> Lương Văn Hòa </a></p>
         </div>
     </div>
 </footer>
 
-<div class="go-top"><i class='bx bx-upvote'></i></div>
-
-<div class="productsFilterModal modal right fade" id="productsFilterModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            <div class="modal-body">
-                <aside class="widget-area">
-                    <div class="widget widget_categories">
-                        <h3 class="widget-title"><span>Categories</span></h3>
-                        <ul>
-                            <li><a href="shop-left-sidebar.html">Business</a></li>
-                            <li><a href="shop-left-sidebar.html">Privacy</a></li>
-                            <li><a href="shop-left-sidebar.html">Technology</a></li>
-                            <li><a href="shop-left-sidebar.html">Tips</a></li>
-                            <li><a href="shop-left-sidebar.html">Log in</a></li>
-                            <li><a href="shop-left-sidebar.html">Uncategorized</a></li>
-                        </ul>
-                    </div>
-                    <div class="widget widget_price_filter">
-                        <h3 class="widget-title"><span>Filter by Price</span></h3>
-                        <div class="collection_filter_by_price">
-                            <input class="js-range-of-price" type="text" data-min="0" data-max="1055" name="filter_by_price" data-step="10">
+<div class="modal fade productsQuickView" id="productsQuickView" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="image">
+                                <img src="public/patoi/assets/img/products/products1.jpg" alt="image">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="content">
+                                <h3><a href="products-details.html">Pet Brash</a></h3>
+                                <div class="price">
+                                    <span class="new-price">$150.00</span>
+                                    <span class="old-price">$200.00</span>
+                                </div>
+                                <div class="rating">
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                </div>
+                                <p>Nemo malesuada animi consectetur, cras consectetuer laborum tenetur, cum, lacus nemo
+                                    imperdiet facilisis aute metus lorem.</p>
+                                <div class="products-add-to-cart">
+                                    <div class="input-counter">
+                                        <span class="minus-btn"><i class='bx bx-minus'></i></span>
+                                        <input type="text" value="1">
+                                        <span class="plus-btn"><i class='bx bx-plus'></i></span>
+                                    </div>
+                                    <button type="submit" class="default-btn"><span>Add to Cart</span></button>
+                                </div>
+                                <a href="wishlist.html" class="add-to-wishlist"><i class='bx bx-heart'></i> Add to
+                                    wishlist</a>
+                                <ul class="products-info">
+                                    <li><span>SKU:</span> 007</li>
+                                    <li><span>Categories:</span> <a href="shop-grid.html">Brash</a></li>
+                                    <li><span>Availability:</span> In stock (7 items)</li>
+                                    <li><span>Tag:</span> Accessories</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="widget widget_patoi_posts_thumb">
-                        <h3 class="widget-title"><span>Our Best Sellers</span></h3>
-                        <article class="item">
-                            <a href="products-details.html" class="thumb">
-                                <img src="public/patoi/assets/img/products/products1.jpg" alt="blog-image">
-                            </a>
-                            <div class="info">
-                                <h4 class="title"><a href="products-details.html">Pet brash</a></h4>
-                                <div class="star-rating">
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                </div>
-                                <span class="price">$150.00</span>
-                            </div>
-                        </article>
-                        <article class="item">
-                            <a href="products-details.html" class="thumb">
-                                <img src="public/patoi/assets/img/products/products2.jpg" alt="blog-image">
-                            </a>
-                            <div class="info">
-                                <h4 class="title"><a href="products-details.html">Automatic dog blue leash</a></h4>
-                                <div class="star-rating">
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                </div>
-                                <span class="price">$150.00</span>
-                            </div>
-                        </article>
-                        <article class="item">
-                            <a href="products-details.html" class="thumb">
-                                <img src="public/patoi/assets/img/products/products3.jpg" alt="blog-image">
-                            </a>
-                            <div class="info">
-                                <h4 class="title"><a href="products-details.html">Cat toilet bowl</a></h4>
-                                <div class="star-rating">
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                </div>
-                                <span class="price">$150.00</span>
-                            </div>
-                        </article>
-                        <article class="item">
-                            <a href="products-details.html" class="thumb">
-                                <img src="public/patoi/assets/img/products/products4.jpg" alt="blog-image">
-                            </a>
-                            <div class="info">
-                                <h4 class="title"><a href="products-details.html">Bowl with rubber toy</a></h4>
-                                <div class="star-rating">
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                    <i class='bx bxs-star'></i>
-                                </div>
-                                <span class="price">$150.00</span>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="widget widget_tag_cloud">
-                        <h3 class="widget-title"><span>Tags</span></h3>
-                        <div class="tagcloud">
-                            <a href="shop-left-sidebar.html">Advertisment</a>
-                            <a href="shop-left-sidebar.html">Business</a>
-                            <a href="shop-left-sidebar.html">Life</a>
-                            <a href="shop-left-sidebar.html">Lifestyle</a>
-                            <a href="shop-left-sidebar.html">Fashion</a>
-                            <a href="shop-left-sidebar.html">Ads</a>
-                            <a href="shop-left-sidebar.html">Advertisment</a>
-                        </div>
-                    </div>
-                    <div class="widget widget_follow_us">
-                        <h3 class="widget-title"><span>Follow Us</span></h3>
-                        <ul>
-                            <li><a href="#" target="_blank">Facebook</a></li>
-                            <li><a href="#" target="_blank">Twitter</a></li>
-                            <li><a href="#" target="_blank">Instagram</a></li>
-                            <li><a href="#" target="_blank">Pinterest</a></li>
-                            <li><a href="#" target="_blank">Linkedin</a></li>
-                        </ul>
-                    </div>
-                </aside>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>-->
+<div class="go-top"><i class='bx bx-upvote'></i></div>
+
+
+<!-- <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
 <script src="public/patoi/assets/js/jquery.min.js"></script>
 <script src="public/patoi/assets/js/bootstrap.bundle.min.js"></script>
 <script src="public/patoi/assets/js/magnific-popup.min.js"></script>

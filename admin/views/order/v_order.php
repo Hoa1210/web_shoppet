@@ -88,7 +88,7 @@
                                             <?php echo $trang_thai; ?>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_order.php?ma_dh=<?php echo $value->ma_dh;?>'">Xóa</button>
+
                                             <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='order_details.php?ma_dh=<?php echo $value->ma_dh;?>'">Chi tiết</button>
                                             <button type="button" class="btn btn-cyan btn-sm" onclick="window.location.href='update_order.php?ma_dh=<?php echo $value->ma_dh;?>'">Cập nhật</button>
                                         </td>

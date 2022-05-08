@@ -3,7 +3,7 @@
         <div class="page-title-content">
             <h1>Blog</h1>
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="index.php">Trang Chủ</a></li>
                 <li>Blog</li>
             </ul>
         </div>
@@ -22,9 +22,9 @@
                         </a>
                     </div>
                     <div class="content">
-<span class="date">
-<span>10 Aug</span> 2021
-</span>
+                        <span class="date">
+                            <span>10 Aug</span> 2021
+                        </span>
                         <a href="v_blog.php" class="category">Training</a>
                         <h3><a href="blog-details.html">Properly a pet training guide</a></h3>
                         <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus magna justo, lacinia eget consectetur.</p>
@@ -39,9 +39,9 @@
                         </a>
                     </div>
                     <div class="content">
-<span class="date">
- <span>11 Aug</span> 2021
-</span>
+                        <span class="date">
+                            <span>11 Aug</span> 2021
+                        </span>
                         <a href="v_blog.php" class="category">Behaviour</a>
                         <h3><a href="blog-details.html">The exact rules of how to travel with pets</a></h3>
                         <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus magna justo, lacinia eget consectetur.</p>
@@ -56,9 +56,9 @@
                         </a>
                     </div>
                     <div class="content">
-<span class="date">
-<span>12 Aug</span> 2021
-</span>
+                        <span class="date">
+                            <span>12 Aug</span> 2021
+                        </span>
                         <a href="v_blog.php" class="category">Solutions</a>
                         <h3><a href="blog-details.html">Creating proper guidelines for pet food </a></h3>
                         <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus magna justo, lacinia eget consectetur.</p>
@@ -73,9 +73,9 @@
                         </a>
                     </div>
                     <div class="content">
-<span class="date">
-<span>11 Aug</span> 2021
-</span>
+                        <span class="date">
+                            <span>11 Aug</span> 2021
+                        </span>
                         <a href="v_blog.php" class="category">Browser</a>
                         <h3><a href="blog-details.html">Patch browser bug to prevent tracking</a></h3>
                         <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus magna justo, lacinia eget consectetur.</p>
@@ -90,9 +90,9 @@
                         </a>
                     </div>
                     <div class="content">
-<span class="date">
-<span>10 Aug</span> 2021
-</span>
+                        <span class="date">
+                            <span>10 Aug</span> 2021
+                        </span>
                         <a href="v_blog.php" class="category">Cicadas</a>
                         <h3><a href="blog-details.html">Are cicadas dangerous for pets to eat?</a></h3>
                         <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus magna justo, lacinia eget consectetur.</p>
@@ -107,9 +107,9 @@
                         </a>
                     </div>
                     <div class="content">
-<span class="date">
-<span>09 Aug</span> 2021
-</span>
+                        <span class="date">
+                            <span>09 Aug</span> 2021
+                        </span>
                         <a href="blog-grid.html" class="category">Pet</a>
                         <h3><a href="blog-details.html">Pet trends to watch in 2021</a></h3>
                         <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus magna justo, lacinia eget consectetur.</p>
