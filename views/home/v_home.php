@@ -6,7 +6,7 @@
                     <span class="sub-title">Chào mừng đến với Patoi</span>
                     <h1>Chúng tôi cung cấp các sản phẩm thú cưng tốt nhất</h1>
                     <p>Giảm giá 100% cho đơn hàng đầu tiên của bạn</p>
-                    <a href="shop.php" class="default-btn"><span>Xem ngay</span></a>
+                    <a href="shop.php?shop" class="default-btn"><span>Xem ngay</span></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
@@ -26,21 +26,21 @@
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6">
                 <div class="single-offer-box">
-                    <a href="shop.php" class="d-block">
+                    <a href="shop.php?shop" class="d-block">
                         <img src="public/patoi/assets/img/offer/offer1.jpg" alt="offer-image">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="single-offer-box">
-                    <a href="shop.php" class="d-block">
+                    <a href="shop.php?shop" class="d-block">
                         <img src="public/patoi/assets/img/offer/offer2.jpg" alt="offer-image">
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="single-offer-box">
-                    <a href="shop.php" class="d-block">
+                    <a href="shop.php?shop" class="d-block">
                         <img src="public/patoi/assets/img/offer/offer3.jpg" alt="offer-image">
                     </a>
                 </div>
@@ -103,235 +103,56 @@
             <h2>Sản Phẩm</h2>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block">
-                            <img src="public/patoi/assets/img/products/products1.jpg" alt="products-image">
-                        </a>
-                        <ul class="products-button">
-                            <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                            <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                            <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <h3><a href="products-details.html">Pet brash</a></h3>
-                        <div class="price">
-                            <span class="new-price">$35.00</span>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block">
-                            <img src="public/patoi/assets/img/products/products2.jpg" alt="products-image">
-                        </a>
-                        <span class="hot">Hot!</span>
-                        <ul class="products-button">
-                            <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                            <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                            <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <h3><a href="products-details.html">Automatic dog blue leash</a></h3>
-                        <div class="price">
-                            <span class="new-price">$75.00</span>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star-half'></i>
+            <?php foreach ($product as $key => $value) :
+                if ($key < 8) :
+            ?>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-products-box">
+                            <div class="image">
+                                <a   onclick="window.location.href='products_details.php?action=add1&&ma_sp=<?php echo $value->ma_sp; ?>'" class="d-block">
+                                    <img   src="admin/public/imageproduct/<?php echo $value->hinh_anh ?>" alt="products-image">
+                                </a>
+                                <?php
+                                if ($value->so_luong == 0) {
+                                    $css = "sold";
+                                    $tt = "Sold!";
+                                } else {
+                                    if ($value->trang_thai_sp == 0) {
+                                        $css = "sold";
+                                        $tt = "Sold!";
+                                    } else {
+                                        $css = "";
+                                        $tt = "";
+                                    }
+                                }
+                                ?>
+                                <span class="<?php echo $css; ?>"><?php echo $tt; ?></span>
+                                <ul class="products-button">
+                                    <li><a onclick="window.location.href='cart.php?ma_sp=<?php echo $value->ma_sp; ?>'"><i class='bx bx-cart-alt'></i></a></li>
+                                    <!--                            <li><a href="wishlist.php"><i class='bx bx-heart'></i></a></li>-->
+                                    <!--                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>-->
+                                    <li><a onclick="window.location.href='products_details.php?ma_sp=<?php echo $value->ma_sp; ?>'"><i class='bx bx-link-alt'></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="content">
+                                <h3><a onclick="window.location.href='products_details.php?ma_sp=<?php echo $value->ma_sp; ?>'"><?php echo $value->ten_sp ?></a></h3>
+                                <div class="price">
+                                    <span class="new-price"><?php echo number_format($value->gia_ban) ?> VND</span>
+                                </div>
+                                <div class="rating">
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block">
-                            <img src="public/patoi/assets/img/products/products3.jpg" alt="products-image">
-                        </a>
-                        <ul class="products-button">
-                            <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                            <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                            <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <h3><a href="products-details.html">Cat toilet bowl</a></h3>
-                        <div class="price">
-                            <span class="new-price">$49.00</span>
-                            <span class="old-price">$55.00</span>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block">
-                            <img src="public/patoi/assets/img/products/products4.jpg" alt="products-image">
-                        </a>
-                        <span class="on-sale">On Sale!</span>
-                        <ul class="products-button">
-                            <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                            <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                            <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <h3><a href="products-details.html">Bowl with rubber toy</a></h3>
-                        <div class="price">
-                            <span class="new-price">$60.00</span>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block">
-                            <img src="public/patoi/assets/img/products/products5.jpg" alt="products-image">
-                        </a>
-                        <span class="on-sale">On Sale!</span>
-                        <ul class="products-button">
-                            <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                            <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                            <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <h3><a href="products-details.html">Stack pet collars</a></h3>
-                        <div class="price">
-                            <span class="new-price">$99.00</span>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block">
-                            <img src="public/patoi/assets/img/products/products6.jpg" alt="products-image">
-                        </a>
-                        <ul class="products-button">
-                            <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                            <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                            <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <h3><a href="products-details.html">Dog toy</a></h3>
-                        <div class="price">
-                            <span class="new-price">$15.00</span>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block">
-                            <img src="public/patoi/assets/img/products/products7.jpg" alt="products-image">
-                        </a>
-                        <ul class="products-button">
-                            <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                            <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                            <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <h3><a href="products-details.html">Plastic muzzle</a></h3>
-                        <div class="price">
-                            <span class="new-price">$29.00</span>
-                            <span class="old-price">$35.00</span>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block">
-                            <img src="public/patoi/assets/img/products/products8.jpg" alt="products-image">
-                        </a>
-                        <ul class="products-button">
-                            <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                            <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                            <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <h3><a href="products-details.html">Pet toy</a></h3>
-                        <div class="price">
-                            <span class="new-price">$25.00</span>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <?php else : echo "  ";
+                endif;
+            endforeach; ?>
         </div>
     </div>
 </div>
@@ -365,139 +186,53 @@
             <h2>Bán Chạy Nhất</h2>
         </div>
         <div class="products-slides owl-carousel owl-theme">
-            <div class="single-products-box">
-                <div class="image">
-                    <a href="products-details.html" class="d-block">
-                        <img src="public/patoi/assets/img/products/products9.jpg" alt="products-image">
-                    </a>
-                    <ul class="products-button">
-                        <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                        <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                        <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                    </ul>
-                    <div class="new">New!</div>
-                </div>
-                <div class="content">
-                    <h3><a href="products-details.html">Pet chair</a></h3>
-                    <div class="price">
-                        <span class="new-price">$150.00</span>
+            <?php foreach ($product as $key => $value) :
+                if ($key < 6) :
+            ?>
+                    <div class="single-products-box">
+                        <div class="image">
+                            <a   onclick="window.location.href='products_details.php?action=add1&&ma_sp=<?php echo $value->ma_sp; ?>'" class="d-block">
+                                <img   src="admin/public/imageproduct/<?php echo $value->hinh_anh ?>" alt="products-image">
+                            </a>
+                            <?php
+                            if ($value->so_luong == 0) {
+                                $css = "sold";
+                                $tt = "Sold!";
+                            } else {
+                                if ($value->trang_thai_sp == 0) {
+                                    $css = "sold";
+                                    $tt = "Sold!";
+                                } else {
+                                    $css = "";
+                                    $tt = "";
+                                }
+                            }
+                            ?>
+                            <span class="<?php echo $css; ?>"><?php echo $tt; ?></span>
+                            <ul class="products-button">
+                                <li><a onclick="window.location.href='cart.php?ma_sp=<?php echo $value->ma_sp; ?>'"><i class='bx bx-cart-alt'></i></a></li>
+                                <!--                            <li><a href="wishlist.php"><i class='bx bx-heart'></i></a></li>-->
+                                <!--                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>-->
+                                <li><a onclick="window.location.href='products_details.php?ma_sp=<?php echo $value->ma_sp; ?>'"><i class='bx bx-link-alt'></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h3><a onclick="window.location.href='products_details.php?ma_sp=<?php echo $value->ma_sp; ?>'"><?php echo $value->ten_sp ?></a></h3>
+                            <div class="price">
+                                <span class="new-price"><?php echo number_format($value->gia_ban) ?> VND</span>
+                            </div>
+                            <div class="rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="rating">
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                    </div>
-                </div>
-            </div>
-            <div class="single-products-box">
-                <div class="image">
-                    <a href="products-details.html" class="d-block">
-                        <img src="public/patoi/assets/img/products/products10.jpg" alt="products-image">
-                    </a>
-                    <ul class="products-button">
-                        <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                        <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                        <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                    </ul>
-                </div>
-                <div class="content">
-                    <h3><a href="products-details.html">Pink ceramic cat bowl</a></h3>
-                    <div class="price">
-                        <span class="new-price">$39.00</span>
-                    </div>
-                    <div class="rating">
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                    </div>
-                </div>
-            </div>
-            <div class="single-products-box">
-                <div class="image">
-                    <a href="products-details.html" class="d-block">
-                        <img src="public/patoi/assets/img/products/products11.jpg" alt="products-image">
-                    </a>
-                    <ul class="products-button">
-                        <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                        <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                        <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                    </ul>
-                    <span class="sold">Sold!</span>
-                </div>
-                <div class="content">
-                    <h3><a href="products-details.html">Red dog bed</a></h3>
-                    <div class="price">
-                        <span class="new-price">$125.00</span>
-                        <span class="old-price">$145.00</span>
-                    </div>
-                    <div class="rating">
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star-half'></i>
-                        <i class='bx bx-star'></i>
-                    </div>
-                </div>
-            </div>
-            <div class="single-products-box">
-                <div class="image">
-                    <a href="products-details.html" class="d-block">
-                        <img src="public/patoi/assets/img/products/products12.jpg" alt="products-image">
-                    </a>
-                    <ul class="products-button">
-                        <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                        <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                        <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                    </ul>
-                </div>
-                <div class="content">
-                    <h3><a href="products-details.html">Pet carrier</a></h3>
-                    <div class="price">
-                        <span class="new-price">$39.00</span>
-                    </div>
-                    <div class="rating">
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star-half'></i>
-                    </div>
-                </div>
-            </div>
-            <div class="single-products-box">
-                <div class="image">
-                    <a href="products-details.html" class="d-block">
-                        <img src="public/patoi/assets/img/products/products1.jpg" alt="products-image">
-                    </a>
-                    <ul class="products-button">
-                        <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                        <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                        <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                    </ul>
-                </div>
-                <div class="content">
-                    <h3><a href="products-details.html">Pet brash</a></h3>
-                    <div class="price">
-                        <span class="new-price">$35.00</span>
-                    </div>
-                    <div class="rating">
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                    </div>
-                </div>
-            </div>
+            <?php else : echo "  ";
+                endif;
+            endforeach; ?>
         </div>
     </div>
 </div>
@@ -602,70 +337,62 @@
                                     <div><span class="counter-minutes"></span> Minutes</div>
                                     <div><span class="counter-seconds"></span> Seconds</div>
                                 </div>
-                                <a href="shop-grid.html" class="default-btn"><span>Shop Now</span></a>
+                                <a href="shop-grid.html" class="default-btn"><span>Xem Ngay</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block">
-                            <img src="public/patoi/assets/img/products/products13.jpg" alt="products-image">
-                        </a>
-                        <ul class="products-button">
-                            <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                            <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                            <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <h3><a href="products-details.html">Premium beef rice</a></h3>
-                        <div class="price">
-                            <span class="new-price">$139.00</span>
-                            <span class="old-price">$200.00</span>
+            <?php foreach ($product as $key => $value) : 
+            if($key < 2) :
+            ?>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="single-products-box">
+                        <div class="image">
+                            <a   onclick="window.location.href='products_details.php?action=add1&&ma_sp=<?php echo $value->ma_sp; ?>'" class="d-block">
+                                <img   src="admin/public/imageproduct/<?php echo $value->hinh_anh ?>" alt="products-image">
+                            </a>
+                            <?php
+                            if ($value->so_luong == 0) {
+                                $css = "sold";
+                                $tt = "Sold!";
+                            } else {
+                                if ($value->trang_thai_sp == 0) {
+                                    $css = "sold";
+                                    $tt = "Sold!";
+                                } else {
+                                    $css = "";
+                                    $tt = "";
+                                }
+                            }
+                            ?>
+                            <span class="<?php echo $css; ?>"><?php echo $tt; ?></span>
+                            <ul class="products-button">
+                                <li><a onclick="window.location.href='cart.php?ma_sp=<?php echo $value->ma_sp; ?>'"><i class='bx bx-cart-alt'></i></a></li>
+                                <!--                            <li><a href="wishlist.php"><i class='bx bx-heart'></i></a></li>-->
+                                <!--                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>-->
+                                <li><a onclick="window.location.href='products_details.php?ma_sp=<?php echo $value->ma_sp; ?>'"><i class='bx bx-link-alt'></i></a></li>
+                            </ul>
                         </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block">
-                            <img src="public/patoi/assets/img/products/products14.jpg" alt="products-image">
-                        </a>
-                        <ul class="products-button">
-                            <li><a href="cart.html"><i class='bx bx-cart-alt'></i></a></li>
-                            <li><a href="wishlist.html"><i class='bx bx-heart'></i></a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i class='bx bx-show'></i></a></li>
-                            <li><a href="products-details.html"><i class='bx bx-link-alt'></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <h3><a href="products-details.html">Premium pork rice</a></h3>
-                        <div class="price">
-                            <span class="new-price">$100.00</span>
-                            <span class="old-price">$120.00</span>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
+                        <div class="content">
+                            <h3><a onclick="window.location.href='products_details.php?ma_sp=<?php echo $value->ma_sp; ?>'"><?php echo $value->ten_sp ?></a></h3>
+                            <div class="price">
+                                <span class="new-price"><?php echo number_format($value->gia_ban) ?> VND</span>
+                            </div>
+                            <div class="rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
+            <?php else: echo "  ";
+            endif;
+        endforeach; ?>
         </div>
     </div>
 </div>

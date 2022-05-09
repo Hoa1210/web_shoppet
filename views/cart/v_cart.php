@@ -78,10 +78,11 @@
                         </div>
                     </div>
                     <div class="col-lg-5 col-sm-12 col-md-5 text-end">
-                        <!--                        <a href="" class="default-btn"><span>Update Cart</span></a>-->
-                        <input type="submit" class="default-btn"  name="btn_delete"   value="Xóa Giỏ Hàng">
+                        <!-- <input type="submit" class="default-btn"  name="btn_delete"   value="Xóa Giỏ Hàng"> -->
+                        <button type="submit" style="width: auto" name="btn_delete" class="default-btn"><span>Xóa Giỏ Hàng</span></button>
 
-                        <input type="submit" class="default-btn"  name="btn_update"  value="Cập Nhật">
+                        <!-- <input type="submit" class="default-btn"  name="btn_update"  value="Cập Nhật"> -->
+                        <button type="submit" style="width: auto" name="btn_update" class="default-btn"><span>Cập Nhật</span></button>
                     </div>
                 </div>
             </div>
@@ -91,7 +92,8 @@
 <!--                    if(isset($_SESSION['tong'])) {echo number_format($_SESSION['tong']);} else {echo "0";}-->
                     <li>Tổng Tiền : <span><?php echo number_format($tongtien); ?> VNĐ</span></li>
                 </ul>
-                <input type="button" name="btn_checkout" onclick="location.href='check_out.php'"  class="default-btn" value="Mua Hàng">
+                <!-- <input type="button" name="btn_checkout" onclick="location.href='check_out.php'"  class="default-btn" value="Mua Hàng"> -->
+                <button type="button" name="btn_checkout" onclick="location.href='check_out.php'"  class="default-btn"><span>Mua Hàng</span></button>
             </div>
             <?php }else{ echo " "; } ?>
         </form>

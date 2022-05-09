@@ -1,4 +1,5 @@
 <?php
+
 class c_contact {
     public function contact()
     {
@@ -6,3 +7,4 @@ class c_contact {
         include ("templates/layout.php");
     }
 }
+?>

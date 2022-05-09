@@ -1,3 +1,9 @@
+<?php 
+// kiểm tra nếu chưa chạy session_start() thì sẽ chạy session_start()
+if ((function_exists('session_status') && session_status() !== PHP_SESSION_ACTIVE) || !session_id()) {
+session_start();
+}
+?>
 <body>
 
     <div class="top-header-area">
@@ -67,7 +73,14 @@
                             <div class="d-flex align-items-center">
                                 <ul>
                                     <li><a href="user.php?user"><i class='bx bx-user-circle'></i></a></li>
-                                    <li><a href="cart.php"><i class='bx bx-cart'></i></a></li>
+                                    <?php if(!empty($_SESSION['cart'])) :
+                                        $so = sizeof($_SESSION['cart']);
+                                        $css = " ";
+                                    else:
+                                    $so = 0;
+                                    $css = "display: none;";
+                                    endif;?>
+                                    <li><a href="cart.php"><i class='bx bx-cart'></i><span style="<?php echo $css;?> padding: 2px 6px; font-weight: 500; font-size: 14px; background-color: #f87171; border-radius: 50%;"><?php echo $so;?></span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -89,7 +102,7 @@
                         <div class="others-option">
                             <ul>
                                 <li><a href="profile-authentication.php"><i class='bx bx-user-circle'></i></a></li>
-                                <li><a href="cart.php"><i class='bx bx-cart'></i></a></li>
+                                <li><a href="cart.php"><i class='bx bx-cart'></i><span style=" padding: 2px 6px; font-weight: 500; font-size: 14px; background-color: red; border-radius: 50%;">1</span></a></li>
                             </ul>
                         </div>
                     </div>

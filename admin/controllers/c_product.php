@@ -38,8 +38,19 @@ class c_product{
                 $result = $m_banner->insert_product($ma_sp, $ma_loai_sp, $ten_sp, $hinh_sp, $so_luong, $gia_ban, $thong_tin_them, $trang_thai);
                 if ($result) {
                     if ($hinh_sp != "") {
-                        //di chuyển hình vào thư mục source
-                        move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "public/imageproduct/" . $hinh_sp);
+
+                        // kiểm tra xem đã có forder imageproduct chưa
+                        $filename = "public/imageproduct";
+
+                        if(file_exists( $filename )):
+                            //nếu chưa thì tạo forder mới
+                            mkdir( $filename ,  0777 ,  TRUE  );
+                            move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "public/imageproduct/" . $hinh_sp);
+
+                        else:
+                            //di chuyển hình vào thư mục source
+                            move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "public/imageproduct/" . $hinh_sp);
+                        endif;
                     }
                     $_SESSION['alert_add_sp'] = "Thêm sản phẩm có mã là " . $ma_sp . " thành công!!";
                 }
@@ -83,8 +94,16 @@ class c_product{
 
                 if ($result) {
                     if ($_FILES['f_hinh_anh']['error'] == 0) {
-                        //di chuyển hình vào thư mục source
-                        move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "public/imageproduct/".$hinh_sp);
+                        // kiểm tra xem đã có ảnh đấy trong file chưa
+                        if(file_exists( $_FILES['f_hinh_anh']['name'] )){
+                            // nếu có thì xóa ảnh rồi thêm ảnh vào
+                            unlink("public/imageproduct/".$_FILES['f_hinh_anh']['name']);
+                            move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "public/imageproduct/".$hinh_sp);
+                        }else{
+                            //di chuyển hình vào thư mục source
+                            move_uploaded_file($_FILES['f_hinh_anh']['tmp_name'], "public/imageproduct/".$hinh_sp);
+                        }
+                        
                     }
                     $_SESSION['alert_product'] = "Sửa sản phẩm có mã là ".$ma_sp." thành công!!";
                     header("location:list_product.php");
@@ -105,9 +124,11 @@ class c_product{
             $ma_sp = $_GET['ma_sp'];
 
             $m_product = new m_product();
+            $product = $m_product->select_product_by_id_product($ma_sp);
             $delete = $m_product->delete_product($ma_sp);
             if($delete)
             {
+                unlink("public/imageproduct/".$m_product->hinh_anh);
                 $_SESSION['alert_product'] = "Xóa sản phẩm có mã là ".$ma_sp." thành công!!";
             }else{
                 $_SESSION['alert_err_product'] = "Xóa sản phẩm có mã là ".$ma_sp." thành công!!";

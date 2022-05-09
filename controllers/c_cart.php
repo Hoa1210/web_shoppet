@@ -1,6 +1,7 @@
 <?php
 
 include ("models/m_cart.php");
+@session_start();
 class c_cart
 {
     public function cart()
@@ -41,7 +42,7 @@ class c_cart
                     ];
 
                     // tính tổng tiền của từng sp
-//                    $_SESSION['cart'][$ma_sp]['tt'] = $_SESSION['cart'][$ma_sp]['so_luong'] * $_SESSION['cart'][$ma_sp]['gia_ban'];
+                    //  $_SESSION['cart'][$ma_sp]['tt'] = $_SESSION['cart'][$ma_sp]['so_luong'] * $_SESSION['cart'][$ma_sp]['gia_ban'];
 
                     header("location:cart.php");
                 }else{
@@ -61,7 +62,6 @@ class c_cart
                     }
                 endforeach;
             }
-
     }
 
     // xóa toàn bộ giỏ hàng

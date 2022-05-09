@@ -1,4 +1,5 @@
 <?php
+
 class c_about_us {
 
     public function about() {

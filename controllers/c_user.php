@@ -124,7 +124,7 @@ class c_user {
                     setcookie("username", "", time()-86400*7);
                     setcookie("password", "", time()-86400*7);
                 }
-                echo "<script>location.href = 'index.php';</script>";
+                echo "<script>location.href = 'index.php?index';</script>";
             }
         }
     }
