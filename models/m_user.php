@@ -18,7 +18,7 @@ class m_user extends database {
 
     //    kiem tra email  xem da co nguoi dnag ký chua
     public function check_email($email) {
-        $sql = "select * from nguoi_dung where email = ?";
+        $sql = "SELECT * from nguoi_dung where email = ?";
         $this->setQuery($sql);
         return $this->loadAllRows(array($email));
     }
@@ -31,25 +31,25 @@ class m_user extends database {
 
 //    lay thong tin khach hang
     public function read_information_user($id_user){
-        $sql = "select * from khach_hang where ma_kh = ?";
+        $sql = "SELECT * FROM khach_hang WHERE ma_kh = ?";
         $this->setQuery($sql);
         return $this->loadRow(array($id_user));
     }
 
 //    sua thong tin khach hang
-    public function edit_information_user( $id,$ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email) {
+    public function edit_information_user( $id,$ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email, $gioi_tinh) {
         $sql = "UPDATE khach_hang 
-                SET ten_khach_hang = ?,ngay_sinh = ? ,dia_chi = ?, so_dien_thoai = ?, email = ? 
+                SET ten_khach_hang = ?,ngay_sinh = ? ,dia_chi = ?, so_dien_thoai = ?, email = ? , gioi_tinh = ?
                 WHERE ma_kh = ?";
         $this->setQuery($sql);
-        return $this->execute(array( $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email, $id));
+        return $this->execute(array( $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email, $gioi_tinh, $id));
     }
 
-    //    them thong tin khach hang
-    public function add_information_user($id, $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email ) {
-        $sql = "INSERT INTO khach_hang VALUES (?,?,?,?,?,?)";
+    //   tạo id khach voi email khi dnag nhap
+    public function add_information_user($id, $email ) {
+        $sql = "INSERT INTO khach_hang VALUES (?,'','','','',?,'')";
         $this->setQuery($sql);
-        return $this->execute(array( $id, $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email));
+        return $this->execute(array( $id,  $email));
     }
 }
 ?>

@@ -11,57 +11,34 @@ class c_user {
     public function profile() {
 
         $id_user = $_SESSION['id_user'];
+        $email_user = $_SESSION['email'];
         $info = new m_user();
         $profile = $info->read_information_user($id_user);
-
-        $view = "views/profile/v_show_profile.php";
-        include ("templates/layout.php");
-
-    }
-
-    public function add_profile() {
-        if(isset($_POST['btn_information'])) {
-            $id = $_SESSION['id_user'];
-            $ten_khach_hang = $_POST['name'];
-            $ngay_sinh = $_POST['date'];
-            $dia_chi = $_POST['address'];
-            $so_dien_thoai = $_POST['phone'];
-            $email = $_POST['email'];
-
-            $information = new m_user();
-            $result1 = $information->add_information_user($id, $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email);
-
-            if($result1) {
-                echo "<script>window.location='user.php'</script>";
-            }
+        if(!$profile) {
+            $add_information =  $info->add_information_user($id_user, $email_user);
         }
-        $view = "views/profile/v_add_profile.php";
+        
+        $view = "views/profile/v_profile.php";
         include ("templates/layout.php");
+
     }
 
-    public function edit_information() {
-        $id_user = $_SESSION['id_user'];
-        $info = new m_user();
-        $profile = $info->read_information_user($id_user);
-
-        $view = "views/profile/v_edit_profile.php";
-        include ("templates/layout.php");
-    }
-
-    public function edit_information_user() {
+    public function information_user() {
         if(isset($_POST['btn_information'])) {
             $id = $_SESSION['id_user'];
             $ten_khach_hang = $_POST['name'];
             $ngay_sinh = $_POST['date'];
             $dia_chi = $_POST['address'];
+            $gioi_tinh = $_POST['gender'];
             $so_dien_thoai = $_POST['phone'];
             $email = $_POST['email'];
 
             $information = new m_user();
-            $result1 = $information->edit_information_user( $id, $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email);
-
+            $result1 = $information->edit_information_user( $id, $ten_khach_hang, $ngay_sinh, $dia_chi, $so_dien_thoai, $email, $gioi_tinh);
             if($result1) {
                 echo "<script>window.location='user.php'</script>";
+            }else{
+                echo "<script>alert('Thêm thất bại');</script>";
             }
 
         }

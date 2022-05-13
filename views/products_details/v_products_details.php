@@ -17,19 +17,19 @@
             <div class="col-lg-5 col-md-12">
                 <div class="products-details-thumbs-image">
                     <ul class="products-details-thumbs-image-slides">
-                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
+                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
+                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
+                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
+                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
                     </ul>
                     <div class="slick-thumbs">
                         <ul>
-                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
-                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh;?>" alt="image"></li>
+                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
+                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
+                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
+                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
+                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
                         </ul>
                     </div>
                 </div>
@@ -48,27 +48,25 @@
                         <i class='bx bxs-star'></i>
                         <i class='bx bxs-star'></i>
                     </div>
-                    <p><?php echo $review->thong_tin_them; ?></p>
-                    <form action="cart.php?action=add2&ma_sp=<?php echo $review->ma_sp;?>" method="POST">
-                    <div class="products-add-to-cart">
-                        <div class="input-counter">
-                            <span class="minus-btn"><i class='bx bx-minus'></i></span>
-                            <input type="text" value="1" name="so_luong" min="1" max="<?php echo $review->so_luong;?>">
-                            <span class="plus-btn"><i class='bx bx-plus'></i></span>
+                    <form action="cart.php?action=add2&ma_sp=<?php echo $review->ma_sp; ?>" method="POST">
+                        <div class="products-add-to-cart">
+                            <div class="input-counter">
+                                <span class="minus-btn"><i class='bx bx-minus'></i></span>
+                                <input type="text" value="1" name="so_luong" min="1" max="<?php echo $review->so_luong; ?>">
+                                <span class="plus-btn"><i class='bx bx-plus'></i></span>
+                            </div>
+                            <button type="submit" class="default-btn" name="add_cart"><span>Thêm vào giỏ hàng</span></button>
                         </div>
-                        <button type="submit" class="default-btn" name="add_cart"><span >Add to Cart</span></button>
-                    </div>
                     </form>
-                    <a href="wishlist.html" class="add-to-wishlist"><i class='bx bx-heart'></i> Add to wishlist</a>
+                    <a href="wishlist.html" class="add-to-wishlist"><i class='bx bx-heart'></i> Thêm vào danh sách yêu thích</a>
                     <ul class="products-info">
-                        <li><span>SKU:</span> <?php echo $review->ma_sp; ?></li>
-                        <li><span>Categories:</span> <a href="shop.php">Brash</a></li>
-                        <li><span>Availability:</span> In stock (<?php echo $review->so_luong ?> items)</li>
-                        <li><span>Tag:</span> Accessories</li>
+                        <li><span>Mã:</span> <?php echo $review->ma_sp; ?></li>
+                        <li><span>Danh mục:</span> <a href="shop.php">Brash</a></li>
+                        <li><span>Tồn kho:</span> In stock (<?php echo $review->so_luong ?> items)</li>
                     </ul>
                     <div class="products-share">
                         <ul class="social">
-                            <li><span>Share:</span></li>
+                            <li><span>Chia sẻ:</span></li>
                             <li><a href="#" class="facebook" target="_blank"><i class='bx bxl-facebook'></i></a></li>
                             <li><a href="#" class="twitter" target="_blank"><i class='bx bxl-twitter'></i></a></li>
                             <li><a href="#" class="linkedin" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
@@ -81,52 +79,43 @@
                 <div class="products-details-tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="false">Description</button>
+                            <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="false">Mô tả</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link" id="additional-information-tab" data-bs-toggle="tab" data-bs-target="#additional-information" type="button" role="tab" aria-controls="additional-information" aria-selected="false">Additional Info</button>
+                            <button class="nav-link" id="additional-information-tab" data-bs-toggle="tab" data-bs-target="#additional-information" type="button" role="tab" aria-controls="additional-information" aria-selected="false">Thông tin</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Reviews</button>
+                            <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Đánh giá</button>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="description" role="tabpanel">
-                            <p>This story, dazzling in its powerful simplicity and soul-stirring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried near the Pyramids. Lorem ipsum dolor sit.</p>
-                            <ul>
-                                <li>Instant <strong>Patoi</strong> bestseller</li>
-                                <li>Translated into 18 languages</li>
-                                <li>#1 Most Recommended Book of the year.</li>
-                                <li>A neglected project, widely dismissed, its champion written off as unhinged.</li>
-                                <li>Yields a negative result in an experiment because of a flaw in the design of the experiment.</li>
-                                <li>An Amazon, Bloomberg, Financial Times, Forbes, Inc., Newsweek, Strategy + Business, Tech Crunch, Washington Post Best Business Book of the year</li>
-                            </ul>
-                            <p><i>This story, dazzling in its powerful simplicity and soul-stirring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried near the Pyramids. Lorem ipsum dolor sit.</i></p>
+                        <?php echo $review->thong_tin_them; ?>
                         </div>
                         <div class="tab-pane fade" id="additional-information" role="tabpanel">
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <tbody>
-                                    <tr>
-                                        <td>Handle Height</td>
-                                        <td>40-45″</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Width</td>
-                                        <td>24″</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Wheels</td>
-                                        <td>12″</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dimensions</td>
-                                        <td>10 × 10 × 10 cm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Material</td>
-                                        <td>Iron</td>
-                                    </tr>
+                                        <tr>
+                                            <td>Handle Height</td>
+                                            <td>40-45″</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Width</td>
+                                            <td>24″</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wheels</td>
+                                            <td>12″</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dimensions</td>
+                                            <td>10 × 10 × 10 cm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Material</td>
+                                            <td>Iron</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

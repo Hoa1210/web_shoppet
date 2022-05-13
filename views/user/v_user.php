@@ -78,7 +78,7 @@
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control" id="email" name="Nhập email..." required placeholder="Email">
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="Nhập email...">
                         </div>
                         <div class="form-group">
                             <label>Mật khẩu</label>

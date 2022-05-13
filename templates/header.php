@@ -15,8 +15,8 @@ session_start();
                 <div class="col-lg-5 col-md-5 col-sm-6">
                     <div class="search-box">
                         <form action="search.php" method="POST">
-                            <input type="text" class="input-search" placeholder="Nhập tên sản phẩm..." name="tu_khoa">
-                            <button type="submit" name="tim_kiem"><i class='bx bx-search'></i></button>
+                            <input type="text" class="input-search" id="tk" placeholder="Nhập tên sản phẩm..." name="tu_khoa">
+                            <button type="submit" id="search" name="tim_kiem"><i class='bx bx-search'></i></button>
                         </form>
 
                     </div>

@@ -10,6 +10,8 @@ $login = $user->login();
 
 if(isset($_SESSION['login'])){
     $logout = $user->profile();
+    $logout = $user->information_user();
+
 } else {
     $account = $user->account();
 }
