@@ -10,7 +10,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Cập nhật Đơn Hàng</li>
+                            <li class="breadcrumb-item active" aria-current="page">Danh mục sản phẩm</li>
                         </ol>
                     </nav>
                 </div>
@@ -31,45 +31,52 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Cập Nhật Đơn Hàng</h5>
-                        <form action="" method="post">
+                        <h5 class="card-title">Danh Mục Sản Phẩm</h5>
+                        <?php if (isset($_SESSION['alert_type_product'])) { ?>
+                            <div class="alert alert-success"  role="alert">
+                                <?php echo $_SESSION['alert_type_product'];?>
+                            </div>
+                        <?php } unset($_SESSION['alert_type_product']);?>
+                        <?php if (isset($_SESSION['alert_err_type_product'])) { ?>
+                            <div class="alert alert-danger"  role="alert">
+                                <?php echo $_SESSION['alert_err_type_product'];?>
+                            </div>
+                        <?php } unset($_SESSION['alert_err_type_product']);?>
                         <div class="table-responsive">
-                            <?php if(isset($_SESSION['alert_delete_order'])) :?>
-                                <div class="alert alert-success" role="alert">
-                                    <?php echo $_SESSION['alert_delete_order'];?>
+
+                            <div class="border-top" style="display: flex;">
+                                <div class="card-body" style="flex: 0;">
+                                    <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='add_product_categories.php'">Thêm danh mục</button>
                                 </div>
-                            <?php endif; unset($_SESSION['alert_delete_order']);?>
+                            </div>
                             <table id="zero_config" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>Trạng thái</th>
-                                    <th></th>
+                                    <th>STT</th>
+                                    <th>Mã danh mục</th>
+                                    <th>Tên danh mục</th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                    $trang_thai0 = $status->trang_thai == 0 ? "selected" : "";
-                                    $trang_thai1 = $status->trang_thai == 1 ? "selected" : "";
-                                    $trang_thai2 = $status->trang_thai == 2 ? "selected" : "";
+                                foreach ($show_type as $key=>$value) {
                                     ?>
                                     <tr>
+                                        <td><?php echo $key+1 ; ?></td>
+                                        <td><?php echo $value->ma_loai ; ?></td>
+                                        <td><?php echo $value->ten_loai_sp ; ?></td>
                                         <td>
-                                            <select name="trang_thai" class="select2 form-control custom-select" style="width: 100%; height:36px;">
-                                                <option value="0" <?php echo $trang_thai0; ?>>Chưa nhận hàng - Chưa thanh toán</option>
-                                                <option value="1" <?php echo $trang_thai1; ?>>Chưa nhận hàng - Đã thanh toán</option>
-                                                <option value="2" <?php echo $trang_thai2; ?>>Đã nhận hàng - Đã thanh toán</option>
-                                                
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <button type="submit" class="btn btn-cyan btn-sm" name="btn_update">Cập Nhậy</button>
+                                            <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='edit_product_categories.php?ma_loai=<?php echo $value->ma_loai;?>'">Sửa</button>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="window.location.href='delete_product_categories.php?ma_loai=<?php echo $value->ma_loai;?>'">Xóa</button>
                                         </td>
                                     </tr>
+                                <?php } ?>
                                 </tbody>
 
                             </table>
                         </div>
-                        </form>
+
                     </div>
                 </div>
             </div>

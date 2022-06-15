@@ -23,5 +23,18 @@ class m_product extends database {
         return $this->loadAllRows();
     }
 
+    // lấy thông tin sp trên db
+    public function select_product_by_id_product($ma_sp) {
+        $sql = "select * from san_pham where ma_sp = ?";
+        $this->setQuery($sql);
+        return $this->loadRow(array($ma_sp));
+    }
+
+     // lấy ảnh sản phẩm chi tiết
+     public function read_img_product($ma_sp) {
+        $sql = "SELECT hinh_anh FROM anh_sp WHERE ma_sp = ?";
+        $this->setQuery($sql);
+        return $this->loadAllRows(array($ma_sp));
+    }
 }
 ?>

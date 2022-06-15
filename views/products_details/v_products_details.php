@@ -18,18 +18,20 @@
                 <div class="products-details-thumbs-image">
                     <ul class="products-details-thumbs-image-slides">
                         <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
-                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
-                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
-                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
-                        <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
+                        <?php if ($img_product) :
+                            foreach ($img_product as $key => $value) : ?>
+                                <li><img src="admin/public/imageproduct/<?php echo $img_product[$key]->hinh_anh; ?>" alt="image"></li>
+                        <?php endforeach;
+                        endif; ?>
                     </ul>
                     <div class="slick-thumbs">
                         <ul>
                             <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
-                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
-                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
-                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
-                            <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
+                            <?php if ($img_product) :
+                                foreach ($img_product as $key => $value) : ?>
+                                    <li><img src="admin/public/imageproduct/<?php echo $img_product[$key]->hinh_anh; ?>" alt="image"></li>
+                            <?php endforeach;
+                            endif; ?>
                         </ul>
                     </div>
                 </div>
@@ -90,7 +92,7 @@
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="description" role="tabpanel">
-                        <?php echo $review->thong_tin_them; ?>
+                            <?php echo $review->thong_tin_them; ?>
                         </div>
                         <div class="tab-pane fade" id="additional-information" role="tabpanel">
                             <div class="table-responsive">

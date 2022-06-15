@@ -9,7 +9,7 @@
                     <form class="form-horizontal" action="" enctype="multipart/form-data" method="POST">
                         <fieldset>
                             <div class="card-body">
-                                <h4 class="card-title">Edit Product ID :  <?php echo $_GET['ma_sp']; ?></h4>
+                                <h4 class="card-title">Sửa Sản Phẩm có ID :  <?php echo $_GET['ma_sp']; ?></h4>
                                 <?php if (isset($_SESSION['alert_err_product'])) { ?>
                                     <div class="alert alert-danger"  role="alert">
                                         <?php echo $_SESSION['alert_err_product'];?>
@@ -39,20 +39,34 @@
                                     </div>
                                 </div>
                                 <div class="form-group row" style="height: 200px;">
-                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Hinh anh</label>
+                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Hình ảnh</label>
                                     <div class="col-sm-9">
 
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" name = "f_hinh_anh"  id="validatedCustomFile"  >
-                                            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                            <input type="file" class="custom-file-inputs" name = "f_hinh_anh"  id="validatedCustomFile"  >
                                             <div class="col-xs-6  bg-white" id="image-holder3" >
                                                 <img src="public/imageproduct/<?php echo $edit_product->hinh_anh;?>" style="width: 100px;" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="form-group row">
+                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Hình ảnh chi tiết</label>
+                                <div class="col-sm-9">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-inputs" name="f_hinh_anhs[]" id="validatedCustomFile" multiple="multiple">
+                                        <div class="col-xs-6  bg-white" id="image-holder3" >
+                                            <?php
+                                            // echo "<pre />";
+                                            // print_r($img_product_details);
+                                        
+                                             foreach($img_product_details as $key=>$value): ?>
+                                                <img src="public/imageproduct/<?php echo $img_product_details[$key]->hinh_anh;?>" style="width: 100px;" />
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
                                 <div class="form-group row">
                                     <label for="fname" class="col-sm-3 text-right control-label col-form-label">Số Lượng</label>
                                     <div class="col-sm-9">
@@ -72,12 +86,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Trang thai</label>
+                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Trạng thái</label>
                                     <div class="col-sm-9">
                                         <select class="select2 form-control custom-select" name="trang_thai" style="width: 100%; height:36px;">
-                                            <option>---Chon---</option>
-                                            <option value="1" <?php if($edit_product->trang_thai_sp == 1) echo"selected"; ?>>Open</option>
-                                            <option value="0" <?php if($edit_product->trang_thai_sp == 0) echo"selected"; ?>>Close</option>
+                                            <option>---Chọn---</option>
+                                            <option value="1" <?php if($edit_product->trang_thai_sp == 1) echo"selected"; ?>>Còn hàng</option>
+                                            <option value="0" <?php if($edit_product->trang_thai_sp == 0) echo"selected"; ?>>Hết hàng</option>
                                         </select>
                                     </div>
                                 </div>
@@ -87,7 +101,7 @@
 
                         <div class="border-top">
                             <div class="card-body">
-                                <button type="submit" name="btn-submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" name="btn-submit" class="btn btn-primary">Gửi</button>
                             </div>
                         </div>
                     </form>
@@ -95,16 +109,5 @@
 
             </div>
         </div>
-        <!-- editor -->
-        <!-- ============================================================== -->
-        <!-- End PAge Content -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right sidebar -->
-        <!-- ============================================================== -->
-        <!-- .right-sidebar -->
-        <!-- ============================================================== -->
-        <!-- End Right sidebar -->
-        <!-- ============================================================== -->
     </div>
 </div>
