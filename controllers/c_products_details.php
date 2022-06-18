@@ -12,6 +12,8 @@ class c_products_details {
 
             $img_product = $product->read_img_product($ma_sp);
 
+            $categories_product = $product->read_type_product_by_id($ma_sp);
+
         }
 
 

@@ -20,7 +20,7 @@
                         <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
                         <?php if ($img_product) :
                             foreach ($img_product as $key => $value) : ?>
-                                <li><img src="admin/public/imageproduct/<?php echo $img_product[$key]->hinh_anh; ?>" alt="image"></li>
+                                <li><img src="admin/public/imageproduct/<?php echo $value->hinh_anh; ?>" alt="image"></li>
                         <?php endforeach;
                         endif; ?>
                     </ul>
@@ -29,7 +29,7 @@
                             <li><img src="admin/public/imageproduct/<?php echo $review->hinh_anh; ?>" alt="image"></li>
                             <?php if ($img_product) :
                                 foreach ($img_product as $key => $value) : ?>
-                                    <li><img src="admin/public/imageproduct/<?php echo $img_product[$key]->hinh_anh; ?>" alt="image"></li>
+                                    <li><img src="admin/public/imageproduct/<?php echo $value->hinh_anh; ?>" alt="image"></li>
                             <?php endforeach;
                             endif; ?>
                         </ul>
@@ -62,9 +62,9 @@
                     </form>
                     <a href="wishlist.html" class="add-to-wishlist"><i class='bx bx-heart'></i> Thêm vào danh sách yêu thích</a>
                     <ul class="products-info">
-                        <li><span>Mã:</span> <?php echo $review->ma_sp; ?></li>
-                        <li><span>Danh mục:</span> <a href="shop.php">Brash</a></li>
-                        <li><span>Tồn kho:</span> In stock (<?php echo $review->so_luong ?> items)</li>
+                        <li><span>Mã:</span> <?php echo $review->ma_sp; ?>.</li>
+                        <li><span>Danh mục:</span> <?php echo $categories_product->ten_loai_sp;?>.</li>
+                        <li><span>Tồn kho:</span> <?php echo $review->so_luong ?> sản phẩm.</li>
                     </ul>
                     <div class="products-share">
                         <ul class="social">

@@ -36,5 +36,12 @@ class m_product extends database {
         $this->setQuery($sql);
         return $this->loadAllRows(array($ma_sp));
     }
+
+     // lấy thông tin danh mục sp voi id san pham
+     public function read_type_product_by_id($ma_sp) {
+        $sql = "select loai_sp.ten_loai_sp from san_pham inner join loai_sp on san_pham.ma_loai_sp = loai_sp.ma_loai where ma_sp = ?";
+        $this->setQuery($sql);
+        return $this->loadRow(array($ma_sp));
+    }
 }
 ?>
