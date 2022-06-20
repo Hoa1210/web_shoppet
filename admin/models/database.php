@@ -8,6 +8,7 @@ class database{
         try
         {
 //            $this->pdo = new PDO('mysql:host=localhost; dbname=PHP0921E_Nhom4','PHP0921E_Nhom4','7tqrL4nXfF');
+//            $this->pdo = new PDO('mysql:host=sql212.epizy.com; dbname=epiz_31940235_shoppet202','epiz_31940235','m1XHBHlrdl2D10m');
             $this->pdo = new PDO('mysql:host=localhost; dbname=PHP0921E_Nhom4','root','');
             $this->pdo->query('set names "utf8"');
         }
