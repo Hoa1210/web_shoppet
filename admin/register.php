@@ -29,7 +29,7 @@
 
                     <h4 class="header-title mb-3">Register account admin</h4>
 
-                        <form>
+                        <form action="" method="POST">
                             <div id="progressbarwizard">
 
                                 <ul class="nav nav-pills nav-justified form-wizard-header mb-3">

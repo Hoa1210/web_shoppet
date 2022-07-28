@@ -1,5 +1,5 @@
 <?php 
-if ($view) {
+if (isset($view)) {
     include $view;
 }
 ?>
