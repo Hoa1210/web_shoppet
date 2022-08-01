@@ -1,0 +1,29 @@
+<meta charset="utf-8" />
+<title>ADMIN SHOPPET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+<meta content="Coderthemes" name="author" />
+<!-- App favicon -->
+<link rel="shortcut icon" href="<?php echo _WEB_ROOT; ?>/public/images/favicon.ico">
+
+<!-- third party css -->
+<?php
+if (isset($viewName)) {
+    if ($viewName == 'product/v_index' || $viewName == 'category/v_index' ) {
+?>
+        <link href="<?php echo _WEB_ROOT; ?>/public/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo _WEB_ROOT; ?>/public/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css" />
+
+    <?php
+    }
+    if ($viewName == 'category/v_create'|| $viewName == 'category/v_update') {
+    ?>
+<?php
+    }
+}
+?>
+<!-- third party css end -->
+
+<!-- App css -->
+<link href="<?php echo _WEB_ROOT; ?>/public/css/icons.min.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo _WEB_ROOT; ?>/public/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
