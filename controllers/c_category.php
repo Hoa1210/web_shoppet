@@ -45,3 +45,16 @@ class c_category extends Controller
         $this->loadView('category/v_create', $alert);
     }
 
+    public function update()
+    {
+        
+        if (isset($_GET['update'])) {
+            $id = ($_GET['id']) ? $_GET['id'] : '';
+            $alert1 = $this->loadModel('category')->select_category_with_id($id);
+            if($alert1){
+                $this->loadView('category/v_update',$alert1);
+            }
+        }
+        $this->loadView('category/v_update');
+    }
+}
