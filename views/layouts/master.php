@@ -53,33 +53,33 @@
     <!-- /End-bar -->
 
     <!-- bundle -->
-    <script src="<?php echo _WEB_ROOT; ?>/public/js/vendor.min.js"></script>
-    <script src="<?php echo _WEB_ROOT; ?>/public/js/app.min.js"></script>
+    <script src="public/js/vendor.min.js"></script>
+    <script src="public/js/app.min.js"></script>
 
     <!-- third party js -->
     <?php
     if (isset($viewName)) {
         if ($viewName == 'product/v_index') {
     ?>
-            <script src="<?php echo _WEB_ROOT; ?>/public/js/vendor/jquery.dataTables.min.js"></script>
-            <script src="<?php echo _WEB_ROOT; ?>/public/js/vendor/dataTables.bootstrap5.js"></script>
-            <script src="<?php echo _WEB_ROOT; ?>/public/js/vendor/dataTables.responsive.min.js"></script>
-            <script src="<?php echo _WEB_ROOT; ?>/public/js/vendor/responsive.bootstrap5.min.js"></script>
+            <script src="public/js/vendor/jquery.dataTables.min.js"></script>
+            <script src="public/js/vendor/dataTables.bootstrap5.js"></script>
+            <script src="public/js/vendor/dataTables.responsive.min.js"></script>
+            <script src="public/js/vendor/responsive.bootstrap5.min.js"></script>
 
             <!-- demo app -->
-            <script src="<?php echo _WEB_ROOT; ?>/public/js/pages/demo.products.js"></script>
+            <script src="public/js/pages/demo.products.js"></script>
             <!-- end demo js-->
         <?php
         }
         if ($viewName == 'category/v_index' ) {
         ?>
-            <script src="<?php echo _WEB_ROOT; ?>/public/js/vendor/jquery.dataTables.min.js"></script>
-            <script src="<?php echo _WEB_ROOT; ?>/public/js/vendor/dataTables.bootstrap5.js"></script>
-            <script src="<?php echo _WEB_ROOT; ?>/public/js/vendor/dataTables.responsive.min.js"></script>
-            <script src="<?php echo _WEB_ROOT; ?>/public/js/vendor/responsive.bootstrap5.min.js"></script>
+            <script src="public/js/vendor/jquery.dataTables.min.js"></script>
+            <script src="public/js/vendor/dataTables.bootstrap5.js"></script>
+            <script src="public/js/vendor/dataTables.responsive.min.js"></script>
+            <script src="public/js/vendor/responsive.bootstrap5.min.js"></script>
     
             <!-- demo app -->
-            <script src="<?php echo _WEB_ROOT; ?>/public/js/pages/demo.datatable-init.js"></script>
+            <script src="public/js/pages/demo.datatable-init.js"></script>
             <!-- end demo js-->
         <?php
         }

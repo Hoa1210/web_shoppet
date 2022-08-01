@@ -56,7 +56,7 @@
                                                     <?php echo $val->description; ?>
                                                 </td>
                                                 <td>
-                                                    <img src="<?php echo _WEB_ROOT; ?>/public/uploads/category/<?php echo $val->image; ?>" alt="Upload" width="150">
+                                                    <img src="public/uploads/category/<?php echo $val->image; ?>" alt="Upload" width="150">
                                                 </td>
                                                 <td>
                                                     <?php echo $val->created_at; ?>

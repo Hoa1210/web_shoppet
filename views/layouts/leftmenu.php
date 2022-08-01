@@ -3,20 +3,20 @@
     <!-- LOGO -->
     <a href="index.html" class="logo text-center logo-light">
         <span class="logo-lg">
-            <img src="<?php echo _WEB_ROOT; ?>/public/images/logo.png" alt="" height="16">
+            <img src="public/images/logo.png" alt="" height="16">
         </span>
         <span class="logo-sm">
-            <img src="<?php echo _WEB_ROOT; ?>/public/images/logo_sm.png" alt="" height="16">
+            <img src="public/images/logo_sm.png" alt="" height="16">
         </span>
     </a>
 
     <!-- LOGO -->
     <a href="index.html" class="logo text-center logo-dark">
         <span class="logo-lg">
-            <img src="<?php echo _WEB_ROOT; ?>/public/images/logo-dark.png" alt="" height="16">
+            <img src="public/images/logo-dark.png" alt="" height="16">
         </span>
         <span class="logo-sm">
-            <img src="<?php echo _WEB_ROOT; ?>/public/images/logo_sm_dark.png" alt="" height="16">
+            <img src="public/images/logo_sm_dark.png" alt="" height="16">
         </span>
     </a>
 

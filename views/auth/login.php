@@ -10,12 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
+    <base href="<?php echo _WEB_ROOT; ?>/">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="<?php echo _WEB_ROOT; ?>/public/images/favicon.ico">
+    <link rel="shortcut icon" href="public/images/favicon.ico">
 
     <!-- App css -->
-    <link href="<?php echo _WEB_ROOT; ?>/public/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo _WEB_ROOT; ?>/public/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="public/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="public/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
 </head>
 
@@ -30,10 +31,10 @@
                     <!-- Logo -->
                     <div class="auth-brand text-center text-lg-start">
                         <a href="index.html" class="logo-dark">
-                            <span><img src="<?php echo _WEB_ROOT; ?>/public/images/logo-dark.png" alt="" height="18"></span>
+                            <span><img src="public/images/logo-dark.png" alt="" height="18"></span>
                         </a>
                         <a href="index.html" class="logo-light">
-                            <span><img src="<?php echo _WEB_ROOT; ?>/public/images/logo.png" alt="" height="18"></span>
+                            <span><img src="public/images/logo.png" alt="" height="18"></span>
                         </a>
                     </div>
 
@@ -102,8 +103,8 @@
     <!-- end auth-fluid-->
 
     <!-- bundle -->
-    <script src="<?php echo _WEB_ROOT; ?>/public/js/vendor.min.js"></script>
-    <script src="<?php echo _WEB_ROOT; ?>/public/js/app.min.js"></script>
+    <script src="public/js/vendor.min.js"></script>
+    <script src="public/js/app.min.js"></script>
 
 </body>
 

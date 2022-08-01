@@ -14,7 +14,7 @@
         <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                 <span class="account-user-avatar">
-                    <img src="<?php echo _WEB_ROOT; ?>/public/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                    <img src="public/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                 </span>
                 <span>
                     <span class="account-user-name">Dominic Keller</span>
@@ -105,7 +105,7 @@
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <div class="d-flex">
-                        <img class="d-flex me-2 rounded-circle" src="<?php echo _WEB_ROOT; ?>/public/images/users/avatar-2.jpg" alt="Generic placeholder image" height="32">
+                        <img class="d-flex me-2 rounded-circle" src="public/images/users/avatar-2.jpg" alt="Generic placeholder image" height="32">
                         <div class="w-100">
                             <h5 class="m-0 font-14">Erwin Brown</h5>
                             <span class="font-12 mb-0">UI Designer</span>
@@ -116,7 +116,7 @@
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <div class="d-flex">
-                        <img class="d-flex me-2 rounded-circle" src="<?php echo _WEB_ROOT; ?>/public/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
+                        <img class="d-flex me-2 rounded-circle" src="public/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
                         <div class="w-100">
                             <h5 class="m-0 font-14">Jacob Deo</h5>
                             <span class="font-12 mb-0">Developer</span>
