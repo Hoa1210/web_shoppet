@@ -7,3 +7,15 @@ class m_category extends Database{
         return $this->execute(array($id, $name, $slug, $description, $image));
     }
 
+    public function select_category(){
+        $sql = "SELECT * FROM categories";
+        $this->setQuery($sql);
+        return $this->loadAllRows(array());
+    }
+
+    public function select_category_with_id($id){
+        $sql = "SELECT * FROM categories WHERE id = ?";
+        $this->setQuery($sql);
+        return $this->loadRow(array($id));
+    }
+}
