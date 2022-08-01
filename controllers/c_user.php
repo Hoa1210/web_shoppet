@@ -24,3 +24,31 @@ class c_user extends Controller{
         }
         $this->loadView('auth/register');
     }
+
+    public function login() {
+        $_SESSION['check'] = "Đăng nhập thành công";
+        if(isset($_POST["submit"])){
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+
+            $m_user = $this->loadModel('user');
+            // $result = $m_user->check_account($email, md5($password));
+            $result = $m_user->check_account($email,md5($password));
+            
+            if($result){
+                $_SESSION['login'] = "Đăng nhập thành công";
+                header("Location:index.php?controller=home&method=index");
+            }else{
+                $this->loadView('auth/login',[
+                    'content' => "Sai tài khoản hoặc mật khẩu!",
+                    'status' => 'danger',
+                ]);
+            }
+
+
+        }
+         $this->loadView('auth/login');
+    }
+
+}
+?>
