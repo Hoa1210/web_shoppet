@@ -16,6 +16,9 @@ class Controller
         // if(!empty($data)){
         //     extract($data);
         // }
+        // echo "<pre />";
+        // var_dump($data);
+        // die();
         if (file_exists('views/' . $viewName . '.php')) {
             if(strlen(strstr($viewName, "auth")) > 0) {
                 // kiểm tra trong $viewName có auth không , bằng cách lấy ra chuỗi con trong $viewName rồi kiểm tra độ dài 

@@ -3,12 +3,11 @@
         <div class="page-title-box">
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">eCommerce</a></li>
-                    <li class="breadcrumb-item active">Products</li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
+                    <li class="breadcrumb-item active">Categories</li>
                 </ol>
             </div>
-            <h4 class="page-title">List Category</h4>
+            <h4 class="page-title">List Categories</h4>
         </div>
     </div>
 </div>
@@ -62,7 +61,7 @@
                                                     <?php echo $val->created_at; ?>
                                                 </td>
                                                 <td>
-                                                <a href="?controller=category&method=update&update&id=<?php echo $val->id; ?>" class="btn btn-success mb-2"><i class="mdi dripicons-pencil"></i></a>
+                                                <a href="?controller=category&method=update&id=<?php echo $val->id; ?>" class="btn btn-success mb-2"><i class="mdi dripicons-pencil"></i></a>
                                                 <a href="?controller=category&method=delete&delete&id=<?php echo $val->id; ?>" class="btn btn-danger mb-2"><i class="mdi dripicons-trash"></i></a>
 
                                                 </td>

@@ -18,4 +18,10 @@ class m_category extends Database{
         $this->setQuery($sql);
         return $this->loadRow(array($id));
     }
+
+    public function update_category( $name, $slug, $description, $image, $updated_at, $id) {
+        $sql  = "UPDATE categories SET name = ?, slug = ?, description = ?, image = ?, updated_at = ? WHERE id = ?";
+        $this->setQuery($sql);
+        return $this->execute(array( $name, $slug, $description, $image, $updated_at, $id));
+    }
 }
