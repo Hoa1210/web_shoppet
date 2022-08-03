@@ -13,9 +13,7 @@ class Controller
     }
     public function loadView($viewName, $data = [])
     {
-        // if(!empty($data)){
-        //     extract($data);
-        // }
+        
         // echo "<pre />";
         // var_dump($data);
         // die();

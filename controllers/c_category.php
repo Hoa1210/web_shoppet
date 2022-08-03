@@ -4,6 +4,10 @@ date_default_timezone_set("Asia/Ho_Chi_Minh");
 class c_category extends Controller
 {
 
+    private function UploadsImageFolderPublic() {
+
+    }
+
     public function index()
     {
         $list_category = $this->loadModel('category');
@@ -70,10 +74,21 @@ class c_category extends Controller
                         'content' => 'Update category successfully',
                         'status' => 'success',
                     ];
-                    $alert1 = array_merge((array) $m_category1->select_category_with_id($id), $alert);
+                    $alert1 =  array_merge((array) $m_category1->select_category_with_id($id), $alert);
                 }
             }
         }
         $this->loadView('category/v_update', $alert1);
+    }
+
+    public function delete(){
+        $id = ($_GET['id']) ? $_GET['id'] : '';
+        $deleted_at = date("Y-m-d H:i:s");
+        $m_category2 = $this->loadModel('category');
+        $resutl3 = $m_category2->delete_category_by_id($deleted_at, $id);
+        if(!empty($resutl3)){
+            $_SESSION['content'] = "Delete category successfully";
+            header("Location:?controller=category&method=index");
+        }
     }
 }

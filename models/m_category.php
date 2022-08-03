@@ -24,4 +24,10 @@ class m_category extends Database{
         $this->setQuery($sql);
         return $this->execute(array( $name, $slug, $description, $image, $updated_at, $id));
     }
+
+    public function delete_category_by_id($deleted_at, $id){
+        $sql = "UPDATE categories SET deleted_at = ? WHERE id = ?";
+        $this->setQuery($sql);
+        return $this->execute(array($deleted_at, $id));
+    }
 }
