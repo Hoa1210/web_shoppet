@@ -4,8 +4,8 @@ date_default_timezone_set("Asia/Ho_Chi_Minh");
 class c_category extends Controller
 {
 
-    private function UploadsImageFolderPublic() {
-
+    private function UploadsImageFolderPublic()
+    {
     }
 
     public function index()
@@ -81,12 +81,13 @@ class c_category extends Controller
         $this->loadView('category/v_update', $alert1);
     }
 
-    public function delete(){
+    public function delete()
+    {
         $id = ($_GET['id']) ? $_GET['id'] : '';
         $deleted_at = date("Y-m-d H:i:s");
         $m_category2 = $this->loadModel('category');
         $resutl3 = $m_category2->delete_category_by_id($deleted_at, $id);
-        if(!empty($resutl3)){
+        if (!empty($resutl3)) {
             $_SESSION['content'] = "Delete category successfully";
             header("Location:?controller=category&method=index");
         }
