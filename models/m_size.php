@@ -13,4 +13,16 @@ class m_size extends Database {
         $this->setQuery($sql);
         return $this->execute(array($id, $name));
     }
+
+    public function select_size_by_id($id){
+        $sql = "SELECT * FROM sizes WHERE id = ?";
+        $this->setQuery($sql);
+        return $this->loadRow(array($id));
+    }
+    
+    public function update_size_by_id($name, $id){
+        $sql = "UPDATE sizes SET name = ? WHERE id = ?";
+        $this->setQuery($sql);
+        return $this->execute(array($name, $id));
+    }
 }

@@ -23,4 +23,20 @@ class c_size extends Controller
         }
         $this->loadView("size/v_create");
     }
+
+    public function update(){
+        
+        $id = ($_GET['id']) ? $_GET['id'] : null ;
+        $select_size_by_id = $this->loadModel('size')->select_size_by_id($id);
+        if(isset($_POST['submit'])) {
+            $name = ($_POST['name']) ? $_POST['name'] :  $select_size_by_id->name ;
+            $resutl = $this->loadModel('size')->update_size_by_id($name,$id);
+            if(!empty($resutl)) {
+                $select_size_by_id = $this->loadModel('size')->select_size_by_id($id);
+                $_SESSION['alert_size'] = "Update size successfully";
+            }
+        }
+        $this->loadView("size/v_update",$select_size_by_id);
+        
+    }
 }

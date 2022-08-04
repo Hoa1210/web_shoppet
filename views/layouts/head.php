@@ -10,15 +10,11 @@
 <!-- third party css -->
 <?php
 if (isset($viewName)) {
-    if ($viewName == 'product/v_index' || $viewName == 'category/v_index' ) {
+    if ($viewName == 'product/v_index' || $viewName == 'category/v_index' || $viewName == 'size/v_index') {
 ?>
         <link href="public/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
         <link href="public/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css" />
 
-    <?php
-    }
-    if ($viewName == 'category/v_create'|| $viewName == 'category/v_update') {
-    ?>
 <?php
     }
 }

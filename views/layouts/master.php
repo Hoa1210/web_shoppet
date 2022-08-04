@@ -71,7 +71,7 @@
             <!-- end demo js-->
         <?php
         }
-        if ($viewName == 'category/v_index' ) {
+        if ($viewName == 'category/v_index' || $viewName == 'size/v_index') {
         ?>
             <script src="public/js/vendor/jquery.dataTables.min.js"></script>
             <script src="public/js/vendor/dataTables.bootstrap5.js"></script>
