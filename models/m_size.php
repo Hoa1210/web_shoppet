@@ -25,4 +25,10 @@ class m_size extends Database {
         $this->setQuery($sql);
         return $this->execute(array($name, $id));
     }
+
+    public function delete_size_by_id($id){
+        $sql = "DELETE FROM sizes WHERE id = ?";
+        $this->setQuery($sql);
+        return $this->execute(array($id));
+    }
 }

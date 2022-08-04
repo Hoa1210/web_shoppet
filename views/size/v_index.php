@@ -21,6 +21,15 @@
                     </div>
                 </div>
                 <div class="tab-content">
+                <?php if (isset($_SESSION['alert_size'])) { ?>
+                        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                            <?php 
+                                echo $_SESSION['alert_size']; 
+                                unset($_SESSION['alert_size']);
+                            ?>
+                        </div>
+                    <?php } ?>
                     <div class="tab-pane show active" id="basic-datatable-preview">
                         <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                             <thead>
