@@ -36,7 +36,7 @@
                         </a>
                     </div>
                     <!-- form -->
-                    <form action="?controller=user&method=register" method="post">
+                    <form action="user/register.html" method="post">
                         <div class="mb-3">
                             <div class="row">
                                 <div class="col-lg-6">
@@ -77,7 +77,7 @@
 
                     <!-- Footer-->
                     <footer class="footer footer-alt">
-                        <p class="text-muted">Already have account? <a href="?controller=user&method=login" class="text-muted ms-1"><b>Log In</b></a></p>
+                        <p class="text-muted">Already have account? <a href="user/login.html" class="text-muted ms-1"><b>Log In</b></a></p>
                     </footer>
                 </div>
             </div> <!-- end .align-items-center.d-flex.h-100-->

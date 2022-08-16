@@ -89,7 +89,7 @@ class c_category extends Controller
         $resutl3 = $m_category2->delete_category_by_id($deleted_at, $id);
         if (!empty($resutl3)) {
             $_SESSION['content'] = "Delete category successfully";
-            header("Location:?controller=category&method=index");
+            header("Location:" . _WEB_ROOT ."/category/index.html");
         }
     }
 }

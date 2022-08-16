@@ -3,11 +3,11 @@
         <div class="page-title-box">
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="size/index.html">Size</a></li>
-                    <li class="breadcrumb-item active">Create Size</li>
+                    <li class="breadcrumb-item"><a href="color/index.html">Color</a></li>
+                    <li class="breadcrumb-item active">Update Color</li>
                 </ol>
             </div>
-            <h4 class="page-title">Create Size</h4>
+            <h4 class="page-title">Update Color</h4>
         </div>
     </div>
 </div>
@@ -20,16 +20,17 @@
                 <div class="row">
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="col-xl-6">
-                            <?php if (isset($_SESSION['alert_size']) ) {?>
+                            <?php if (isset($_SESSION['alert_color']) ) {?>
                                     <div class="alert alert-success ?> alert-dismissible bg-success text-white border-0 fade show" role="alert">
                                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-                                        <strong>Success - </strong> <?php echo $_SESSION['alert_size']; ?>
+                                        <strong>Success - </strong> <?php echo $_SESSION['alert_color']; ?>
                                     </div>
-                            <?php unset($_SESSION['alert_size']);
+                            <?php 
+                            unset($_SESSION['alert_color']);
                             } ?>
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="text" id="name" class="form-control" name="name"  placeholder="Enter size name">
+                                <input type="text" id="name" class="form-control" name="name" value="<?php echo $data->name; ?>"   placeholder="Enter color name">
                             </div>
                             <button type="submit" class="btn btn-success" name="submit">Submit</button>
                         </div>

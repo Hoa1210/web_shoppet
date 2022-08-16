@@ -1,7 +1,7 @@
 <?php
 class Request{
 
-    public $controller = 'user';
+    public $controller = 'home';
     public $method = 'index';
     public function __construct(){
         $this->getSystemParameters();

@@ -45,7 +45,7 @@ class c_size extends Controller
         $delete_size_by_id = $this->loadModel('size')->delete_size_by_id($id);
         if(!empty($delete_size_by_id)) {
             $_SESSION['alert_size'] = "Delete size successfully";
-            header("Location:?controller=size&method=index");
+            header("Location:size/index.html");
         }
     }
 }

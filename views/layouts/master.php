@@ -71,19 +71,27 @@
             <!-- end demo js-->
         <?php
         }
-        if ($viewName == 'category/v_index' || $viewName == 'size/v_index') {
+        if ($viewName == 'product/v_create') {
+        ?>
+            <!-- quill js -->
+            <script src="public/js/vendor/quill.min.js"></script>
+            <!-- quill Init js-->
+            <script src="public/js/pages/demo.quilljs.js"></script>
+        <?php
+        }
+        if ($viewName == 'category/v_index' || $viewName == 'size/v_index' || $viewName == 'color/v_index') {
         ?>
             <script src="public/js/vendor/jquery.dataTables.min.js"></script>
             <script src="public/js/vendor/dataTables.bootstrap5.js"></script>
             <script src="public/js/vendor/dataTables.responsive.min.js"></script>
             <script src="public/js/vendor/responsive.bootstrap5.min.js"></script>
-    
+
             <!-- demo app -->
             <script src="public/js/pages/demo.datatable-init.js"></script>
             <!-- end demo js-->
         <?php
         }
-        if ($viewName == 'category/v_create'|| $viewName == 'category/v_update') {
+        if ($viewName == 'category/v_create' || $viewName == 'category/v_update') {
         ?>
             <script type="text/javascript">
                 function ChangeToSlug() {
@@ -128,7 +136,7 @@
 
                 document.getElementById('description').value = description;
             </script> -->
-           
+
     <?php
         }
     }

@@ -13,18 +13,15 @@ class Controller
     }
     public function loadView($viewName, $data = [])
     {
-        
-        // echo "<pre />";
-        // var_dump($data);
-        // die();
         if (file_exists('views/' . $viewName . '.php')) {
-            if(strlen(strstr($viewName, "auth")) > 0) {
-                // kiểm tra trong $viewName có auth không , bằng cách lấy ra chuỗi con trong $viewName rồi kiểm tra độ dài 
-                require_once 'views/' . $viewName . '.php';
-            }else{
-                require_once 'views/layouts/master.php';
+
+                if(strlen(strstr($viewName, "auth")) > 0) {
+                    // kiểm tra trong $viewName có auth không , bằng cách lấy ra chuỗi con trong $viewName rồi kiểm tra độ dài 
+                    require_once 'views/' . $viewName . '.php';
+                }else{
+                    require_once 'views/layouts/master.php';
+                }
             }
             
         }
-    }
 }

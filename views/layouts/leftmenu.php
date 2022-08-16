@@ -28,7 +28,7 @@
             <!-- <li class="side-nav-title side-nav-item">Navigation</li> -->
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="?controller=user&method=index" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="user/index.html" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                     <i class="uil-home-alt"></i>
                     <span class="badge bg-success float-end">4</span>
                     <span> Dashboards </span>
@@ -44,16 +44,16 @@
                 <div class="collapse" id="sidebarDashboards">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="?controller=product&method=index">Product</a>
+                            <a href="product/index.html">Product</a>
                         </li>
                         <li>
-                            <a href="?controller=category&method=index">Category</a>
+                            <a href="category/index.html">Category</a>
                         </li>
                         <li>
-                            <a href="?controller=size&method=index">Size</a>
+                            <a href="size/index.html">Size</a>
                         </li>
                         <li>
-                            <a href="?controller=color&method=index">Color</a>
+                            <a href="color/index.html">Color</a>
                         </li>
                     </ul>
                 </div>

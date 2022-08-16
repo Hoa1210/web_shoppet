@@ -51,7 +51,7 @@
                     }
                     ?>
                     <!-- form -->
-                    <form action="?controller=user&method=login" method="post">
+                    <form action="user/login.html" method="post">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
                             <input class="form-control" type="email" id="email" name="email" required placeholder="Enter your email">
@@ -77,7 +77,7 @@
 
                     <!-- Footer-->
                     <footer class="footer footer-alt">
-                        <p class="text-muted">Don't have an account? <a href="?controller=user&method=register" class="text-muted ms-1"><b>Sign Up</b></a></p>
+                        <p class="text-muted">Don't have an account? <a href="user/register.html" class="text-muted ms-1"><b>Sign Up</b></a></p>
                     </footer>
 
                 </div> <!-- end .card-body -->

@@ -4,7 +4,7 @@
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Products</a></li>
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Category</a></li>
+                    <li class="breadcrumb-item"><a href="category/index.html">Category</a></li>
                     <li class="breadcrumb-item active">Create Product</li>
                 </ol>
             </div>
@@ -19,7 +19,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <form action="?controller=category&method=create" method="post" enctype="multipart/form-data">
+                    <form action="category/create.html" method="post" enctype="multipart/form-data">
                         <div class="col-xl-6">
                             <?php if (isset($data) && !empty($data)) {
                                 if ($data['status'] == "success") { ?>
