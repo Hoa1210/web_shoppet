@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME}% !-d
+RewriteCond %{REQUEST_FILENAME}% !-f
+RewriteCond %{REQUEST_FILENAME}% !-l
+
+
+RewriteRule ^([a-z]+)/([a-z]+).html$ index.php?controller=$1&method=$2
+RewriteRule ^([a-z]+)/([a-z]+)/([0-9]+)$ ?controller=$1&method=$2&id=$3
