@@ -57,37 +57,37 @@
         </div>
         <div class="categories-slides owl-carousel owl-theme">
             <div class="single-categories-box">
-                <a href="#" class="d-block">
+                <a href="shop-grid.html" class="d-block">
                     <img src="public/patoi/assets/img/categories/categories1.jpg" alt="categories-image">
                     <h3>Thực phẩm cho chó</h3>
                 </a>
             </div>
             <div class="single-categories-box">
-                <a href="#" class="d-block">
+                <a href="shop-grid.html" class="d-block">
                     <img src="public/patoi/assets/img/categories/categories2.jpg" alt="categories-image">
                     <h3>Thực phẩm cho mèo</h3>
                 </a>
             </div>
             <div class="single-categories-box">
-                <a href="#" class="d-block">
+                <a href="shop-grid.html" class="d-block">
                     <img src="public/patoi/assets/img/categories/categories3.jpg" alt="categories-image">
                     <h3>Phụ kiện</h3>
                 </a>
             </div>
             <div class="single-categories-box">
-                <a href="#" class="d-block">
+                <a href="shop-grid.html" class="d-block">
                     <img src="public/patoi/assets/img/categories/categories4.jpg" alt="categories-image">
                     <h3>Thực phẩm khô</h3>
                 </a>
             </div>
             <div class="single-categories-box">
-                <a href="#" class="d-block">
+                <a href="shop-grid.html" class="d-block">
                     <img src="public/patoi/assets/img/categories/categories5.jpg" alt="categories-image">
                     <h3>Đồ chơi thú cưng</h3>
                 </a>
             </div>
             <div class="single-categories-box">
-                <a href="#" class="d-block">
+                <a href="shop-grid.html" class="d-block">
                     <img src="public/patoi/assets/img/categories/categories6.jpg" alt="categories-image">
                     <h3>Đồ chơi cho mèo</h3>
                 </a>
@@ -257,42 +257,42 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-2 col-md-3 col-sm-4 col-4">
                 <div class="single-brands-box">
-                    <a href="#" class="d-block">
+                    <a href="shop-grid.html" class="d-block">
                         <img src="public/patoi/assets/img/brands/brands1.png" alt="brands">
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-4">
                 <div class="single-brands-box">
-                    <a href="#" class="d-block">
+                    <a href="shop-grid.html" class="d-block">
                         <img src="public/patoi/assets/img/brands/brands2.png" alt="brands">
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-4">
                 <div class="single-brands-box">
-                    <a href="#" class="d-block">
+                    <a href="shop-grid.html" class="d-block">
                         <img src="public/patoi/assets/img/brands/brands3.png" alt="brands">
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-4">
                 <div class="single-brands-box">
-                    <a href="#" class="d-block">
+                    <a href="shop-grid.html" class="d-block">
                         <img src="public/patoi/assets/img/brands/brands4.png" alt="brands">
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-4">
                 <div class="single-brands-box">
-                    <a href="#" class="d-block">
+                    <a href="shop-grid.html" class="d-block">
                         <img src="public/patoi/assets/img/brands/brands5.png" alt="brands">
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-4">
                 <div class="single-brands-box">
-                    <a href="#" class="d-block">
+                    <a href="shop-grid.html" class="d-block">
                         <img src="public/patoi/assets/img/brands/brands6.png" alt="brands">
                     </a>
                 </div>
@@ -318,7 +318,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="content">
-                                <h3><a href="#">Premium lamb rice</a></h3>
+                                <h3><a href="products-details.html">Premium lamb rice</a></h3>
                                 <span class="price">$240.00</span>
                                 <div class="rating">
                                     <i class='bx bxs-star'></i>
@@ -337,7 +337,7 @@
                                     <div><span class="counter-minutes"></span> Minutes</div>
                                     <div><span class="counter-seconds"></span> Seconds</div>
                                 </div>
-                                <a href="#" class="default-btn"><span>Xem Ngay</span></a>
+                                <a href="shop-grid.html" class="default-btn"><span>Xem Ngay</span></a>
                             </div>
                         </div>
                     </div>
@@ -441,7 +441,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="single-blog-post">
                     <div class="image">
-                        <a href="#" class="d-block">
+                        <a href="blog-details.html" class="d-block">
                             <img src="public/patoi/assets/img/blog/blog1.jpg" alt="blog-image">
                         </a>
                     </div>
@@ -449,15 +449,15 @@
                         <span class="date">
                             <span>10 Aug</span> 2021
                         </span>
-                        <a href="#" class="category">Training</a>
-                        <h3><a href="#">Properly a pet training guide</a></h3>
+                        <a href="blog-grid.html" class="category">Training</a>
+                        <h3><a href="blog-details.html">Properly a pet training guide</a></h3>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="single-blog-post">
                     <div class="image">
-                        <a href="#" class="d-block">
+                        <a href="blog-details.html" class="d-block">
                             <img src="public/patoi/assets/img/blog/blog2.jpg" alt="blog-image">
                         </a>
                     </div>
@@ -465,15 +465,15 @@
                         <span class="date">
                             <span>11 Aug</span> 2021
                         </span>
-                        <a href="#" class="category">Behaviour</a>
-                        <h3><a href="#">The exact rules of how to travel with pets</a></h3>
+                        <a href="blog-grid.html" class="category">Behaviour</a>
+                        <h3><a href="blog-details.html">The exact rules of how to travel with pets</a></h3>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="single-blog-post">
                     <div class="image">
-                        <a href="#" class="d-block">
+                        <a href="blog-details.html" class="d-block">
                             <img src="public/patoi/assets/img/blog/blog3.jpg" alt="blog-image">
                         </a>
                     </div>
@@ -481,8 +481,8 @@
                         <span class="date">
                             <span>12 Aug</span> 2021
                         </span>
-                        <a href="#" class="category">Solutions</a>
-                        <h3><a href="#">Creating proper guidelines for pet food </a></h3>
+                        <a href="blog-grid.html" class="category">Solutions</a>
+                        <h3><a href="blog-details.html">Creating proper guidelines for pet food </a></h3>
                     </div>
                 </div>
             </div>

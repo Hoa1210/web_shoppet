@@ -1,15 +1,19 @@
 <?php
-require("config.php");
-class database {
+class database{
     protected $pdo = NULL;
     protected $sql = '';
     protected $sta = NULL;
 
     public function __construct() {
-        try {
-            $this->pdo = new PDO("mysql:host=".DB_HOST."; dbname=".DB_NAME, DB_USER, DB_PWD);
+        try
+        {
+//            $this->pdo = new PDO('mysql:host=localhost; dbname=PHP0921E_Nhom4','PHP0921E_Nhom4','7tqrL4nXfF');
+//            $this->pdo = new PDO('mysql:host=sql212.epizy.com; dbname=epiz_31940235_shoppet202','epiz_31940235','m1XHBHlrdl2D10m');
+            $this->pdo = new PDO('mysql:host=localhost; dbname=PHP0921E_Nhom4','root','');
             $this->pdo->query('set names "utf8"');
-        } catch (PDOException $ex) {
+        }
+        catch(PDOException $ex )
+        {
             die($ex->getMessage());
         }
     }
@@ -19,11 +23,11 @@ class database {
 
     //Function execute the query
     // hàm này sẽ làm hàm chạy câu truy vấn
-    public function execute($options = array()) {
+    public function execute($options=array()) {
         $this->sta = $this->pdo->prepare($this->sql);
         if($options) {  //If have $options then system will be tranmission parameters
-            for($i = 0; $i < count($options); $i++) {
-                $this->sta->bindParam($i + 1, $options[$i]);
+            for($i=0;$i<count($options);$i++) {
+                $this->sta->bindParam($i+1,$options[$i]);
             }
         }
         $this->sta->execute();
@@ -32,11 +36,12 @@ class database {
 
     //Funtion load datas on table
     // lấy nhiều dữ liệu ở trong bảng
-    public function loadAllRows($options = array()) {
+    public function loadAllRows($options=array()) {
         if(!$options) {
             if(!$result = $this->execute())
                 return false;
-        } else {
+        }
+        else {
             if(!$result = $this->execute($options))
                 return false;
         }
@@ -45,11 +50,12 @@ class database {
 
     //Funtion load 1 data on the table
     //lay 1 du lieu thoi
-    public function loadRow($option = array()) {
+    public function loadRow($option=array()) {
         if(!$option) {
             if(!$result = $this->execute())
                 return false;
-        } else {
+        }
+        else {
             if(!$result = $this->execute($option))
                 return false;
         }
@@ -57,11 +63,12 @@ class database {
     }
 
     //Function count the record on the table
-    public function loadRecord($option = array()) {
+    public function loadRecord($option=array()) {
         if(!$option) {
             if(!$result = $this->execute())
                 return false;
-        } else {
+        }
+        else {
             if(!$result = $this->execute($option))
                 return false;
         }
@@ -73,7 +80,7 @@ class database {
     }
 
     public function disconnect() {
-        $this->sta = NULL;
+        $this->sta=NULL;
         $this->pdo = NULL;
     }
 }
